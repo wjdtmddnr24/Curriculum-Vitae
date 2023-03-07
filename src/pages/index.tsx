@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Summary } from "../features/Summary";
+import { TechSkills } from "../features/TechSkills";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <main>
         <div className="bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500 flex flex-col">
           <Summary />
+          <TechSkills />
           <div className="bg-white rounded shadow w-[72rem] h-[32rem] mx-auto my-8 p-8">
             <div className="text-2xl text-green-500 font-bold">제목</div>
           </div>
