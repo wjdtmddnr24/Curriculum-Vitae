@@ -11,7 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="bg-blue-500 bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500 flex flex-col">
+        <div className="bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500 flex flex-col">
           <Summary />
           <div className="bg-white rounded shadow w-[40rem] h-[32rem] mx-auto my-8 relative -top-[8rem] -mb-[6rem]">
             asdddf
