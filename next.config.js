@@ -1,8 +1,8 @@
+const withTwin = require('./withTwin.js')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
+  reactStrictMode: true,
 }
 
-module.exports = nextConfig
+module.exports = withTwin(nextConfig)
