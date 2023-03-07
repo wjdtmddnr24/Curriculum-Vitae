@@ -26,12 +26,13 @@ export function Summary() {
         <div className="p-5">
           <div>25살</div>
           <div>한국 서울 거주</div>
+          <div>선린 인터넷 고등학교 졸업</div>
           <div>숭실대학교 졸업</div>
         </div>
         <div className="p-5">
-          <div>공군 교육훈련매체개발병</div>
-          <div>코딩학원 강사</div>
-          <div>스타트업 안드로이드 개발자</div>
+          <div>2022~2023 공군 교육훈련매체개발병</div>
+          <div>2018~2021 코딩학원 강사</div>
+          <div>2018~2019 스타트업 안드로이드 개발자</div>
         </div>
       </div>
     </div>
