@@ -9,7 +9,7 @@ export function Summary() {
   return (
     <div className="mx-auto flex justify-center items-center min-h-screen">
       <div className="bg-white w-[80rem] h-[36rem] grid grid-cols-[auto_1fr_1fr] rounded shadow-2xl">
-        <div className="w-[26rem] items-center justify-center flex flex-col border-r-2 pt-12 pb-6">
+        <div className="w-[26rem] items-center justify-center flex flex-col border-r pt-12 pb-6">
           <Image
             className="w-72 h-72 my-auto rounded-full object-cover self-center justify-self-center"
             src={profilePic}
