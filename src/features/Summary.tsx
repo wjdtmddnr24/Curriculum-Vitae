@@ -15,8 +15,9 @@ export function Summary() {
             alt="Profile Image"
           />
           <div className="w-full my-auto rounded-b justify-self-center flex flex-col items-center justify-center gap-1 py-4">
-            <div className="text-2xl">정승욱</div>
-            <div className="text-green-500 text-lg">소프트웨어 엔지니어</div>
+            <div className="text-lg text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 font-bold">
+              소프트웨어 엔지니어
+            </div>
             <div className="flex gap-1.5 text-slate-800 text-xl">
               <Link href="https://github.com/wjdtmddnr24">
                 <FontAwesomeIcon icon={faGithub} />
