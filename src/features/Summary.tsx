@@ -27,7 +27,7 @@ export function Summary() {
               <Link href="#">
                 <FontAwesomeIcon icon={faFacebook} />
               </Link>
-              <Link href="#">
+              <Link href="https://www.rocketpunch.com/@cindyjack369">
                 <FontAwesomeIcon icon={faRocket} className="pt-1" />
               </Link>
             </div>
