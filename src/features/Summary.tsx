@@ -7,22 +7,29 @@ import Link from "next/link";
 export function Summary() {
   return (
     <div className="mx-auto flex justify-center items-center min-h-screen">
-      <div className="rounded shadow-2xl w-[24rem] grid grid-rows-[1fr_auto] hover:scale-105 duration-200 transition-all">
-        <Image className="w-full h-96 rounded-t object-cover" src={profilePic} alt="Profile Image" />
-        <div className="bg-white w-full rounded-b justify-self-center flex flex-col items-center justify-center gap-1 py-4">
-          <div className="text-2xl">정승욱</div>
-          <div className="text-green-500">소프트웨어 엔지니어</div>
-          <div className="flex gap-1.5 text-slate-800">
-            <Link href="https://github.com/wjdtmddnr24">
-              <FontAwesomeIcon icon={faGithub} />
-            </Link>
-            <Link href="#">
-              <FontAwesomeIcon icon={faFacebook} />
-            </Link>
+      <div className="bg-white w-[80rem] h-[36rem] grid grid-cols-[auto_1fr_1fr] rounded shadow-2xl">
+        <div className="w-[26rem] items-center justify-center flex flex-col border-r-2 pt-12 pb-6">
+          <Image
+            className="w-72 h-72 my-auto rounded-full object-cover self-center justify-self-center"
+            src={profilePic}
+            alt="Profile Image"
+          />
+          <div className="w-full my-auto rounded-b justify-self-center flex flex-col items-center justify-center gap-1 py-4">
+            <div className="text-2xl">정승욱</div>
+            <div className="text-green-500 text-lg">소프트웨어 엔지니어</div>
+            <div className="flex gap-1.5 text-slate-800 text-xl">
+              <Link href="https://github.com/wjdtmddnr24">
+                <FontAwesomeIcon icon={faGithub} />
+              </Link>
+              <Link href="#">
+                <FontAwesomeIcon icon={faFacebook} />
+              </Link>
+              <Link href="#">
+                <FontAwesomeIcon icon={faFacebook} />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="h-[30rem] w-[40rem] bg-slate-50 rounded-r shadow grid grid-cols-2 divide-x-2">
         <div className="p-5">
           <div>25살</div>
           <div>한국 서울 거주</div>
