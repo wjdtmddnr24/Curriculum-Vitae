@@ -3,6 +3,7 @@ import { faFacebook, faGithub } from "@fortawesome/free-brands-svg-icons";
 import profilePic from "../../public/profile.png";
 import Image from "next/image";
 import Link from "next/link";
+import { faRocket } from "@fortawesome/free-solid-svg-icons";
 
 export function Summary() {
   return (
