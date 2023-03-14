@@ -1,6 +1,3 @@
-import { faHouseChimneyCrack } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 export function TechSkills() {
   return (
     <div className="bg-white rounded shadow w-[80rem] min-h-[32rem] mx-auto my-8 relative -top-24 -mb-[4rem] p-8">
