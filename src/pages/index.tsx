@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500 flex flex-col">
+        <div className="bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500 flex flex-col max-h-screen overflow-y-auto">
           <Summary />
           <TechSkills />
           <Awards />
