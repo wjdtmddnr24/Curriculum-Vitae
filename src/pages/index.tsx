@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Awards } from "../features/Awards";
 import { Summary } from "../features/Summary";
 import { TechSkills } from "../features/TechSkills";
 
@@ -15,12 +16,7 @@ export default function Home() {
         <div className="bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500 flex flex-col">
           <Summary />
           <TechSkills />
-          <div className="bg-white rounded shadow w-[72rem] h-[32rem] mx-auto my-8 p-8">
-            <div className="text-2xl text-green-500 font-bold">제목</div>
-          </div>
-          <div className="bg-white rounded shadow w-[72rem] h-[32rem] mx-auto my-8 p-8">
-            <div className="text-2xl text-green-500 font-bold">제목</div>
-          </div>
+          <Awards />
         </div>
       </main>
     </>
