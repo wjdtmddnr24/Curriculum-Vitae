@@ -4,7 +4,7 @@ export function TechSkills() {
       <div className="text-2xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 font-bold mb-4">
         Tech Skills
       </div>
-      <div className="grid grid-cols-4 gap-8">
+      <div className="grid grid-cols-4 auto-rows-[minmax(4rem,_1fr)] gap-8 ">
         <div>
           <div className="text-xl font-bold">General</div>
           <ul>
