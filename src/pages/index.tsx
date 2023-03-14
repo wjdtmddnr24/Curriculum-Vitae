@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Awards } from "../features/Awards";
+import { Projects } from "../features/Projects";
 import { Summary } from "../features/Summary";
 import { TechSkills } from "../features/TechSkills";
 
@@ -17,6 +18,7 @@ export default function Home() {
           <Summary />
           <TechSkills />
           <Awards />
+          <Projects />
         </div>
       </main>
     </>
