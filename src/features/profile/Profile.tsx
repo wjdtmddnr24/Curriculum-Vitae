@@ -1,5 +1,6 @@
-import { faCalendar, faEnvelope, faJetFighterUp, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faCalendar, faEnvelope, faJetFighterUp, faLocationDot, faSchoolFlag } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconList } from "../icon-list/IconList";
 import { ProfileHeader } from "./ProfileHeader";
 
 export function Profile() {
@@ -45,12 +46,15 @@ export function Profile() {
           </div>
           <div>
             <div className="text-gray-800 font-bold text-xl mb-2">Education</div>
-            <ul>
-              <li>숭실대학교 졸업</li>
-              <li>선린인터넷고등학교 졸업</li>
-              <li>Kunming International Academy 재학</li>
-              <li>언주중학교 졸업</li>
-            </ul>
+            <IconList>
+              <IconList.Item icon={faSchoolFlag}>숭실대학교 졸업 예정</IconList.Item>
+              <IconList.Item icon={faSchoolFlag}>선린인터넷고등학교 졸업</IconList.Item>
+              <IconList.Item icon={faSchoolFlag}>
+                Kunming International Academy &
+                <br />
+                언주중학교 졸업
+              </IconList.Item>
+            </IconList>
           </div>
 
           <div>
