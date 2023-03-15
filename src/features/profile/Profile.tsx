@@ -13,7 +13,7 @@ import { ProfileHeader } from "./ProfileHeader";
 
 export function Profile() {
   return (
-    <div className="mx-auto flex justify-center items-center min-h-screen">
+    <div className="flex-none mx-auto flex justify-center items-center h-screen">
       <div className="bg-white w-[80rem] h-[36rem] grid grid-cols-[auto_1fr] rounded shadow-2xl divide-x">
         <ProfileHeader />
         <div className="grid grid-cols-2 p-16 pr-0 text-slate-600">
