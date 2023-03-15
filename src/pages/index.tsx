@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Awards } from "../features/Awards";
 import { Projects } from "../features/Projects";
-import { Profile } from "../features/Profile";
+import { Profile } from "../features/profile/Profile";
 import { TechSkills } from "../features/TechSkills";
 
 export default function Home() {

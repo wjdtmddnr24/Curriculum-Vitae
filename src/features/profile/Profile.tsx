@@ -1,6 +1,6 @@
 import { faCalendar, faEnvelope, faJetFighterUp, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ProfileHeader } from "./ProfileHeader";
+import { ProfileHeader } from "../ProfileHeader";
 
 export function Profile() {
   return (
