@@ -7,10 +7,10 @@ export function Profile() {
     <div className="mx-auto flex justify-center items-center min-h-screen">
       <div className="bg-white w-[80rem] h-[36rem] grid grid-cols-[auto_1fr] rounded shadow-2xl divide-x">
         <ProfileHeader />
-        <div className="grid grid-cols-2 p-8 pt-16">
+        <div className="grid grid-cols-2 p-8 pt-16 text-slate-600">
           <div>
             <div className="text-gray-800 font-bold text-xl mb-2">Info</div>
-            <ul className="text-slate-600">
+            <ul>
               <li>
                 <FontAwesomeIcon icon={faLocationDot} fixedWidth /> 서울, 한국
               </li>
