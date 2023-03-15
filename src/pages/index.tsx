@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Awards } from "../features/Awards";
 import { Projects } from "../features/Projects";
-import { Summary } from "../features/Summary";
+import { Profile } from "../features/Profile";
 import { TechSkills } from "../features/TechSkills";
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
       <main>
         <div className="bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500 flex flex-col max-h-screen overflow-y-auto">
-          <Summary />
+          <Profile />
           <TechSkills />
           <Awards />
           <Projects />

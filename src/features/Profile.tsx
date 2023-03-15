@@ -1,15 +1,15 @@
-import { faFacebook, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faCalendar, faEnvelope, faJetFighterUp, faLocationDot, faRocket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import profilePic from "../../public/profile.png";
 
-export function Summary() {
+export function Profile() {
   return (
     <div className="mx-auto flex justify-center items-center min-h-screen">
-      <div className="bg-white w-[80rem] h-[36rem] grid grid-cols-[auto_1fr] rounded shadow-2xl">
-        <div className="w-[26rem] items-center flex flex-col border-r pt-16 pb-6">
+      <div className="bg-white w-[80rem] h-[36rem] grid grid-cols-[auto_1fr] rounded shadow-2xl divide-x">
+        <div className="w-[26rem] items-center flex flex-col pt-16 pb-6">
           <div className="relative flex justify-center items-center w-72 h-72 group rounded-full">
             <Image
               className="z-10 w-72 h-72 my-auto rounded-full object-cover self-center justify-self-center transition-transform ease-out"
@@ -32,6 +32,9 @@ export function Summary() {
               </Link>
               <Link href="https://www.rocketpunch.com/@cindyjack369" className="hover:text-slate-800 transition-colors">
                 <FontAwesomeIcon icon={faRocket} className="pt-1" />
+              </Link>
+              <Link href="#" className="hover:text-slate-800 transition-colors">
+                <FontAwesomeIcon icon={faLinkedin} />
               </Link>
             </div>
           </div>
