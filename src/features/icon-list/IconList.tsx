@@ -3,11 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReactNode } from "react";
 
 interface IconListProps {
+  className?: string;
   children: ReactNode;
 }
 
-export function IconList({ children }: IconListProps) {
-  return <ul>{children}</ul>;
+export function IconList({ className, children }: IconListProps) {
+  return <ul className={className}>{children}</ul>;
 }
 
 interface ItemProps {
