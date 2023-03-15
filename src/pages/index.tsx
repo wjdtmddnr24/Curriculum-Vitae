@@ -15,20 +15,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500  h-screen overflow-y-auto">
-          <div className="flex flex-col">
-            <div className="flex flex-col justify-center items-center h-screen relative">
-              <Profile />
-        <div className="bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500 flex flex-col max-h-screen overflow-y-auto">
-          <Profile />
+        <div className="bg-fixed bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500 flex flex-col z-20">
+          <div className="flex flex-col justify-center items-center h-screen relative">
+            <Profile />
+          </div>
           <TechSkills />
           <Awards />
           <Projects />
-            </div>
-            <TechSkills />
-            <Awards />
-            <Projects />
-          </div>
         </div>
       </main>
     </>
