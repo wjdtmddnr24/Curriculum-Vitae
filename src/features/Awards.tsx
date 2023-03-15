@@ -4,7 +4,7 @@ export function Awards() {
       <div className="text-2xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 font-bold mb-4">
         Awards
       </div>
-      <ul className="grid gap-4 grid-flow- grid-cols-2">
+      <ul className="grid gap-4 grid-cols-2">
         <li>2019 | 2020 하반기 TOPCIT 특별평가 교내 성적 우수자 - 우수상</li>
         <li>2019 | 2020 상반기 TOPCIT 특별평가 교내 성적 우수자 - 최우수상</li>
         <li>2019 | 제12회 TOPCIT 정기평가 교내 성적우수자 - 우수상</li>
