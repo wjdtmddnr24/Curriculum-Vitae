@@ -11,21 +11,14 @@ export function Profile() {
         <div className="grid grid-cols-2 p-16 text-slate-600">
           <div>
             <div className="text-gray-800 font-bold text-xl mb-2">Info</div>
-            <ul>
-              <li>
-                <FontAwesomeIcon icon={faLocationDot} fixedWidth /> 서울, 한국
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faCalendar} fixedWidth /> 25살, 1999년생
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faEnvelope} fixedWidth />{" "}
+            <IconList>
+              <IconList.Item icon={faLocationDot}>서울, 한국</IconList.Item>
+              <IconList.Item icon={faCalendar}>25살, 1999년생</IconList.Item>
+              <IconList.Item icon={faEnvelope}>
                 <span className="hover:underline hover:cursor-pointer">wjdtmddnr24@naver.com</span>
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faJetFighterUp} fixedWidth /> 공군에서 병역 수행중
-              </li>
-            </ul>
+              </IconList.Item>
+              <IconList.Item icon={faJetFighterUp}>공군에서 병역 수행중</IconList.Item>
+            </IconList>
           </div>
           <div>
             <div className="text-gray-800 font-bold text-xl mb-2">Career</div>
