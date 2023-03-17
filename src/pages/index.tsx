@@ -8,8 +8,6 @@ import { ScrollDownIndicator } from "../features/scroll-down-indicator/ScrollDow
 import { TechSkills } from "../features/TechSkills";
 
 export default function Home() {
-  const scrollToRef = useRef<HTMLDivElement>(null);
-
   return (
     <>
       <Head>
