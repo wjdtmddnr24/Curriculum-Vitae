@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { ReactNode, useEffect, useRef, useState } from "react";
+import { Pagination } from "./Pagination";
 
 interface FullPageProps {
   className?: string;
@@ -60,7 +61,7 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
   }, [currentSectionIndex, sections, isTransitioningRef, screenHeight]);
 
   return (
-    <div className="h-screen max-h-screen overflow-hidden">
+    <div className="h-screen max-h-screen overflow-hidden relative">
       <div
         ref={fullPageRef}
         className={classNames(["transition-transform duration-300 ease-in", className])}
@@ -73,6 +74,9 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
             {s}
           </section>
         ))}
+      </div>
+      <div className="absolute right-4 top-1/2 -translate-y-1/2">
+        <Pagination totalCount={sections.length} currentIndex={currentSectionIndex} />
       </div>
     </div>
   );
