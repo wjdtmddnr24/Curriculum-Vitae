@@ -24,9 +24,11 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
     setScreenHeight(window.innerHeight);
 
     const onResize = () => {
+      isTransitioningRef.current = false;
       setScreenHeight(window.innerHeight);
     };
     window.addEventListener("resize", onResize);
+
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
@@ -45,7 +47,7 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
     };
     window.addEventListener("wheel", onWheel);
     return () => window.removeEventListener("wheel", onWheel);
-  }, [currentSectionIndex, sections, isTransitioningRef]);
+  }, [currentSectionIndex, sections]);
 
   useEffect(() => {
     const offset = screenHeight * currentSectionIndex;
@@ -58,7 +60,7 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
     return () => {
       isTransitioningRef.current = false;
     };
-  }, [currentSectionIndex, sections, isTransitioningRef, screenHeight]);
+  }, [currentSectionIndex, sections, screenHeight]);
 
   return (
     <div className="h-screen max-h-screen overflow-hidden relative">
@@ -70,7 +72,7 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
         }}
       >
         {sections.map((s, idx) => (
-          <section key={idx} className="h-screen max-h-screen">
+          <section key={idx} className="h-screen max-h-screen overflow-hidden">
             {s}
           </section>
         ))}
