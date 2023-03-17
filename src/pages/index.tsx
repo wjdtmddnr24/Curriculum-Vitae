@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRef } from "react";
 import { Awards } from "../features/Awards";
+import { FullPage } from "../features/fullpage/FullPage";
 import { Profile } from "../features/profile/Profile";
 import { Projects } from "../features/Projects";
 import { ScrollDownIndicator } from "../features/scroll-down-indicator/ScrollDownIndicator";
@@ -8,6 +9,7 @@ import { TechSkills } from "../features/TechSkills";
 
 export default function Home() {
   const scrollToRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
       <Head>
@@ -18,22 +20,31 @@ export default function Home() {
       </Head>
       <main>
         <div className="bg-fixed bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500">
-          <div className="flex flex-col justify-center items-center h-screen min-h-[58rem] relative">
-            <Profile />
-            <div className="absolute bottom-5">
-              <ScrollDownIndicator
-                onClick={() => {
-                  console.log(scrollToRef);
-                  scrollToRef.current?.scrollIntoView({ behavior: "smooth" });
-                }}
-              />
-            </div>
-          </div>
-          <div ref={scrollToRef} className="flex flex-col py-4">
-            <TechSkills />
-            <Awards />
-            <Projects />
-          </div>
+          <FullPage
+            className="overflow-hidden"
+            sections={[
+              // eslint-disable-next-line react/jsx-key
+              <div className="flex flex-col justify-center items-center h-screen min-h-[58rem] relative">
+                <Profile />
+                <div className="absolute bottom-5">
+                  <ScrollDownIndicator />
+                </div>
+              </div>,
+
+              // eslint-disable-next-line react/jsx-key
+              <div className="flex flex-col justify-center items-center h-screen min-h-[58rem]">
+                <TechSkills />
+              </div>,
+              // eslint-disable-next-line react/jsx-key
+              <div className="flex flex-col justify-center items-center h-screen min-h-[58rem]">
+                <Projects />
+              </div>,
+              // eslint-disable-next-line react/jsx-key
+              <div className="flex flex-col justify-center items-center h-screen min-h-[58rem]">
+                <Awards />
+              </div>,
+            ]}
+          ></FullPage>
         </div>
       </main>
     </>
