@@ -30,15 +30,15 @@ export default function Home() {
               </div>,
 
               // eslint-disable-next-line react/jsx-key
-              <div className="flex flex-col justify-center items-center h-screen min-h-[58rem]">
+              <div className="flex flex-col justify-center items-center h-screen">
                 <TechSkills />
               </div>,
               // eslint-disable-next-line react/jsx-key
-              <div className="flex flex-col justify-center items-center h-screen min-h-[58rem]">
+              <div className="flex flex-col justify-center items-center h-screen">
                 <Projects />
               </div>,
               // eslint-disable-next-line react/jsx-key
-              <div className="flex flex-col justify-center items-center h-screen min-h-[58rem]">
+              <div className="flex flex-col justify-center items-center h-screen">
                 <Awards />
               </div>,
             ]}
