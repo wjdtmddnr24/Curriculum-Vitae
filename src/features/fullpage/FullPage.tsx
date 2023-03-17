@@ -1,12 +1,10 @@
 import classNames from "classnames";
-import { createContext, ReactNode, RefObject, useCallback, useContext, useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 
 interface FullPageProps {
   className?: string;
   sections?: ReactNode[];
 }
-
-const fullPageContext = createContext<((info: RefObject<HTMLElement>) => void) | null>(null);
 
 export const FullPage = ({ className, sections = [] }: FullPageProps) => {
   const [screenHeight, setScreenHeight] = useState<number>(0);
