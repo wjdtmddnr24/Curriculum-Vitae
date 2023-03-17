@@ -3,21 +3,38 @@ import { createContext, ReactNode, RefObject, useCallback, useContext, useEffect
 
 interface FullPageProps {
   className?: string;
-  children: ReactNode;
+  sections?: ReactNode[];
 }
 
 const fullPageContext = createContext<((info: RefObject<HTMLElement>) => void) | null>(null);
 
-export const FullPage = ({ className, children }: FullPageProps) => {
+export const FullPage = ({ className, sections = [] }: FullPageProps) => {
+  const [screenHeight, setScreenHeight] = useState<number>(0);
+
   const fullPageRef = useRef<HTMLDivElement>(null);
   const isTransitioningRef = useRef<boolean>(false);
-  const [sectionRefs, setSectionRefs] = useState<RefObject<HTMLElement>[]>([]);
   const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(0);
+
+  useEffect(() => {
+    if (sections.length <= currentSectionIndex) {
+      setCurrentSectionIndex(Math.max(sections.length - 1, 0));
+    }
+  }, [sections, currentSectionIndex]);
+
+  useEffect(() => {
+    setScreenHeight(window.innerHeight);
+
+    const onResize = () => {
+      setScreenHeight(window.innerHeight);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   useEffect(() => {
     const onWheel = (e: WheelEvent) => {
       if (isTransitioningRef.current) return;
-      if (e.deltaY > 0 && currentSectionIndex >= sectionRefs.length - 1) {
+      if (e.deltaY > 0 && currentSectionIndex >= sections.length - 1) {
         return;
       }
       if (e.deltaY < 0 && currentSectionIndex <= 0) {
@@ -29,12 +46,10 @@ export const FullPage = ({ className, children }: FullPageProps) => {
     };
     window.addEventListener("wheel", onWheel);
     return () => window.removeEventListener("wheel", onWheel);
-  }, [currentSectionIndex, sectionRefs, isTransitioningRef]);
+  }, [currentSectionIndex, sections, isTransitioningRef]);
 
   useEffect(() => {
-    const offset = sectionRefs
-      .filter((_, idx) => idx < currentSectionIndex)
-      .reduce((acc, ref) => acc + (ref.current?.clientHeight ?? 0), 0);
+    const offset = screenHeight * currentSectionIndex;
 
     if (fullPageRef.current?.style) {
       isTransitioningRef.current = true;
@@ -44,55 +59,23 @@ export const FullPage = ({ className, children }: FullPageProps) => {
     return () => {
       isTransitioningRef.current = false;
     };
-  }, [currentSectionIndex, sectionRefs, isTransitioningRef]);
+  }, [currentSectionIndex, sections, isTransitioningRef, screenHeight]);
 
-  const addSectionRef = useCallback(
-    (ref: RefObject<HTMLElement>) => {
-      setSectionRefs((refs) => {
-        const nextRefs = refs.filter((r) => r.current);
-        if (ref.current !== null && nextRefs.find((r) => r.current === ref.current)) {
-          return nextRefs;
-        }
-        return [...nextRefs, ref];
-      });
-    },
-    [setSectionRefs],
-  );
   return (
-    <fullPageContext.Provider value={addSectionRef}>
-      <div className="h-screen max-h-screen overflow-hidden">
-        <div
-          ref={fullPageRef}
-          className={classNames(["transition-transform duration-300 ease-in", className])}
-          onTransitionEnd={(e) => {
-            isTransitioningRef.current = false;
-          }}
-        >
-          {children}
-        </div>
+    <div className="h-screen max-h-screen overflow-hidden">
+      <div
+        ref={fullPageRef}
+        className={classNames(["transition-transform duration-300 ease-in", className])}
+        onTransitionEnd={() => {
+          isTransitioningRef.current = false;
+        }}
+      >
+        {sections.map((s, idx) => (
+          <section key={idx} className="h-screen max-h-screen">
+            {s}
+          </section>
+        ))}
       </div>
-    </fullPageContext.Provider>
+    </div>
   );
 };
-
-interface SectionProps {
-  children: ReactNode;
-  className?: string;
-}
-
-const Section = ({ children, className }: SectionProps) => {
-  const ref = useRef<HTMLElement>(null);
-  const addSectionRef = useContext(fullPageContext);
-
-  useEffect(() => {
-    addSectionRef?.(ref);
-  }, [ref, addSectionRef]);
-
-  return (
-    <section ref={ref} className={classNames(["h-screen max-h-screen", className])}>
-      {children}
-    </section>
-  );
-};
-
-FullPage.Section = Section;
