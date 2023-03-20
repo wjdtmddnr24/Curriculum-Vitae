@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
 import { Pagination } from "./Pagination";
+import { ScrollUpButton } from "../scroll-up-button/ScrollUpButton";
 
 interface FullPageProps {
   className?: string;
@@ -82,6 +83,7 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
           onClick={(index) => setCurrentSectionIndex(index)}
         />
       </div>
+      <ScrollUpButton onClick={() => setCurrentSectionIndex(0)} />
     </div>
   );
 };
