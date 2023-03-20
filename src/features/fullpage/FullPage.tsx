@@ -63,7 +63,7 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
       >
         <div
           ref={fullPageRef}
-          className={classNames(["transition-transform duration-700 ease-out", className])}
+          className={classNames(["transition-transform duration-700 ease-in-out", className])}
           style={{
             transform: `translateY(-${screenHeight * currentSectionIndex}px)`,
           }}
