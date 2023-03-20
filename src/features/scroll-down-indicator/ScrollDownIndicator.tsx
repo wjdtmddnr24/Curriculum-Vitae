@@ -8,7 +8,8 @@ interface ScrollDownIndicatorProps {
 export const ScrollDownIndicator = ({ onClick }: ScrollDownIndicatorProps) => {
   const scrollY = useVScrollPosition();
   const height = useWindowheight();
-  const opacity = 1 - Math.min(height / 2, scrollY) / (height / 2);
+
+  const opacity = height > 0 ? 1 - Math.min(height / 2, scrollY) / (height / 2) : 0;
 
   return (
     <div className={`flex flex-col items-center text-gray-100 ${opacity === 0 ? "hidden" : ""}`} style={{ opacity }}>
