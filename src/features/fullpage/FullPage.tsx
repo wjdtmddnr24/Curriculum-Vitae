@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { ReactNode, useEffect, useRef, useState } from "react";
+import { Transition } from "react-transition-group";
 import { Pagination } from "./Pagination";
 
 interface FullPageProps {
@@ -9,9 +10,9 @@ interface FullPageProps {
 
 export const FullPage = ({ className, sections = [] }: FullPageProps) => {
   const [screenHeight, setScreenHeight] = useState<number>(0);
-
   const fullPageRef = useRef<HTMLDivElement>(null);
-  const isTransitioningRef = useRef<boolean>(false);
+  const [inProp, setInProp] = useState<boolean>(false);
+  const [isWheelable, setIsWheelable] = useState<boolean>(true);
   const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(0);
 
   useEffect(() => {
@@ -24,7 +25,6 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
     setScreenHeight(window.innerHeight);
 
     const onResize = () => {
-      isTransitioningRef.current = false;
       setScreenHeight(window.innerHeight);
     };
     window.addEventListener("resize", onResize);
@@ -34,49 +34,47 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
 
   useEffect(() => {
     const onWheel = (e: WheelEvent) => {
-      if (isTransitioningRef.current) return;
-      if (e.deltaY > 0 && currentSectionIndex >= sections.length - 1) {
-        return;
-      }
-      if (e.deltaY < 0 && currentSectionIndex <= 0) {
+      if (
+        !isWheelable ||
+        (e.deltaY > 0 && currentSectionIndex >= sections.length - 1) ||
+        (e.deltaY < 0 && currentSectionIndex <= 0)
+      ) {
         return;
       }
 
       const nextCurrentSectionIndex = currentSectionIndex + (e.deltaY > 0 ? 1 : e.deltaY < 0 ? -1 : 0);
       setCurrentSectionIndex(nextCurrentSectionIndex);
+      setInProp(true);
     };
     window.addEventListener("wheel", onWheel);
     return () => window.removeEventListener("wheel", onWheel);
-  }, [currentSectionIndex, sections]);
-
-  useEffect(() => {
-    const offset = screenHeight * currentSectionIndex;
-
-    if (fullPageRef.current?.style) {
-      isTransitioningRef.current = true;
-      fullPageRef.current.style.transform = `translateY(-${offset}px)`;
-    }
-
-    return () => {
-      isTransitioningRef.current = false;
-    };
-  }, [currentSectionIndex, sections, screenHeight]);
+  }, [currentSectionIndex, isWheelable, sections]);
 
   return (
     <div className="h-screen max-h-screen overflow-hidden relative">
-      <div
-        ref={fullPageRef}
-        className={classNames(["transition-transform duration-300 ease-in", className])}
-        onTransitionEnd={() => {
-          isTransitioningRef.current = false;
-        }}
+      <Transition
+        in={inProp}
+        nodeRef={fullPageRef}
+        timeout={300}
+        onEnter={() => setIsWheelable(false)}
+        onExited={() => setIsWheelable(true)}
+        addEndListener={() => setInProp(false)}
       >
-        {sections.map((s, idx) => (
-          <section key={idx} className="h-screen max-h-screen overflow-hidden">
-            {s}
-          </section>
-        ))}
-      </div>
+        <div
+          ref={fullPageRef}
+          className={classNames(["transition-transform duration-300 ease-in", className])}
+          style={{
+            transform: `translateY(-${screenHeight * currentSectionIndex}px)`,
+          }}
+        >
+          {sections.map((s, idx) => (
+            <section key={idx} className="h-screen max-h-screen overflow-hidden">
+              {s}
+            </section>
+          ))}
+        </div>
+      </Transition>
+
       <div className="absolute right-4 top-1/2 -translate-y-1/2">
         <Pagination totalCount={sections.length} currentIndex={currentSectionIndex} />
       </div>
