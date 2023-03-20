@@ -76,7 +76,11 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
       </Transition>
 
       <div className="absolute right-4 top-1/2 -translate-y-1/2">
-        <Pagination totalCount={sections.length} currentIndex={currentSectionIndex} />
+        <Pagination
+          totalCount={sections.length}
+          currentIndex={currentSectionIndex}
+          onClick={(index) => setCurrentSectionIndex(index)}
+        />
       </div>
     </div>
   );
