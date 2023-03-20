@@ -82,6 +82,7 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
           onClick={(index) => setCurrentSectionIndex(index)}
         />
       </div>
+      <ScrollUpButton onClick={() => setCurrentSectionIndex(0)} />
     </div>
   );
 };
