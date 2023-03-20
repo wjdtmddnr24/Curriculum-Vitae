@@ -55,14 +55,14 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
       <Transition
         in={inProp}
         nodeRef={fullPageRef}
-        timeout={300}
+        timeout={350}
         onEnter={() => setIsWheelable(false)}
         onExited={() => setIsWheelable(true)}
         addEndListener={() => setInProp(false)}
       >
         <div
           ref={fullPageRef}
-          className={classNames(["transition-transform duration-300 ease-in", className])}
+          className={classNames(["transition-transform duration-700 ease-out", className])}
           style={{
             transform: `translateY(-${screenHeight * currentSectionIndex}px)`,
           }}
