@@ -22,9 +22,12 @@ interface ItemProps {
   onClick: () => void;
 }
 
-const Item = ({ isCurrentPage }: ItemProps) => {
+const Item = ({ isCurrentPage, onClick }: ItemProps) => {
   return (
-    <div className="rounded-full w-4 h-4 bg-slate-700/50 flex justify-center items-center cursor-pointer">
+    <div
+      className="rounded-full w-4 h-4 bg-slate-700/50 flex justify-center items-center cursor-pointer hover:scale-110 ease-in-out duration-200"
+      onClick={onClick}
+    >
       <div
         className={classNames([
           "rounded-full w-2 h-2 transition-color duration-300",
