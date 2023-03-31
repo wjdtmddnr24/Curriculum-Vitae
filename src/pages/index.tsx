@@ -5,7 +5,7 @@ import { FullPage } from "../features/fullpage/FullPage";
 import { Profile } from "../features/profile/Profile";
 import { Projects } from "../features/Projects";
 import { ScrollDownIndicator } from "../features/scroll-down-indicator/ScrollDownIndicator";
-import { TechSkills } from "../features/TechSkills";
+import { TechSkills } from "../features/tech-skills/TechSkills";
 
 export default function Home() {
   return (
