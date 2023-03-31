@@ -15,7 +15,7 @@ export function Profile() {
   return (
     <div className="flex-none bg-white rounded shadow-2xl w-[80rem] h-[36rem] mx-auto grid grid-cols-[auto_1fr] divide-x">
       <ProfileHeader />
-      <div className="grid grid-cols-2 p-16 pr-0 text-slate-600">
+      <div className="grid grid-cols-2 p-16 pr-0 pt-20 text-slate-600">
         <div>
           <div className="text-gray-800 font-bold text-xl mb-2">Info</div>
           <IconList className="space-y-0.5">
