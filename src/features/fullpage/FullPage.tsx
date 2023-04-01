@@ -1,8 +1,9 @@
 import classNames from "classnames";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
+import { shallow } from "zustand/shallow";
 import { Pagination } from "./Pagination";
-import { ScrollUpButton } from "../scroll-up-button/ScrollUpButton";
+import { useFullPageStore } from "./useFullPageStore";
 
 interface FullPageProps {
   className?: string;
@@ -14,13 +15,10 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
   const fullPageRef = useRef<HTMLDivElement>(null);
   const [inProp, setInProp] = useState<boolean>(false);
   const [isWheelable, setIsWheelable] = useState<boolean>(true);
-  const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(0);
-
-  useEffect(() => {
-    if (sections.length <= currentSectionIndex) {
-      setCurrentSectionIndex(Math.max(sections.length - 1, 0));
-    }
-  }, [sections, currentSectionIndex]);
+  const [currentSectionIndex, setCurrentSectionIndex] = useFullPageStore(
+    (state) => [state.pageIndex, state.setPageIndex],
+    shallow,
+  );
 
   useEffect(() => {
     setScreenHeight(window.innerHeight);
@@ -49,7 +47,7 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
     };
     window.addEventListener("wheel", onWheel);
     return () => window.removeEventListener("wheel", onWheel);
-  }, [currentSectionIndex, isWheelable, sections]);
+  }, [currentSectionIndex, isWheelable, sections, setCurrentSectionIndex]);
 
   return (
     <div className="h-screen max-h-screen overflow-hidden relative">
@@ -83,7 +81,6 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
           onClick={(index) => setCurrentSectionIndex(index)}
         />
       </div>
-      <ScrollUpButton onClick={() => setCurrentSectionIndex(0)} />
     </div>
   );
 };
