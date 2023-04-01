@@ -5,7 +5,9 @@ import { FullPage } from "../features/fullpage/FullPage";
 import { Profile } from "../features/profile/Profile";
 import { Projects } from "../features/Projects";
 import { ScrollDownIndicator } from "../features/scroll-down-indicator/ScrollDownIndicator";
+import { ScrollUpButton } from "../features/scroll-up-button/ScrollUpButton";
 import { TechSkills } from "../features/tech-skills/TechSkills";
+import { ToggleDarkmodeButton } from "../features/toggle-darkmode-button/ToggleDarkmodeButton";
 
 export default function Home() {
   return (
@@ -42,7 +44,11 @@ export default function Home() {
                 <Awards />
               </div>,
             ]}
-          ></FullPage>
+          />
+          <div className="fixed bottom-8 right-8 flex flex-col gap-2">
+            <ToggleDarkmodeButton />
+            <ScrollUpButton />
+          </div>
         </div>
       </main>
     </>
