@@ -1,6 +1,6 @@
 export function Awards() {
   return (
-    <div className="bg-white rounded shadow-2xl w-[80rem] min-h-[32rem] mx-auto my-8 p-8">
+    <div className="bg-white dark:bg-slate-800 dark:text-slate-200 rounded shadow-2xl w-[80rem] min-h-[32rem] mx-auto my-8 p-8">
       <div className="text-2xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 font-bold mb-4">
         Awards
       </div>
