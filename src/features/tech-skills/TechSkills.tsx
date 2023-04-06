@@ -1,13 +1,13 @@
 export function TechSkills() {
   return (
     <div className="bg-white dark:bg-slate-800 dark:text-slate-200 rounded shadow-2xl w-[88rem] min-h-[35rem] mx-auto p-10">
-      <div className="text-3xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold mb-2">
+      <div className="text-3xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold mb-8">
         Tech Skills
       </div>
-      {/* <div className="text-2xl font-bold mb-2">General</div> */}
+      {/* <div className="text-2xl font-bold mb-2 mb-2">General</div> */}
       <div className="grid grid-cols-4 gap-10 text-lg mt-4">
         <div>
-          <div className="text-2xl font-bold">General</div>
+          <div className="text-2xl font-bold mb-2">General</div>
           <ul>
             <li>Linux</li>
             <li>Bash/Zsh</li>
@@ -26,7 +26,7 @@ export function TechSkills() {
           </ul>
         </div>
         <div>
-          <div className="text-2xl font-bold">Web Frontend</div>
+          <div className="text-2xl font-bold mb-2">Web Frontend</div>
           <div>
             <ul>
               <li>HTML / CSS / JavaScript</li>
@@ -42,7 +42,7 @@ export function TechSkills() {
           </div>
         </div>
         <div>
-          <div className="text-2xl font-bold">Backend</div>
+          <div className="text-2xl font-bold mb-2">Backend</div>
           <div>
             <ul>
               <li>NodeJS</li>
@@ -55,7 +55,7 @@ export function TechSkills() {
           </div>
         </div>
         <div>
-          <div className="text-2xl font-bold">Mobile</div>
+          <div className="text-2xl font-bold mb-2">Mobile</div>
           <div>
             <ul>
               <li>Flutter / Dart</li>
@@ -64,7 +64,7 @@ export function TechSkills() {
           </div>
         </div>
         <div>
-          <div className="text-2xl font-bold">Database</div>
+          <div className="text-2xl font-bold mb-2">Database</div>
           <div>
             <ul>
               <li>MySQL</li>
@@ -74,7 +74,7 @@ export function TechSkills() {
           </div>
         </div>
         <div>
-          <div className="text-2xl font-bold">DevOps</div>
+          <div className="text-2xl font-bold mb-2">DevOps</div>
           <div>
             <ul>
               <li>Kubernetes</li>

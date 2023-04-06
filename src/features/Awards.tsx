@@ -1,10 +1,10 @@
 export function Awards() {
   return (
-    <div className="bg-white dark:bg-slate-800 dark:text-slate-200 rounded shadow-2xl w-[80rem] min-h-[32rem] mx-auto my-8 p-8">
-      <div className="text-2xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold mb-4">
+    <div className="bg-white dark:bg-slate-800 dark:text-slate-200 rounded shadow-2xl w-[88rem] min-h-[35rem] mx-auto p-10">
+      <div className="text-3xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold mb-8">
         Awards
       </div>
-      <ul className="grid gap-4 grid-cols-2">
+      <ul className="grid gap-4 grid-cols-2 text-lg">
         <li>2019 | 2020 하반기 TOPCIT 특별평가 교내 성적 우수자 - 우수상</li>
         <li>2019 | 2020 상반기 TOPCIT 특별평가 교내 성적 우수자 - 최우수상</li>
         <li>2019 | 제12회 TOPCIT 정기평가 교내 성적우수자 - 우수상</li>
