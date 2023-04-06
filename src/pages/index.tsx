@@ -47,7 +47,7 @@ export default function Home() {
               </div>,
             ]}
           />
-          <div className="fixed bottom-8 right-8 flex flex-col gap-2">
+          <div className="fixed bottom-8 right-8 flex flex-col gap-3">
             <ToggleDarkmodeButton />
             <ScrollUpButton />
           </div>
