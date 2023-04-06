@@ -7,21 +7,21 @@ import profilePic from "../../../public/profile.png";
 
 export function ProfileHeader() {
   return (
-    <div className="w-[26rem] items-center flex flex-col pt-16 pb-6">
-      <div className="relative flex justify-center items-center w-72 h-72 group rounded-full">
+    <div className="w-[28.5rem] items-center flex flex-col pt-[4.4rem] pb-6">
+      <div className="relative flex justify-center items-center w-80 h-80 group rounded-full">
         <Image
-          className="z-10 w-72 h-72 my-auto rounded-full object-cover self-center justify-self-center transition-transform ease-out"
+          className="z-10 w-80 h-80 my-auto rounded-full object-cover self-center justify-self-center transition-transform ease-out"
           src={profilePic}
           alt="Profile Image"
         />
-        <div className="absolute transition-all duration-300 w-[18rem] h-[18rem] rounded-full group-hover:w-[calc(18rem+12px)] group-hover:h-[calc(18rem+12px)] bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 animate-spin"></div>
+        <div className="absolute transition-all duration-300 w-[20rem] h-[20rem] rounded-full group-hover:w-[calc(20rem+13px)] group-hover:h-[calc(20rem+13px)] bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 animate-spin"></div>
       </div>
       <div className="w-full mt-12 rounded-b justify-self-center flex flex-col items-center justify-center y-4">
-        <div className="dark:text-slate-200 text-3xl mb-1">정승욱</div>
-        <div className="text-lg mb-0.5 text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold">
+        <div className="dark:text-slate-200 text-4xl mb-4">정승욱</div>
+        <div className="text-xl mb-1 text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold">
           소프트웨어 엔지니어
         </div>
-        <div className="flex gap-1.5 text-slate-600 dark:text-slate-300 text-xl">
+        <div className="flex gap-2 text-slate-600 dark:text-slate-300 text-2xl">
           <Link
             href="https://github.com/wjdtmddnr24"
             className="hover:text-slate-800 dark:hover:text-slate-100 transition-colors"
