@@ -13,7 +13,7 @@ export const ScrollDownIndicator = ({ onClick }: ScrollDownIndicatorProps) => {
 
   return (
     <div
-      className={`flex flex-col items-center text-gray-100 dark:text-gray-300 ${opacity === 0 ? "hidden" : ""}`}
+      className={`flex flex-col items-center text-lg text-gray-100 dark:text-gray-300 ${opacity === 0 ? "hidden" : ""}`}
       style={{ opacity }}
     >
       <div>아래에 더 많은 내용이 있어요</div>
