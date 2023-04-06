@@ -19,7 +19,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="bg-fixed bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500 dark:from-pink-800 dark:via-purple-800 dark:to-indigo-800">
+        <div className="relative">
+          <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500  dark:opacity-0 transition-opacity duration-500"></div>
+          <div className="absolute inset-0 bg-fixed bg-gradient-to-br  from-pink-800 via-purple-800 to-indigo-800 opacity-0 dark:opacity-100 transition-opacity duration-500"></div>
           <FullPage
             className="overflow-hidden"
             sections={[
