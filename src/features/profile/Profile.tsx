@@ -13,11 +13,11 @@ import { ProfileHeader } from "./ProfileHeader";
 
 export function Profile() {
   return (
-    <div className="flex-none bg-white dark:bg-slate-800 rounded shadow-2xl w-[80rem] h-[36rem] mx-auto grid grid-cols-[auto_1fr] divide-x dark:divide-slate-600">
+    <div className="flex-none bg-white dark:bg-slate-800 rounded shadow-2xl w-[88rem] h-[40rem] mx-auto grid grid-cols-[auto_1fr] divide-x dark:divide-slate-600">
       <ProfileHeader />
-      <div className="grid grid-cols-2 p-16 pr-0 pt-20 text-slate-600 dark:text-slate-300">
+      <div className="grid grid-cols-2 p-16 pr-0 pt-24 text-slate-600 dark:text-slate-300 text-lg">
         <div>
-          <div className="text-slate-700 dark:text-slate-200 font-bold text-xl mb-2">Info</div>
+          <div className="text-slate-700 dark:text-slate-200 font-bold text-2xl mb-2.5">Info</div>
           <IconList className="space-y-0.5">
             <IconList.Item icon={faLocationDot}>서울, 한국</IconList.Item>
             <IconList.Item icon={faCalendar}>25살, 1999년생</IconList.Item>
@@ -28,7 +28,7 @@ export function Profile() {
           </IconList>
         </div>
         <div>
-          <div className="text-slate-700 dark:text-slate-200 font-bold text-xl mb-2">Career</div>
+          <div className="text-slate-700 dark:text-slate-200 font-bold text-2xl mb-2.5">Career</div>
           <IconList className="space-y-0.5">
             <IconList.Item icon={faJetFighterUp}>공군 교육훈련매체개발병 (2022~2023)</IconList.Item>
             <IconList.Item icon={faChalkboardTeacher}>코딩학원 강사 (2018~2021)</IconList.Item>
@@ -36,7 +36,7 @@ export function Profile() {
           </IconList>
         </div>
         <div>
-          <div className="text-slate-700 dark:text-slate-200 font-bold text-xl mb-2">Education</div>
+          <div className="text-slate-700 dark:text-slate-200 font-bold text-2xl mb-2.5">Education</div>
           <IconList className="space-y-0.5">
             <IconList.Item icon={faSchoolFlag}>숭실대학교 4학년 재학</IconList.Item>
             <IconList.Item icon={faGraduationCap}>선린인터넷고등학교 졸업</IconList.Item>
@@ -49,7 +49,7 @@ export function Profile() {
         </div>
 
         <div>
-          <div className="text-slate-700 dark:text-slate-200 font-bold text-xl mb-2">Certificates</div>
+          <div className="text-slate-700 dark:text-slate-200 font-bold text-2xl mb-2.5">Certificates</div>
           <IconList>
             <IconList.Item>정보처리산업기사 (2021)</IconList.Item>
             <IconList.Item>정보기기운용기능사 (2017)</IconList.Item>
