@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import portfolioPic from "../../../public/portfolio_combined.png";
+import portfolioPic from "../../../public/portfolio_combined_compressed.png";
 
 export const ProjectGallary = () => {
   return (
