@@ -1,88 +1,84 @@
 export function TechSkills() {
   return (
     <div className="bg-white dark:bg-slate-800 dark:text-slate-200 rounded shadow-2xl w-[88rem] min-h-[35rem] mx-auto p-10">
-      <div className="text-3xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold mb-8">
+      <div className="text-3xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold">
         Tech Skills
       </div>
-      {/* <div className="text-2xl font-bold mb-2 mb-2">General</div> */}
-      <div className="grid grid-cols-4 gap-10 text-lg mt-4">
+      <div className="grid grid-cols-4 grid-rows-[repeat(2,minmax(12rem,auto))] gap-10 text-lg mt-10">
         <div>
-          <div className="text-2xl font-bold mb-2">General</div>
+          <div className="text-2xl font-bold mb-2 w-max">General</div>
           <ul>
-            <li>Linux</li>
-            <li>Bash/Zsh</li>
-            <li>Docker</li>
-            <li>Git</li>
-            <li>C/C++</li>
-            <li>Java</li>
-            <li>AWS</li>
-            <li>TypeScript</li>
+            {/* ETC */}
             <li>Algorithm & Problem Solving</li>
+            {/* Dev */}
+            <li>Bash, Zsh</li>
+            <li>Git</li>
+            {/* Editor & IDE */}
             <li>Visual Studio</li>
             <li>Visual Studio Code</li>
-            <li>Intellij IDEA Series</li>
             <li>Vim</li>
-            <li>Dev Container</li>
+            <li>Intellij IDEA Series</li>
           </ul>
         </div>
         <div>
-          <div className="text-2xl font-bold mb-2">Web Frontend</div>
-          <div>
-            <ul>
-              <li>HTML / CSS / JavaScript</li>
-              <li>React</li>
-              <li>NextJS</li>
-              <li>Tailwind</li>
-              <li>SCSS</li>
-              <li>Styled Components / Emotion</li>
-              <li>Redux</li>
-              <li>Zustand</li>
-              <li>Ant Design</li>
-            </ul>
-          </div>
+          <div className="text-2xl font-bold mb-2 w-max">Program Languages</div>
+          <ul>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>C, C++</li>
+            <li>Java</li>
+            <li>Dart</li>
+          </ul>
         </div>
         <div>
-          <div className="text-2xl font-bold mb-2">Backend</div>
-          <div>
-            <ul>
-              <li>NodeJS</li>
-              <li>Express.js</li>
-              <li>SocketIO</li>
-              <li>NestJS</li>
-              <li>TypeScript</li>
-              <li>TypeORM</li>
-            </ul>
-          </div>
+          <div className="text-2xl font-bold mb-2 w-max">Web Frontend</div>
+          <ul>
+            <li>HTML5</li>
+            <li>React, NextJS</li>
+            <li>CSS, SCSS</li>
+            <li>Tailwind CSS</li>
+            <li>Styled Components</li>
+            <li>Ant Design</li>
+            <li>Redux</li>
+            <li>Zustand</li>
+          </ul>
         </div>
         <div>
-          <div className="text-2xl font-bold mb-2">Mobile</div>
-          <div>
-            <ul>
-              <li>Flutter / Dart</li>
-              <li>Android / Java</li>
-            </ul>
-          </div>
+          <div className="text-2xl font-bold mb-2 w-max">Backend</div>
+          <ul>
+            <li>NodeJS</li>
+            <li>ExpressJS, NestJS</li>
+            <li>TypeORM</li>
+            <li>Socket.IO</li>
+            <li>RabbitMQ</li>
+            <li>Amazon Web Services</li>
+          </ul>
         </div>
         <div>
-          <div className="text-2xl font-bold mb-2">Database</div>
-          <div>
-            <ul>
-              <li>MySQL</li>
-              <li>Mongoose</li>
-              <li>PostgreSQL</li>
-            </ul>
-          </div>
+          <div className="text-2xl font-bold mb-2 w-max">Database</div>
+          <ul>
+            <li>MySQL</li>
+            <li>PostgreSQL</li>
+            <li>MongoDB</li>
+            <li>Redis</li>
+          </ul>
         </div>
         <div>
-          <div className="text-2xl font-bold mb-2">DevOps</div>
-          <div>
-            <ul>
-              <li>Kubernetes</li>
-              <li>Helm Charts</li>
-              <li>Argo CD</li>
-              <li>Gitlab CI</li>
-            </ul>
-          </div>
+          <div className="text-2xl font-bold mb-2 w-max">DevOps</div>
+          <ul>
+            <li>Docker</li>
+            <li>Kubernetes</li>
+            <li>Helm Charts</li>
+            <li>Argo CD</li>
+            <li>Gitlab CI</li>
+          </ul>
+        </div>
+        <div>
+          <div className="text-2xl font-bold mb-2 w-max">Mobile</div>
+          <ul>
+            <li>Flutter</li>
+            <li>Android(Java)</li>
+          </ul>
         </div>
       </div>
     </div>
