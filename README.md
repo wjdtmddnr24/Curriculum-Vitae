@@ -1,6 +1,9 @@
-# TODO
+# Curriculum-Vitae
 
-## 고려할 기능
+포트폴리오 웹사이트
 
-- 3D 기능
-- Framer Moation으로 애니메이션 넣기
+### 사용 기술
+
+- React(NextJS)
+- TailwindCSS
+- Zustand
