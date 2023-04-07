@@ -83,6 +83,7 @@ const GallaryItem = ({ title, year, description, imageURL }: GallaryItemProps) =
         className="w-full aspect-[6/3.5] bg-slate-300 rounded-t object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-500"
         src={imageURL}
         alt=""
+        priority
       />
       <div className=""></div>
       <div className="p-4">
