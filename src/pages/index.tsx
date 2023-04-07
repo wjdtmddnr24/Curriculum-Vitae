@@ -1,9 +1,8 @@
 import Head from "next/head";
-import { useRef } from "react";
 import { Awards } from "../features/Awards";
 import { FullPage } from "../features/fullpage/FullPage";
 import { Profile } from "../features/profile/Profile";
-import { Projects } from "../features/Projects";
+import { Projects } from "../features/projects/Projects";
 import { ScrollDownIndicator } from "../features/scroll-down-indicator/ScrollDownIndicator";
 import { ScrollUpButton } from "../features/scroll-up-button/ScrollUpButton";
 import { TechSkills } from "../features/tech-skills/TechSkills";
