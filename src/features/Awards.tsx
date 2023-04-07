@@ -5,8 +5,8 @@ export function Awards() {
         Awards
       </div>
       <ul className="grid gap-4 grid-cols-2 text-lg">
-        <li>2019 | 2020 하반기 TOPCIT 특별평가 교내 성적 우수자 - 우수상</li>
-        <li>2019 | 2020 상반기 TOPCIT 특별평가 교내 성적 우수자 - 최우수상</li>
+        <li>2020 | 2020 하반기 TOPCIT 특별평가 교내 성적 우수자 - 우수상</li>
+        <li>2020 | 2020 상반기 TOPCIT 특별평가 교내 성적 우수자 - 최우수상</li>
         <li>2019 | 제12회 TOPCIT 정기평가 교내 성적우수자 - 우수상</li>
         <li>2019 | SCON 프로그래밍 경진대회 - 4th Prize</li>
         <li>2019 | 숭실대학교 소프트웨어학부 소프트웨어 공모전 - 대상</li>
