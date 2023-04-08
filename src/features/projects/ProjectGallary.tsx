@@ -92,7 +92,7 @@ const GallaryItem = ({ title, year, description, imageURL, techs }: GallaryItemP
           <span className="text-xl font-bold">{title}</span>
         </div>
         <div className="mb-2 text-base">{description}</div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           {techs.map((t) => (
             <div className="text-base rounded-full" key={t}>
               <div className="">{t}</div>
