@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
-import { ReactNode } from "react";
 import portfolioPic from "../../../public/portfolio_combined_compressed.png";
+import captainHookPic from "../../../public/captain_hook.png";
 
 export const ProjectGallary = () => {
   return (
@@ -10,7 +9,7 @@ export const ProjectGallary = () => {
         title="Portfolio"
         description="포트폴리오 웹페이지"
         year={2023}
-        techs={["React", "Nextjs"]}
+        techs={["React", "Nextjs", "TypeScript", "Tailwind CSS"]}
         imageURL={portfolioPic}
         sourceURL="#"
       />
@@ -19,7 +18,7 @@ export const ProjectGallary = () => {
         title="Webox"
         description="퍼스널 모빌리티를 위한 클라우드 기반 블랙박스 애플리케이션"
         year={2021}
-        techs={["React", "Nextjs"]}
+        techs={["Nestjs", "Kubernetes", "Flutter"]}
         imageURL=""
         sourceURL="#"
       />
@@ -29,7 +28,7 @@ export const ProjectGallary = () => {
         description="Webhook 기반 알림 서비스"
         year={2021}
         techs={["React", "Nextjs"]}
-        imageURL=""
+        imageURL={captainHookPic}
         sourceURL="#"
       />
 
