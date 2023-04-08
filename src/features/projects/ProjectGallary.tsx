@@ -73,9 +73,9 @@ interface GallaryItemProps {
 }
 const GallaryItem = ({ title, year, description, imageURL, techs }: GallaryItemProps) => {
   return (
-    <div className="group relative">
+    <div className="group relative overflow-hidden">
       <Image
-        className="w-full aspect-[5/4] bg-slate-300 object-cover brightness-75 transition-all duration-500"
+        className="w-full aspect-[5/4] bg-slate-300 group-hover:scale-105 object-cover brightness-75 transition-all duration-500"
         src={imageURL}
         alt=""
         priority
