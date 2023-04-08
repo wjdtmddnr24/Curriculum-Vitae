@@ -50,7 +50,7 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
   }, [currentSectionIndex, isWheelable, sections, setCurrentSectionIndex]);
 
   return (
-    <div className="h-full max-h-full overflow-hidden relative">
+    <div className="h-screen max-h-screen overflow-hidden relative">
       <Transition
         in={inProp}
         nodeRef={fullPageRef}
