@@ -27,7 +27,7 @@ export const ProjectGallary = () => {
         title="Captain Hook"
         description="Webhook 기반 알림 서비스"
         year={2021}
-        techs={["React", "Nextjs"]}
+        techs={["TypeScript", "React", "Nextjs", "Nestjs"]}
         imageURL={captainHookPic}
         sourceURL="#"
       />
