@@ -13,6 +13,7 @@ export function ProfileHeader() {
           className="z-10 w-80 h-80 my-auto rounded-full object-cover self-center justify-self-center transition-transform ease-out"
           src={profilePic}
           alt="Profile Image"
+          priority
         />
         <div className="absolute transition-all duration-300 w-[20rem] h-[20rem] rounded-full group-hover:w-[calc(20rem+13px)] group-hover:h-[calc(20rem+13px)] bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 animate-spin"></div>
       </div>
