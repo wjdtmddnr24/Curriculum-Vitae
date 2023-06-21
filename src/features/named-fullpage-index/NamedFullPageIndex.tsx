@@ -38,7 +38,10 @@ const Item = ({ title, index, isSelected }: ItemProps) => {
         {title}
       </span>
       {isSelected && (
-        <motion.div className="absolute w-[3px] -right-1 top-0 bottom-0 bg-slate-50" layoutId="underline" />
+        <motion.div
+          className="absolute w-[3px] -right-1 top-0 bottom-0 bg-slate-50 dark:bg-slate-300"
+          layoutId="line"
+        />
       )}
     </li>
   );
