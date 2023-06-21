@@ -3,14 +3,14 @@ import { ReactNode, useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
 import { shallow } from "zustand/shallow";
 import { Pagination } from "./Pagination";
+import Section from "./Section";
 import { useFullPageStore } from "./useFullPageStore";
 
 interface FullPageProps {
-  className?: string;
   sections?: ReactNode[];
 }
 
-export const FullPage = ({ className, sections = [] }: FullPageProps) => {
+export const FullPage = ({ sections = [] }: FullPageProps) => {
   const [screenHeight, setScreenHeight] = useState<number>(0);
   const fullPageRef = useRef<HTMLDivElement>(null);
   const [inProp, setInProp] = useState<boolean>(false);
@@ -19,7 +19,7 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
     (state) => [state.pageIndex, state.setPageIndex],
     shallow,
   );
-
+  const pageNames = useFullPageStore((state) => state.pageNames);
   useEffect(() => {
     setScreenHeight(window.innerHeight);
 
@@ -50,7 +50,7 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
   }, [currentSectionIndex, isWheelable, sections, setCurrentSectionIndex]);
 
   return (
-    <div className="h-screen max-h-screen overflow-hidden relative">
+    <div className="h-screen max-h-screen relative overflow-hidden">
       <Transition
         in={inProp}
         nodeRef={fullPageRef}
@@ -61,20 +61,15 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
       >
         <div
           ref={fullPageRef}
-          className={classNames(["transition-transform duration-700 ease-in-out", className])}
+          className="transition-transform duration-700 ease-in-out"
           style={{
             transform: `translateY(-${screenHeight * currentSectionIndex}px)`,
           }}
         >
-          {sections.map((s, idx) => (
-            <section key={idx} className="h-screen max-h-screen overflow-hidden">
-              {s}
-            </section>
-          ))}
+          {sections}
         </div>
       </Transition>
-
-      <div className="absolute right-4 top-1/2 -translate-y-1/2">
+      <div className="absolute right-4 top-1/2  -translate-y-1/2">
         <Pagination
           totalCount={sections.length}
           currentIndex={currentSectionIndex}
@@ -84,3 +79,5 @@ export const FullPage = ({ className, sections = [] }: FullPageProps) => {
     </div>
   );
 };
+
+FullPage.Section = Section;

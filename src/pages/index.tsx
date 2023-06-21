@@ -21,28 +21,22 @@ export default function Home() {
           <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500  dark:opacity-0 transition-opacity duration-500"></div>
           <div className="absolute inset-0 bg-fixed bg-gradient-to-br  from-pink-800 via-purple-800 to-indigo-800 opacity-0 dark:opacity-100 transition-opacity duration-500"></div>
           <FullPage
-            className="overflow-hidden"
             sections={[
-              // eslint-disable-next-line react/jsx-key
-              <div className="flex flex-col justify-center items-center h-screen min-h-[58rem] relative">
+              <FullPage.Section key="0" title="Main" className="relative">
                 <Profile />
                 <div className="absolute bottom-5">
                   <ScrollDownIndicator />
                 </div>
-              </div>,
-
-              // eslint-disable-next-line react/jsx-key
-              <div className="flex flex-col justify-center items-center h-screen">
+              </FullPage.Section>,
+              <FullPage.Section key="1" title="Tech Skills">
                 <TechSkills />
-              </div>,
-              // eslint-disable-next-line react/jsx-key
-              <div className="flex flex-col justify-center items-center h-screen">
+              </FullPage.Section>,
+              <FullPage.Section key="2" title="Projects">
                 <Projects />
-              </div>,
-              // eslint-disable-next-line react/jsx-key
-              <div className="flex flex-col justify-center items-center h-screen">
+              </FullPage.Section>,
+              <FullPage.Section key="3" title="Awards">
                 <Awards />
-              </div>,
+              </FullPage.Section>,
             ]}
           />
           <FloatingActionButtons />
