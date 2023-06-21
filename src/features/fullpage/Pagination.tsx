@@ -1,17 +1,17 @@
 import classNames from "classnames";
 import _ from "lodash";
+import { shallow } from "zustand/shallow";
+import { useFullPageStore } from "./useFullPageStore";
 
-interface PaginationProps {
-  totalCount: number;
-  currentIndex: number;
-  onClick?: (index: number) => void;
-}
-
-export const Pagination = ({ totalCount, currentIndex, onClick }: PaginationProps) => {
+export const Pagination = () => {
+  const [totalSectionCount, currentPageIndex, setPageIndex] = useFullPageStore(
+    (state) => [state.metadatas.length, state.pageIndex, state.setPageIndex],
+    shallow,
+  );
   return (
     <div className="flex flex-col gap-1">
-      {_.range(totalCount).map((num) => (
-        <Item key={num} isCurrentPage={num === currentIndex} onClick={() => onClick?.(num)} />
+      {_.range(totalSectionCount).map((num) => (
+        <Item key={num} isCurrentPage={num === currentPageIndex} onClick={() => setPageIndex(num)} />
       ))}
     </div>
   );

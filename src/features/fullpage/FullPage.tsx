@@ -1,8 +1,6 @@
-import classNames from "classnames";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
 import { shallow } from "zustand/shallow";
-import { Pagination } from "./Pagination";
 import Section from "./Section";
 import { useFullPageStore } from "./useFullPageStore";
 
@@ -19,7 +17,6 @@ export const FullPage = ({ sections = [] }: FullPageProps) => {
     (state) => [state.pageIndex, state.setPageIndex],
     shallow,
   );
-  const pageNames = useFullPageStore((state) => state.pageNames);
   useEffect(() => {
     setScreenHeight(window.innerHeight);
 
@@ -69,13 +66,6 @@ export const FullPage = ({ sections = [] }: FullPageProps) => {
           {sections}
         </div>
       </Transition>
-      <div className="absolute right-4 top-1/2  -translate-y-1/2">
-        <Pagination
-          totalCount={sections.length}
-          currentIndex={currentSectionIndex}
-          onClick={(index) => setCurrentSectionIndex(index)}
-        />
-      </div>
     </div>
   );
 };
