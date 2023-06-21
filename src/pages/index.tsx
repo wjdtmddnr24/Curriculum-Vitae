@@ -2,6 +2,8 @@ import Head from "next/head";
 import { Awards } from "../features/Awards";
 import { FloatingActionButtons } from "../features/floating-action-buttons/FloatingActionButtons";
 import { FullPage } from "../features/fullpage/FullPage";
+import { Pagination } from "../features/fullpage/Pagination";
+import NamedFullPageIndex from "../features/named-fullpage-index/NamedFullPageIndex";
 import { Profile } from "../features/profile/Profile";
 import { Projects } from "../features/projects/Projects";
 import { ScrollDownIndicator } from "../features/scroll-down-indicator/ScrollDownIndicator";
@@ -22,23 +24,26 @@ export default function Home() {
           <div className="absolute inset-0 bg-fixed bg-gradient-to-br  from-pink-800 via-purple-800 to-indigo-800 opacity-0 dark:opacity-100 transition-opacity duration-500"></div>
           <FullPage
             sections={[
-              <FullPage.Section key="0" title="Main" className="relative">
+              <FullPage.Section key="0" index={0} title="Main" className="relative">
                 <Profile />
                 <div className="absolute bottom-5">
                   <ScrollDownIndicator />
                 </div>
               </FullPage.Section>,
-              <FullPage.Section key="1" title="Tech Skills">
+              <FullPage.Section key="1" index={1} title="Tech Skills">
                 <TechSkills />
               </FullPage.Section>,
-              <FullPage.Section key="2" title="Projects">
+              <FullPage.Section key="2" index={2} title="Projects">
                 <Projects />
               </FullPage.Section>,
-              <FullPage.Section key="3" title="Awards">
+              <FullPage.Section key="3" index={3} title="Awards">
                 <Awards />
               </FullPage.Section>,
             ]}
           />
+          <div className="fixed right-8 top-1/2 -translate-y-1/2">
+            <NamedFullPageIndex />
+          </div>
           <FloatingActionButtons />
         </div>
       </main>

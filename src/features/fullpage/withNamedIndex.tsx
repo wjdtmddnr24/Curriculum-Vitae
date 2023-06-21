@@ -1,25 +1,28 @@
 import { ComponentType, useEffect } from "react";
-import { shallow } from "zustand/shallow";
 import { useFullPageStore } from "./useFullPageStore";
 
 interface WrappedProps {
   title: string;
 }
 
-export const withNamedIndex = <P extends WrappedProps>(WrappedComponent: ComponentType<P>): React.FC<P> => {
-  const WithNamedIndexComponent = ({ ...props }: P) => {
-    const { title } = props;
-    const [addPageName, removePageName] = useFullPageStore(
-      (state) => [state.addPageName, state.removePageName],
-      shallow,
-    );
+interface WithNamedIndexProps {
+  title: string;
+  index: number;
+}
+
+export const withNamedIndex = <P extends WrappedProps>(
+  WrappedComponent: ComponentType<P>,
+): React.FC<P & WithNamedIndexProps> => {
+  const WithNamedIndexComponent = ({ ...props }: P & WithNamedIndexProps) => {
+    const { title, index } = props;
+    const setMetadata = useFullPageStore((state) => state.setMetadata);
     useEffect(() => {
-      addPageName(title);
-      return () => {
-        removePageName(title);
-      };
-    }, [addPageName, removePageName, title]);
-    return <WrappedComponent {...props} />;
+      setMetadata({
+        title,
+        index,
+      });
+    }, [index, title, setMetadata]);
+    return <WrappedComponent {...(props as P)} />;
   };
 
   return WithNamedIndexComponent;
