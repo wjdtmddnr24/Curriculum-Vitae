@@ -48,9 +48,9 @@ export const FloatingActionButtons = () => {
       initial="hidden"
       animate={pageIndex !== 0 ? "showing" : "hideing"}
     >
-      <motion.div layout variants={variants}>
+      {/* <motion.div layout variants={variants}>
         <ScrollUpButton />
-      </motion.div>
+      </motion.div> */}
       <motion.div
         layout
         transition={{
