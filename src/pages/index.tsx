@@ -1,12 +1,11 @@
 import Head from "next/head";
 import { Awards } from "../features/Awards";
+import { FloatingActionButtons } from "../features/floating-action-buttons/FloatingActionButtons";
 import { FullPage } from "../features/fullpage/FullPage";
 import { Profile } from "../features/profile/Profile";
 import { Projects } from "../features/projects/Projects";
 import { ScrollDownIndicator } from "../features/scroll-down-indicator/ScrollDownIndicator";
-import { ScrollUpButton } from "../features/scroll-up-button/ScrollUpButton";
 import { TechSkills } from "../features/tech-skills/TechSkills";
-import { ToggleDarkmodeButton } from "../features/toggle-darkmode-button/ToggleDarkmodeButton";
 
 export default function Home() {
   return (
@@ -46,10 +45,7 @@ export default function Home() {
               </div>,
             ]}
           />
-          <div className="fixed bottom-8 right-8 flex flex-col gap-3">
-            <ToggleDarkmodeButton />
-            <ScrollUpButton />
-          </div>
+          <FloatingActionButtons />
         </div>
       </main>
     </>
