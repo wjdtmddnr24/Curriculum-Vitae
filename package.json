@@ -27,6 +27,7 @@
     "echarts-for-react": "^3.0.2",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
+    "framer-motion": "^10.12.16",
     "immer": "^9.0.21",
     "lodash": "^4.17.21",
     "next": "13.1.6",
