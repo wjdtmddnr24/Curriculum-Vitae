@@ -18,35 +18,33 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <div className="relative">
-          <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500  dark:opacity-0 transition-opacity duration-500"></div>
-          <div className="absolute inset-0 bg-fixed bg-gradient-to-br  from-pink-800 via-purple-800 to-indigo-800 opacity-0 dark:opacity-100 transition-opacity duration-500"></div>
-          <FullPage
-            sections={[
-              <FullPage.Section key="0" index={0} title="Main" className="relative">
-                <Profile />
-                <div className="absolute bottom-5">
-                  <ScrollDownIndicator />
-                </div>
-              </FullPage.Section>,
-              <FullPage.Section key="1" index={1} title="Tech Skills">
-                <TechSkills />
-              </FullPage.Section>,
-              <FullPage.Section key="2" index={2} title="Projects">
-                <Projects />
-              </FullPage.Section>,
-              <FullPage.Section key="3" index={3} title="Awards">
-                <Awards />
-              </FullPage.Section>,
-            ]}
-          />
-          <div className="fixed right-8 top-1/2 -translate-y-1/2">
-            <NamedFullPageIndex />
-          </div>
-          <FloatingActionButtons />
+      <div className="relative">
+        <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500  dark:opacity-0 transition-opacity duration-500"></div>
+        <div className="absolute inset-0 bg-fixed bg-gradient-to-br  from-pink-800 via-purple-800 to-indigo-800 opacity-0 dark:opacity-100 transition-opacity duration-500"></div>
+        <FullPage
+          sections={[
+            <FullPage.Section key="0" index={0} title="Main" className="relative">
+              <Profile />
+              <div className="absolute bottom-5">
+                <ScrollDownIndicator />
+              </div>
+            </FullPage.Section>,
+            <FullPage.Section key="1" index={1} title="Tech Skills">
+              <TechSkills />
+            </FullPage.Section>,
+            <FullPage.Section key="2" index={2} title="Projects">
+              <Projects />
+            </FullPage.Section>,
+            <FullPage.Section key="3" index={3} title="Awards">
+              <Awards />
+            </FullPage.Section>,
+          ]}
+        />
+        <div className="fixed right-8 top-1/2 -translate-y-1/2">
+          <NamedFullPageIndex />
         </div>
-      </main>
+        <FloatingActionButtons />
+      </div>
     </>
   );
 }
