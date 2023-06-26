@@ -9,11 +9,12 @@ import {
   faSchoolFlag,
 } from "@fortawesome/free-solid-svg-icons";
 import { IconList } from "../icon-list/IconList";
+import Card from "../ui/Card";
 import { ProfileHeader } from "./ProfileHeader";
 
 export function Profile() {
   return (
-    <div className="flex-none bg-white dark:bg-slate-800 rounded shadow-2xl w-[88rem] h-[40rem] mx-auto grid grid-cols-[auto_1fr] divide-x dark:divide-slate-600">
+    <Card className="grid grid-cols-[auto_1fr] divide-x dark:divide-slate-600">
       <ProfileHeader />
       <div className="grid grid-cols-2 p-16 pr-0 pt-24 text-slate-600 dark:text-slate-300 text-lg">
         <div>
@@ -58,6 +59,6 @@ export function Profile() {
           </IconList>
         </div>
       </div>
-    </div>
+    </Card>
   );
 }
