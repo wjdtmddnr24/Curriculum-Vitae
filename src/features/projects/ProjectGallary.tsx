@@ -19,7 +19,7 @@ export const ProjectGallary = () => {
         description="퍼스널 모빌리티를 위한 클라우드 기반 블랙박스 애플리케이션"
         year={2021}
         techs={["Nestjs", "Kubernetes", "Flutter"]}
-        imageURL=""
+        imageURL={undefined}
         sourceURL="#"
       />
 
@@ -37,7 +37,7 @@ export const ProjectGallary = () => {
         description="소프트웨어 마에스트로 유저 검색과 멘토링 알림 챗봇"
         year={2021}
         techs={["React", "Nextjs"]}
-        imageURL=""
+        imageURL={undefined}
         sourceURL="#"
       />
 
@@ -46,7 +46,7 @@ export const ProjectGallary = () => {
         description="원격 회전캠을 이용한 비대면 감독 플랫폼"
         year={2020}
         techs={["React", "Nextjs"]}
-        imageURL=""
+        imageURL={undefined}
         sourceURL="#"
       />
 
@@ -55,7 +55,7 @@ export const ProjectGallary = () => {
         description="문자열 압축기반 QR코드 애플리케이션"
         year={2016}
         techs={["React", "Nextjs"]}
-        imageURL=""
+        imageURL={undefined}
         sourceURL="#"
       />
     </div>
@@ -67,18 +67,22 @@ interface GallaryItemProps {
   description: string;
   year: number;
   techs: string[];
-  imageURL: StaticImageData | string;
+  imageURL: StaticImageData | string | undefined;
   sourceURL: string;
 }
 const GallaryItem = ({ title, year, description, imageURL, techs }: GallaryItemProps) => {
   return (
     <div className="group relative overflow-hidden rounded-xl">
-      <Image
-        className="w-full aspect-[5/4] bg-slate-300 group-hover:scale-105 object-cover brightness-75 transition-all duration-500"
-        src={imageURL}
-        alt=""
-        priority
-      />
+      {imageURL ? (
+        <Image
+          className="w-full aspect-[5/4] bg-slate-300 group-hover:scale-105 object-cover brightness-75 transition-all duration-500"
+          src={imageURL}
+          alt=""
+          priority
+        />
+      ) : (
+        <div className="w-full aspect-[5/4] bg-slate-300 group-hover:scale-105 object-cover brightness-75 transition-all duration-500" />
+      )}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 flex justify-center items-center group-hover:bg-gray-800/50">
         <span className="text-white py-2 px-4 border border-white rounded-md cursor-pointer hover:bg-gray-100/30 transition-colors">
           자세히 보기
