@@ -32,7 +32,7 @@ const Item = ({ title, index, isSelected }: ItemProps) => {
           "mr-3 ml-auto text-2xl cursor-pointer transition-all",
           isSelected
             ? "text-slate-50 dark:text-slate-100 duration-700"
-            : "text-slate-300 dark:text-slate-400 font-light hover:text-slate-200 hover:font-normal",
+            : "text-slate-300 dark:text-slate-400 font-light hover:text-slate-200",
         )}
       >
         {title}
