@@ -18,8 +18,8 @@ interface ItemProps {
 
 function Item({ icon, children }: ItemProps) {
   return (
-    <li className="flex items-baseline gap-1.5">
-      {icon && <FontAwesomeIcon icon={icon} fixedWidth />}
+    <li className="flex gap-1.5">
+      {icon && <FontAwesomeIcon icon={icon} className="mt-[0.2rem]" fixedWidth />}
       <div className="align-text-bottom">{children}</div>
     </li>
   );
