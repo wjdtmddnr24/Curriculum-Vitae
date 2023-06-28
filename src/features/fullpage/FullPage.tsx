@@ -12,7 +12,7 @@ export const FullPage = ({ sections = [] }: FullPageProps) => {
   const [screenHeight, setScreenHeight] = useState<number>(0);
   const fullPageRef = useRef<HTMLDivElement>(null);
   const [inProp, setInProp] = useState<boolean>(false);
-  const [isWheelable, setIsWheelable] = useState<boolean>(true);
+  const isWheelableRef = useRef<boolean>(true);
   const [currentSectionIndex, setCurrentSectionIndex] = useFullPageStore(
     (state) => [state.pageIndex, state.setPageIndex],
     shallow,
@@ -31,7 +31,7 @@ export const FullPage = ({ sections = [] }: FullPageProps) => {
   useEffect(() => {
     const onWheel = (e: WheelEvent) => {
       if (
-        !isWheelable ||
+        !isWheelableRef.current ||
         (e.deltaY > 0 && currentSectionIndex >= sections.length - 1) ||
         (e.deltaY < 0 && currentSectionIndex <= 0)
       ) {
@@ -44,7 +44,7 @@ export const FullPage = ({ sections = [] }: FullPageProps) => {
     };
     window.addEventListener("wheel", onWheel);
     return () => window.removeEventListener("wheel", onWheel);
-  }, [currentSectionIndex, isWheelable, sections, setCurrentSectionIndex]);
+  }, [currentSectionIndex, sections, setCurrentSectionIndex]);
 
   return (
     <div className="h-screen max-h-screen relative overflow-hidden">
@@ -52,8 +52,8 @@ export const FullPage = ({ sections = [] }: FullPageProps) => {
         in={inProp}
         nodeRef={fullPageRef}
         timeout={350}
-        onEnter={() => setIsWheelable(false)}
-        onExited={() => setIsWheelable(true)}
+        onEnter={() => (isWheelableRef.current = false)}
+        onExited={() => (isWheelableRef.current = true)}
         addEndListener={() => setInProp(false)}
       >
         <div
