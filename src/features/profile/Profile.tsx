@@ -11,6 +11,7 @@ import {
 import { IconList } from "../icon-list/IconList";
 import Card from "../ui/Card";
 import { ProfileHeader } from "./ProfileHeader";
+import { getAge } from "../../utils/getAge";
 
 export function Profile() {
   return (
@@ -21,11 +22,11 @@ export function Profile() {
           <div className="text-slate-700 dark:text-slate-200 font-bold text-2xl mb-2.5">Info</div>
           <IconList className="space-y-0.5">
             <IconList.Item icon={faLocationDot}>서울, 한국</IconList.Item>
-            <IconList.Item icon={faCalendar}>25살, 1999년생</IconList.Item>
+            <IconList.Item icon={faCalendar}>{getAge()}살, 1999년생</IconList.Item>
             <IconList.Item icon={faEnvelope}>
               <span className="hover:underline hover:cursor-pointer">wjdtmddnr24@naver.com</span>
             </IconList.Item>
-            <IconList.Item icon={faJetFighterUp}>공군에서 병역 수행중</IconList.Item>
+            <IconList.Item icon={faJetFighterUp}>공군 제대</IconList.Item>
           </IconList>
         </div>
         <div>
@@ -39,7 +40,7 @@ export function Profile() {
         <div>
           <div className="text-slate-700 dark:text-slate-200 font-bold text-2xl mb-2.5">Education</div>
           <IconList className="space-y-0.5">
-            <IconList.Item icon={faSchoolFlag}>숭실대학교 4학년 재학</IconList.Item>
+            <IconList.Item icon={faSchoolFlag}>숭실대학교 4학년 수료</IconList.Item>
             <IconList.Item icon={faGraduationCap}>선린인터넷고등학교 졸업</IconList.Item>
             <IconList.Item icon={faGraduationCap}>
               Kunming International Academy &
