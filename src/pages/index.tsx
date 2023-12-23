@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Awards } from "../features/Awards";
 import { FloatingActionButtons } from "../features/floating-action-buttons/FloatingActionButtons";
 import { FullPage } from "../features/fullpage/FullPage";
-import { Pagination } from "../features/fullpage/Pagination";
 import NamedFullPageIndex from "../features/named-fullpage-index/NamedFullPageIndex";
 import { Profile } from "../features/profile/Profile";
 import { Projects } from "../features/projects/Projects";
@@ -20,7 +19,7 @@ export default function Home() {
       </Head>
       <div className="relative">
         <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500  dark:opacity-0 transition-opacity duration-500"></div>
-        <div className="absolute inset-0 bg-fixed bg-gradient-to-br  from-pink-800 via-purple-800 to-indigo-800 opacity-0 dark:opacity-100 transition-opacity duration-500"></div>
+        <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-pink-800 via-purple-800 to-indigo-800 opacity-0 dark:opacity-100 transition-opacity duration-500"></div>
         <FullPage
           sections={[
             <FullPage.Section key="0" index={0} title="Main" className="relative">
