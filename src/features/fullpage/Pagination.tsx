@@ -6,7 +6,7 @@ import { useFullPageStore } from "./useFullPageStore";
 export const Pagination = () => {
   const [totalSectionCount, currentPageIndex, setPageIndex] = useFullPageStore(
     (state) => [state.metadatas.length, state.pageIndex, state.setPageIndex],
-    shallow,
+    shallow
   );
   return (
     <div className="flex flex-col gap-1">
