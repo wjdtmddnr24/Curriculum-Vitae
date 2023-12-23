@@ -2,11 +2,6 @@
   "name": "wjdtmddnr24",
   "version": "0.1.0",
   "private": true,
-  "babelMacros": {
-    "twin": {
-      "preset": "emotion"
-    }
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
