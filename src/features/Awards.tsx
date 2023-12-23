@@ -6,7 +6,10 @@ export function Awards() {
       <div className="text-3xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold mb-8">
         Awards
       </div>
-      <ul className="grid gap-4 grid-cols-2 text-lg">
+      <ul className="grid gap-4 grid-rows-[repeat(12,1fr)] grid-flow-col text-lg">
+        <li>2023 | 제20회 TOPCIT 정기평가 성적 우수자 대학생 부문 - 동상</li>
+        <li>2023 | 제19회 TOPCIT 정기평가 성적 우수자 군인 부문 - 대상(국방부 장관상)</li>
+        <li>2023 | 제5회 공군 창의·혁신 아이디어 공모 해커톤 AI 프로그램 부문 - 대상</li>
         <li>2021 | 2021 하반기 TOPCIT 정기평가 교내 성적 우수자 - 최우수상</li>
         <li>2021 | 2021 상반기 TOPCIT 정기평가 교내 성적 우수자 - 우수상</li>
         <li>2020 | 2020 하반기 TOPCIT 특별평가 교내 성적 우수자 - 우수상</li>
