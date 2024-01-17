@@ -24,12 +24,6 @@ function getWheelDirection(e: WheelEvent): Direction {
   }
 }
 
-function hasSameSign(a: number, b: number) {
-  if (a === 0 || b === 0) return false;
-
-  return (a ^ b) >= 0;
-}
-
 export const SectionContainer = () => {
   const screenHeight = useScreenHeight();
   const outerSectionContainerRef = useRef<HTMLDivElement>(null);
@@ -58,10 +52,17 @@ export const SectionContainer = () => {
 
       const nextCurrentSectionIndex = targetSectionIndexRef.current + wheelDirection;
 
+      if (nextCurrentSectionIndex >= sections.length || nextCurrentSectionIndex < 0) {
+        return;
+      }
+
+      if (movingDirection !== wheelDirection && Math.abs(nextCurrentSectionIndex * -screenHeight - y) > screenHeight) {
+        return;
+      }
+
       if (
-        nextCurrentSectionIndex >= sections.length ||
-        nextCurrentSectionIndex < 0 ||
-        movingDirection === wheelDirection
+        movingDirection === wheelDirection &&
+        Math.abs(nextCurrentSectionIndex * -screenHeight - y) > screenHeight * 1.1
       ) {
         return;
       }
@@ -74,14 +75,14 @@ export const SectionContainer = () => {
     outerSectionContainerDiv.addEventListener("wheel", onWheel);
 
     return () => outerSectionContainerDiv.removeEventListener("wheel", onWheel);
-  }, [screenHeight, setCurrentSectionIndex, setMovingState]);
+  }, [currentSectionIndex, screenHeight, setCurrentSectionIndex, setMovingState]);
 
   return (
     <div className="h-screen max-h-screen relative overflow-hidden" ref={outerSectionContainerRef}>
       <Transition
         in={movingState !== MovingState.IDLE}
         nodeRef={innerSectionContainerRef}
-        timeout={700}
+        timeout={350}
         onEntered={() => {
           setMovingState(MovingState.IDLE);
           setCurrentSectionIndex(targetSectionIndexRef.current);
