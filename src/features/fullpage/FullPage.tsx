@@ -2,6 +2,7 @@
 
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
+import { useShallow } from "zustand/react/shallow";
 import { shallow } from "zustand/shallow";
 import Section from "./Section";
 import { useFullPageStore } from "./useFullPageStore";
@@ -16,8 +17,7 @@ export const FullPage = ({ sections = [] }: FullPageProps) => {
   const [inProp, setInProp] = useState<boolean>(false);
   const isWheelableRef = useRef<boolean>(true);
   const [currentSectionIndex, setCurrentSectionIndex] = useFullPageStore(
-    (state) => [state.pageIndex, state.setPageIndex],
-    shallow
+    useShallow((state) => [state.pageIndex, state.setPageIndex])
   );
   useEffect(() => {
     setScreenHeight(window.innerHeight);

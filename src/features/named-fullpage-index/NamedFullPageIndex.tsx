@@ -2,11 +2,12 @@
 
 import classNames from "classnames";
 import { motion } from "framer-motion";
+import { useShallow } from "zustand/react/shallow";
 import { shallow } from "zustand/shallow";
 import { useFullPageStore } from "../fullpage/useFullPageStore";
 
 const NamedFullPageIndex = () => {
-  const [currentPageIndex, metadatas] = useFullPageStore((state) => [state.pageIndex, state.metadatas], shallow);
+  const [currentPageIndex, metadatas] = useFullPageStore(useShallow((state) => [state.pageIndex, state.metadatas]));
 
   return (
     <ul className="flex flex-col gap-1">

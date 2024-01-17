@@ -1,12 +1,12 @@
 import classNames from "classnames";
 import _ from "lodash";
+import { useShallow } from "zustand/react/shallow";
 import { shallow } from "zustand/shallow";
 import { useFullPageStore } from "./useFullPageStore";
 
 export const Pagination = () => {
   const [totalSectionCount, currentPageIndex, setPageIndex] = useFullPageStore(
-    (state) => [state.metadatas.length, state.pageIndex, state.setPageIndex],
-    shallow
+    useShallow((state) => [state.metadatas.length, state.pageIndex, state.setPageIndex])
   );
   return (
     <div className="flex flex-col gap-1">
