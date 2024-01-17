@@ -8,8 +8,8 @@ import {
   faLocationDot,
   faSchoolFlag,
 } from "@fortawesome/free-solid-svg-icons";
-import { IconList } from "../icon-list/IconList";
-import Card from "../ui/Card";
+import { IconList } from "../../app/components/icon-list/IconList";
+import Card from "../../app/components/card/Card";
 import { ProfileHeader } from "./ProfileHeader";
 import { getAge } from "../../utils/getAge";
 

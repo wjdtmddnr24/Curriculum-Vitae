@@ -1,4 +1,4 @@
-import Card from "./ui/Card";
+import Card from "../app/components/card/Card";
 
 export function Awards() {
   return (

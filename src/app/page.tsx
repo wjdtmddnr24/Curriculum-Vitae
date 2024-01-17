@@ -1,13 +1,13 @@
 import { Viewport } from "next";
 import { Awards } from "../features/Awards";
-import { FloatingActionButtons } from "../features/floating-action-buttons/FloatingActionButtons";
 import { FullPage } from "../features/fullpage/FullPage";
 import Section from "../features/fullpage/Section";
 import NamedFullPageIndex from "../features/named-fullpage-index/NamedFullPageIndex";
 import { Profile } from "../features/profile/Profile";
 import { Projects } from "../features/projects/Projects";
-import { ScrollDownIndicator } from "../features/scroll-down-indicator/ScrollDownIndicator";
+import { ScrollDownIndicator } from "./components/scroll-down-indicator/ScrollDownIndicator";
 import { TechSkills } from "../features/tech-skills/TechSkills";
+import { ToggleDarkmodeButton } from "../features/toggle-darkmode-button/ToggleDarkmodeButton";
 
 export const metadata = {
   title: "Curriculum Vitae",
@@ -44,7 +44,11 @@ export default async function MainPage() {
       <div className="fixed right-8 top-1/2 -translate-y-1/2">
         <NamedFullPageIndex />
       </div>
-      <FloatingActionButtons />
+      <div className="fixed bottom-8 right-8 flex flex-col gap-3">
+        <div>
+          <ToggleDarkmodeButton />
+        </div>
+      </div>
     </>
   );
 }

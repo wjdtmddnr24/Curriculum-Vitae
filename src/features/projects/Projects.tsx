@@ -1,4 +1,4 @@
-import Card from "../ui/Card";
+import Card from "../../app/components/card/Card";
 import { ProjectGallary } from "./ProjectGallary";
 
 export function Projects() {
