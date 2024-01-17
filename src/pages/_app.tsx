@@ -3,7 +3,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 
 config.autoAddCss = false;
 
