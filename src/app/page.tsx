@@ -24,7 +24,7 @@ export default async function MainPage() {
     <>
       <FullPage
         sections={[
-          <Section key="0" index={0} title="Main" className="relative">
+          <Section key="0" index={0} title="Profile" className="relative">
             <Profile />
             <div className="absolute bottom-5">
               <ScrollDownIndicator />
