@@ -42,11 +42,11 @@ export default async function MainPage() {
         <NamedFullPageIndex />
       </div>
       <div className="fixed bottom-8 right-8 flex flex-col gap-3">
-        <div>
-          <ToggleDarkmodeButton />
-        </div>
+        <ToggleDarkmodeButton />
       </div>
-      <ScrollDownIndicator />
+      <div className="fixed bottom-5 left-1/2 -translate-x-1/2 ">
+        <ScrollDownIndicator />
+      </div>
     </>
   );
 }
