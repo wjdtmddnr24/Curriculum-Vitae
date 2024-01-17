@@ -11,6 +11,7 @@ export function ProfileHeader() {
       <div className="relative flex justify-center items-center w-80 h-80 group rounded-full">
         <Image
           className="z-10 w-80 h-80 my-auto rounded-full object-cover self-center justify-self-center transition-transform ease-out"
+          draggable={false}
           src={profilePic}
           alt="Profile Image"
           priority

@@ -2,22 +2,23 @@
 
 import classNames from "classnames";
 import { motion } from "framer-motion";
-import { useShallow } from "zustand/react/shallow";
-import { useFullPageStore } from "../fullpage/useFullPageStore";
+import { sections } from "../../app/sections";
+import { useSectionsStore } from "../section-container/useSectionsStore";
 
-const NamedFullPageIndex = () => {
-  const [currentPageIndex, metadatas] = useFullPageStore(useShallow((state) => [state.pageIndex, state.metadatas]));
+const NamedIndex = () => {
+  const titles = sections.map((s) => s.title);
+  const currentPageIndex = useSectionsStore((state) => state.sectionIndex);
 
   return (
     <ul className="flex flex-col gap-1">
-      {metadatas.map(({ title, index }) => (
+      {titles.map((title, index) => (
         <Item key={index} title={title} index={index} isSelected={index === currentPageIndex} />
       ))}
     </ul>
   );
 };
 
-export default NamedFullPageIndex;
+export default NamedIndex;
 
 interface ItemProps {
   title: string;
@@ -26,7 +27,7 @@ interface ItemProps {
 }
 
 const Item = ({ title, index, isSelected }: ItemProps) => {
-  const setPageIndex = useFullPageStore((state) => state.setPageIndex);
+  const setPageIndex = useSectionsStore((state) => state.setSectionIndex);
   return (
     <li className="flex relative" onClick={() => setPageIndex(index)}>
       <span

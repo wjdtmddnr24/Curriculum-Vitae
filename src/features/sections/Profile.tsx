@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { IconList } from "../../app/components/icon-list/IconList";
 import Card from "../../app/components/card/Card";
-import { ProfileHeader } from "./ProfileHeader";
+import { ProfileHeader } from "../profile-header/ProfileHeader";
 import { getAge } from "../../utils/getAge";
 
 export function Profile() {

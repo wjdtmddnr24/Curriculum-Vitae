@@ -1,6 +1,15 @@
 "use client";
 
+import { useShallow } from "zustand/react/shallow";
+import { MovingState, useSectionsStore } from "../../../features/section-container/useSectionsStore";
+
 export const ScrollDownIndicator = () => {
+  const isSettledAtFirstPage = useSectionsStore(
+    (state) => state.sectionIndex === 0 && state.movingState === MovingState.IDLE
+  );
+
+  if (!isSettledAtFirstPage) return null;
+
   return (
     <div className={`flex flex-col items-center text-lg text-gray-100 dark:text-gray-300`}>
       <div>아래에 더 많은 내용이 있어요</div>

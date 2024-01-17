@@ -1,13 +1,8 @@
 import { Viewport } from "next";
-import { Awards } from "../features/Awards";
-import { FullPage } from "../features/fullpage/FullPage";
-import Section from "../features/fullpage/Section";
-import NamedFullPageIndex from "../features/named-fullpage-index/NamedFullPageIndex";
-import { Profile } from "../features/profile/Profile";
-import { Projects } from "../features/projects/Projects";
-import { ScrollDownIndicator } from "./components/scroll-down-indicator/ScrollDownIndicator";
-import { TechSkills } from "../features/tech-skills/TechSkills";
+import NamedIndex from "../features/named-index/NamedIndex";
+import { SectionContainer } from "../features/section-container/SectionContainer";
 import { ToggleDarkmodeButton } from "../features/toggle-darkmode-button/ToggleDarkmodeButton";
+import { ScrollDownIndicator } from "./components/scroll-down-indicator/ScrollDownIndicator";
 
 export const metadata = {
   title: "Curriculum Vitae",
@@ -22,29 +17,14 @@ export const viewport: Viewport = {
 export default async function MainPage() {
   return (
     <>
-      <FullPage
-        sections={[
-          <Section key="0" index={0} title="Profile">
-            <Profile />
-          </Section>,
-          <Section key="1" index={1} title="Tech Skills">
-            <TechSkills />
-          </Section>,
-          <Section key="2" index={2} title="Projects">
-            <Projects />
-          </Section>,
-          <Section key="3" index={3} title="Awards">
-            <Awards />
-          </Section>,
-        ]}
-      />
+      <SectionContainer />
       <div className="fixed right-8 top-1/2 -translate-y-1/2">
-        <NamedFullPageIndex />
+        <NamedIndex />
       </div>
-      <div className="fixed bottom-8 right-8 flex flex-col gap-3">
+      <div className="fixed bottom-8 right-8 flex flex-col gap-3 rounded-full">
         <ToggleDarkmodeButton />
       </div>
-      <div className="fixed bottom-5 left-1/2 -translate-x-1/2 ">
+      <div className="fixed bottom-5 left-1/2 -translate-x-1/2 pointer-events-none">
         <ScrollDownIndicator />
       </div>
     </>
