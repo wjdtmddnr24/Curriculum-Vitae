@@ -24,11 +24,8 @@ export default async function MainPage() {
     <>
       <FullPage
         sections={[
-          <Section key="0" index={0} title="Profile" className="relative">
+          <Section key="0" index={0} title="Profile">
             <Profile />
-            <div className="absolute bottom-5">
-              <ScrollDownIndicator />
-            </div>
           </Section>,
           <Section key="1" index={1} title="Tech Skills">
             <TechSkills />
@@ -49,6 +46,7 @@ export default async function MainPage() {
           <ToggleDarkmodeButton />
         </div>
       </div>
+      <ScrollDownIndicator />
     </>
   );
 }
