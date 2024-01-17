@@ -3,8 +3,6 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
 import { useShallow } from "zustand/react/shallow";
-import { shallow } from "zustand/shallow";
-import Section from "./Section";
 import { useFullPageStore } from "./useFullPageStore";
 
 interface FullPageProps {
