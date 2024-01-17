@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
 import { shallow } from "zustand/shallow";
@@ -15,7 +17,7 @@ export const FullPage = ({ sections = [] }: FullPageProps) => {
   const isWheelableRef = useRef<boolean>(true);
   const [currentSectionIndex, setCurrentSectionIndex] = useFullPageStore(
     (state) => [state.pageIndex, state.setPageIndex],
-    shallow,
+    shallow
   );
   useEffect(() => {
     setScreenHeight(window.innerHeight);
@@ -69,5 +71,3 @@ export const FullPage = ({ sections = [] }: FullPageProps) => {
     </div>
   );
 };
-
-FullPage.Section = Section;

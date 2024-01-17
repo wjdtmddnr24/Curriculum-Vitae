@@ -1,9 +1,8 @@
-import "@/styles/globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import { ThemeProvider } from "next-themes";
-import type { AppProps } from "next/app";
 import localFont from "next/font/local";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import "../styles/globals.css";
+import { Providers } from "./providers";
 
 config.autoAddCss = false;
 
@@ -65,12 +64,18 @@ const pretendardFont = localFont({
   ],
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider attribute="class" enableSystem>
-      <main className={pretendardFont.className}>
-        <Component {...pageProps} />
-      </main>
-    </ThemeProvider>
+    <html lang="en" className={pretendardFont.className} suppressHydrationWarning>
+      <body>
+        <Providers>
+          <div className="relative">
+            <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-green-400 via-cyan-500 to-blue-500  dark:opacity-0 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-pink-800 via-purple-800 to-indigo-800 opacity-0 dark:opacity-100 transition-opacity duration-500"></div>
+            {children}
+          </div>
+        </Providers>
+      </body>
+    </html>
   );
 }

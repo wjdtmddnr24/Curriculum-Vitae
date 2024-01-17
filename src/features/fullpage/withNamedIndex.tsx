@@ -11,7 +11,7 @@ interface WithNamedIndexProps {
 }
 
 export const withNamedIndex = <P extends WrappedProps>(
-  WrappedComponent: ComponentType<P>,
+  WrappedComponent: ComponentType<P>
 ): React.FC<P & WithNamedIndexProps> => {
   const WithNamedIndexComponent = ({ ...props }: P & WithNamedIndexProps) => {
     const { title, index } = props;

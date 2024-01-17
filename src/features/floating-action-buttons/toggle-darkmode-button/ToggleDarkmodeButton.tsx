@@ -1,7 +1,10 @@
+"use client";
+
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+
 export const ToggleDarkmodeButton = () => {
   const [isCSR, setIsCSR] = useState<boolean>(false);
   const { systemTheme, theme, setTheme } = useTheme();

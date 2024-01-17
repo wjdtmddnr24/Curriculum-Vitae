@@ -1,3 +1,5 @@
+"use client";
+
 import { useVScrollPosition } from "./useVScrollPosition";
 import { useWindowheight } from "./useWindowHeight";
 
