@@ -26,19 +26,33 @@ export function ProfileHeader() {
           <Link
             href="https://github.com/wjdtmddnr24"
             className="hover:text-slate-800 dark:hover:text-slate-100 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faGithub} />
           </Link>
-          <Link href="#" className="hover:text-slate-800 dark:hover:text-slate-100 transition-colors">
+          <Link
+            href="https://www.facebook.com/wjdtmddnr24"
+            className="hover:text-slate-800 dark:hover:text-slate-100 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FontAwesomeIcon icon={faFacebook} />
           </Link>
           <Link
             href="https://www.rocketpunch.com/@cindyjack369"
             className="hover:text-slate-800 dark:hover:text-slate-100 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faRocket} className="pt-1" />
           </Link>
-          <Link href="#" className="hover:text-slate-800 dark:hover:text-slate-100 transition-colors">
+          <Link
+            href="https://www.linkedin.com/in/wjdtmddnr24/"
+            className="hover:text-slate-800 dark:hover:text-slate-100 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FontAwesomeIcon icon={faLinkedin} />
           </Link>
         </div>
