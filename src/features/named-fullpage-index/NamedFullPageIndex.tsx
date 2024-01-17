@@ -3,7 +3,6 @@
 import classNames from "classnames";
 import { motion } from "framer-motion";
 import { useShallow } from "zustand/react/shallow";
-import { shallow } from "zustand/shallow";
 import { useFullPageStore } from "../fullpage/useFullPageStore";
 
 const NamedFullPageIndex = () => {
