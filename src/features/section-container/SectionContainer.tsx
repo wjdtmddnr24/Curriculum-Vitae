@@ -104,7 +104,6 @@ export const SectionContainer = () => {
           }}
         >
           {(state) => {
-            console.log(state);
             return (
               <InnerSectionContainer
                 ref={innerSectionContainerRef}
