@@ -18,9 +18,7 @@ export default async function MainPage() {
   return (
     <>
       <SectionContainer />
-      <div className="fixed right-8 top-1/2 -translate-y-1/2">
-        <NamedIndex />
-      </div>
+
       <div className="fixed bottom-8 right-8 flex flex-col gap-3 rounded-full">
         <ToggleDarkmodeButton />
       </div>
