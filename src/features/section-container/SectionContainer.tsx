@@ -37,7 +37,6 @@ function getMovingDirection(y: number, screenHeight: number, targetSectionIndex:
 }
 
 export const SectionContainer = () => {
-  console.count("ren");
   const screenHeightRef = useScreenHeightRef();
   const outerSectionContainerRef = useRef<HTMLDivElement>(null);
   const innerSectionContainerRef = useRef<HTMLDivElement>(null);
@@ -48,7 +47,6 @@ export const SectionContainer = () => {
   const targetSectionIndexRef = useRef<number>(currentSectionIndex);
 
   useEffect(() => {
-    console.count("rerender");
     if (!outerSectionContainerRef.current || !innerSectionContainerRef.current) return;
 
     const outerSectionContainerDiv = outerSectionContainerRef.current;
