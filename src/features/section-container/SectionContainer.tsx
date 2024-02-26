@@ -42,9 +42,10 @@ export const SectionContainer = () => {
   const innerSectionContainerRef = useRef<HTMLDivElement>(null);
   const movingState = useSectionsStore((state) => state.movingState);
   const [currentSectionIndex, setCurrentSectionIndex, setMovingState] = useSectionsStore(
-    useShallow((state) => [state.sectionIndex, state.setSectionIndex, state.setMovingState])
+    useShallow((state) => [state.sectionIndex, state.setSectionIndex, state.setMovingState]),
   );
   const targetSectionIndexRef = useRef<number>(currentSectionIndex);
+  const prevEventRef = useRef<WheelEvent | null>(null);
 
   useEffect(() => {
     if (!outerSectionContainerRef.current || !innerSectionContainerRef.current) return;
@@ -58,6 +59,10 @@ export const SectionContainer = () => {
       const movingDirection: Direction = getMovingDirection(y, screenHeightRef.current, targetSectionIndexRef.current);
 
       const nextCurrentSectionIndex = targetSectionIndexRef.current + wheelDirection;
+
+      const deltaTime = e.timeStamp - (prevEventRef.current?.timeStamp ?? 0);
+      const comparingEvent = prevEventRef.current;
+      prevEventRef.current = e;
 
       // Check out of bounds
       if (nextCurrentSectionIndex >= sections.length || nextCurrentSectionIndex < 0) {
@@ -76,6 +81,15 @@ export const SectionContainer = () => {
       if (
         movingDirection === wheelDirection &&
         Math.abs(nextCurrentSectionIndex * -screenHeightRef.current - y) > screenHeightRef.current * 1.1
+      ) {
+        return;
+      }
+
+      if (
+        deltaTime < 50 &&
+        comparingEvent &&
+        (comparingEvent.deltaY ^ e.deltaY) >= 0 &&
+        Math.abs(comparingEvent.deltaY) >= Math.abs(e.deltaY)
       ) {
         return;
       }
@@ -132,7 +146,7 @@ interface InnerSectionContainerProps {
 
 const InnerSectionContainer = forwardRef<HTMLDivElement, InnerSectionContainerProps>(function InnerSectionContainer(
   { addTransitionDuration, targetSectionIndex }: InnerSectionContainerProps,
-  ref
+  ref,
 ) {
   const screenHeight = useDebouncedScreenHeight(200);
 
@@ -141,7 +155,7 @@ const InnerSectionContainer = forwardRef<HTMLDivElement, InnerSectionContainerPr
       ref={ref}
       className={classNames(
         "transition-transform ease-in-out flex flex-col items-center justify-center",
-        addTransitionDuration && "duration-700"
+        addTransitionDuration && "duration-700",
       )}
       style={{
         transform: `translateY(-${screenHeight * targetSectionIndex}px)`,
