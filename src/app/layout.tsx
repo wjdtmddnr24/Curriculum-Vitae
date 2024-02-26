@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "../styles/globals.css";
 import { Providers } from "./providers";
+import { Analytics } from "@vercel/analytics/react";
 
 config.autoAddCss = false;
 
@@ -75,6 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </div>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
