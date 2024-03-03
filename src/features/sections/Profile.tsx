@@ -6,12 +6,11 @@ import {
   faGraduationCap,
   faJetFighterUp,
   faLocationDot,
-  faSchoolFlag,
 } from "@fortawesome/free-solid-svg-icons";
-import { IconList } from "../../app/components/icon-list/IconList";
 import Card from "../../app/components/card/Card";
-import { ProfileHeader } from "../profile-header/ProfileHeader";
+import { IconList } from "../../app/components/icon-list/IconList";
 import { getAge } from "../../utils/getAge";
+import { ProfileHeader } from "../profile-header/ProfileHeader";
 
 export function Profile() {
   return (
@@ -40,7 +39,7 @@ export function Profile() {
         <div>
           <div className="text-slate-700 dark:text-slate-200 font-bold text-2xl mb-2.5">Education</div>
           <IconList className="space-y-0.5">
-            <IconList.Item icon={faSchoolFlag}>숭실대학교 4학년 수료</IconList.Item>
+            <IconList.Item icon={faGraduationCap}>숭실대학교 4학년 졸업</IconList.Item>
             <IconList.Item icon={faGraduationCap}>선린인터넷고등학교 졸업</IconList.Item>
             <IconList.Item icon={faGraduationCap}>
               Kunming International Academy &
