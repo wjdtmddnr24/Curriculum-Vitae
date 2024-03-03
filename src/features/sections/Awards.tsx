@@ -7,6 +7,7 @@ export function Awards() {
         Awards
       </div>
       <ul className="grid gap-4 grid-rows-[repeat(12,1fr)] grid-flow-col text-lg">
+        <li>2024 | 숭실대학교 소프트웨어학부 - 학과(부) 우등상</li>
         <li>2023 | 제20회 TOPCIT 정기평가 성적 우수자 대학생 부문 - 동상</li>
         <li>2023 | 제19회 TOPCIT 정기평가 성적 우수자 군인 부문 - 대상(국방부 장관상)</li>
         <li>2023 | 제5회 공군 창의·혁신 아이디어 공모 해커톤 AI 프로그램 부문 - 대상</li>
