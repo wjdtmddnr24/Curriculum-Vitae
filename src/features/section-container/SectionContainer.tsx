@@ -1,11 +1,11 @@
 "use client";
 
 import classNames from "classnames";
-import { forwardRef, MutableRefObject, RefObject, useEffect, useRef, useState } from "react";
-import { Transition, TransitionStatus } from "react-transition-group";
+import { forwardRef, useEffect, useRef } from "react";
+import { Transition } from "react-transition-group";
 import { useShallow } from "zustand/react/shallow";
-import { useDebouncedScreenHeight, useScreenHeightRef } from "../../app/hooks/useScreenHeight";
 import { sections } from "../../app/sections";
+import { useDebouncedScreenHeight, useScreenHeightRef } from "../../hooks/useScreenHeight";
 import NamedIndex from "../named-index/NamedIndex";
 import Section from "./Section";
 import { MovingState, useSectionsStore } from "./useSectionsStore";
@@ -42,7 +42,7 @@ export const SectionContainer = () => {
   const innerSectionContainerRef = useRef<HTMLDivElement>(null);
   const movingState = useSectionsStore((state) => state.movingState);
   const [currentSectionIndex, setCurrentSectionIndex, setMovingState] = useSectionsStore(
-    useShallow((state) => [state.sectionIndex, state.setSectionIndex, state.setMovingState]),
+    useShallow((state) => [state.sectionIndex, state.setSectionIndex, state.setMovingState])
   );
   const targetSectionIndexRef = useRef<number>(currentSectionIndex);
   const prevEventRef = useRef<WheelEvent | null>(null);
@@ -146,7 +146,7 @@ interface InnerSectionContainerProps {
 
 const InnerSectionContainer = forwardRef<HTMLDivElement, InnerSectionContainerProps>(function InnerSectionContainer(
   { addTransitionDuration, targetSectionIndex }: InnerSectionContainerProps,
-  ref,
+  ref
 ) {
   const screenHeight = useDebouncedScreenHeight(200);
 
@@ -155,7 +155,7 @@ const InnerSectionContainer = forwardRef<HTMLDivElement, InnerSectionContainerPr
       ref={ref}
       className={classNames(
         "transition-transform ease-in-out flex flex-col items-center justify-center",
-        addTransitionDuration && "duration-700",
+        addTransitionDuration && "duration-700"
       )}
       style={{
         transform: `translateY(-${screenHeight * targetSectionIndex}px)`,
