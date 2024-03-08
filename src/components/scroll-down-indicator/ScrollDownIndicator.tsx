@@ -1,7 +1,6 @@
 "use client";
 
-import { useShallow } from "zustand/react/shallow";
-import { MovingState, useSectionsStore } from "../../../features/section-container/useSectionsStore";
+import { MovingState, useSectionsStore } from "../../features/section-container/useSectionsStore";
 
 export const ScrollDownIndicator = () => {
   const isSettledAtFirstPage = useSectionsStore(

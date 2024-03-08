@@ -2,7 +2,7 @@ import { Viewport } from "next";
 import NamedIndex from "../features/named-index/NamedIndex";
 import { SectionContainer } from "../features/section-container/SectionContainer";
 import { ToggleDarkmodeButton } from "../features/toggle-darkmode-button/ToggleDarkmodeButton";
-import { ScrollDownIndicator } from "./components/scroll-down-indicator/ScrollDownIndicator";
+import { ScrollDownIndicator } from "../components/scroll-down-indicator/ScrollDownIndicator";
 
 export const metadata = {
   title: "Curriculum Vitae",

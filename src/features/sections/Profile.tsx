@@ -7,8 +7,8 @@ import {
   faJetFighterUp,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import Card from "../../app/components/card/Card";
-import { IconList } from "../../app/components/icon-list/IconList";
+import Card from "../../components/card/Card";
+import { IconList } from "../../components/icon-list/IconList";
 import { getAge } from "../../utils/getAge";
 import { ProfileHeader } from "../profile-header/ProfileHeader";
 

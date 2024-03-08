@@ -1,7 +1,7 @@
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useShallow } from "zustand/react/shallow";
-import FloatingActionButton from "../../app/components/floating-action-button/FloatingActionButton";
+import FloatingActionButton from "../../components/floating-action-button/FloatingActionButton";
 import { useSectionsStore } from "../section-container/useSectionsStore";
 
 export const ScrollUpButton = () => {
