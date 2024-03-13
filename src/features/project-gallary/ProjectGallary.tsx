@@ -36,7 +36,7 @@ export const ProjectGallary = () => {
         title="SWM Chatbot"
         description="소프트웨어 마에스트로 유저 검색과 멘토링 알림 챗봇"
         year={2021}
-        techs={["React", "Nextjs"]}
+        techs={["Express", "Mongodb", "Puppeteer"]}
         imageURL={undefined}
         sourceURL="#"
       />
@@ -45,7 +45,7 @@ export const ProjectGallary = () => {
         title="Camtact"
         description="원격 회전캠을 이용한 비대면 감독 플랫폼"
         year={2020}
-        techs={["React", "Nextjs"]}
+        techs={["React", "Electron", "Nestjs", "Raspberrypi"]}
         imageURL={undefined}
         sourceURL="#"
       />
@@ -54,7 +54,7 @@ export const ProjectGallary = () => {
         title="TCQR (Text Compressed QRCode)"
         description="문자열 압축기반 QR코드 애플리케이션"
         year={2016}
-        techs={["React", "Nextjs"]}
+        techs={["Android", "Java"]}
         imageURL={undefined}
         sourceURL="#"
       />
