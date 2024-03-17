@@ -1,11 +1,12 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
+import { SectionsStoreProvider } from "../stores/sections-store-provider";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider attribute="class" enableSystem>
-      {children}
+      <SectionsStoreProvider>{children}</SectionsStoreProvider>
     </ThemeProvider>
   );
 }

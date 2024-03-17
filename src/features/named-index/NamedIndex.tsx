@@ -3,7 +3,6 @@
 import classNames from "classnames";
 import { motion } from "framer-motion";
 import { sections } from "../../app/sections";
-import { useSectionsStore } from "../section-container/useSectionsStore";
 
 interface NamedIndexProps {
   sectionIndex: number;
@@ -16,13 +15,7 @@ const NamedIndex = ({ onSectionNameClick, sectionIndex }: NamedIndexProps) => {
   return (
     <ul className="flex flex-col items-end gap-1">
       {titles.map((title, index) => (
-        <Item
-          key={index}
-          title={title}
-          index={index}
-          isSelected={index === sectionIndex}
-          onClick={() => onSectionNameClick(index)}
-        />
+        <Item key={index} title={title} isSelected={index === sectionIndex} onClick={() => onSectionNameClick(index)} />
       ))}
     </ul>
   );
@@ -32,12 +25,11 @@ export default NamedIndex;
 
 interface ItemProps {
   title: string;
-  index: number;
   isSelected: boolean;
   onClick: () => void;
 }
 
-const Item = ({ title, index, isSelected, onClick }: ItemProps) => {
+const Item = ({ title, isSelected, onClick }: ItemProps) => {
   return (
     <li className="flex relative" onClick={onClick}>
       <span

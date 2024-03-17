@@ -1,6 +1,7 @@
 "use client";
 
-import { MovingState, useSectionsStore } from "../../features/section-container/useSectionsStore";
+import { MovingState } from "../../stores/sections-store";
+import { useSectionsStore } from "../../stores/sections-store-provider";
 
 export const ScrollDownIndicator = () => {
   const isSettledAtFirstPage = useSectionsStore(

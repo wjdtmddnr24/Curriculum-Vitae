@@ -8,7 +8,8 @@ import { sections } from "../../app/sections";
 import { useDebouncedScreenHeight, useScreenHeightRef } from "../../hooks/useScreenHeight";
 import NamedIndex from "../named-index/NamedIndex";
 import Section from "./Section";
-import { MovingState, useSectionsStore } from "./useSectionsStore";
+import { MovingState } from "../../stores/sections-store";
+import { useSectionsStore } from "../../stores/sections-store-provider";
 
 enum Direction {
   UP = -1,
