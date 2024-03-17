@@ -2,18 +2,19 @@
 
 import { createContext, ReactNode, useContext, useRef } from "react";
 import { StoreApi, useStore } from "zustand";
-import { createSectionsStore, SectionsStore } from "./sections-store";
+import { createSectionsStore, SectionsState, SectionsStore } from "./sections-store";
 
 export const SectionsStoreContext = createContext<StoreApi<SectionsStore> | null>(null);
 
 export interface SedtionsStoreProviderProps {
   children: ReactNode;
+  initialState?: SectionsState;
 }
 
-export const SectionsStoreProvider = ({ children }: SedtionsStoreProviderProps) => {
+export const SectionsStoreProvider = ({ children, initialState }: SedtionsStoreProviderProps) => {
   const storeRef = useRef<StoreApi<SectionsStore>>();
   if (!storeRef.current) {
-    storeRef.current = createSectionsStore();
+    storeRef.current = createSectionsStore(initialState);
   }
 
   return <SectionsStoreContext.Provider value={storeRef.current}>{children}</SectionsStoreContext.Provider>;
