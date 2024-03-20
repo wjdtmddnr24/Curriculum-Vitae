@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { useEffect } from "react";
-import { MovingState } from "../../stores/sections-store";
 import { SectionsStoreProvider, useSectionsStore } from "../../stores/sections-store-provider";
 import { ScrollDownIndicator } from "./ScrollDownIndicator";
 
@@ -43,7 +42,7 @@ export const Default: Story = {
 
 export const NotFirstSection: Story = {
   decorators: (Story) => (
-    <SectionsStoreProvider initialState={{ sectionIndex: 1, movingState: MovingState.IDLE }}>
+    <SectionsStoreProvider initialState={{ sectionIndex: 1 }}>
       <Story />
     </SectionsStoreProvider>
   ),
