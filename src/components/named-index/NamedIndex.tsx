@@ -2,7 +2,7 @@
 
 import classNames from "classnames";
 import { motion } from "framer-motion";
-import { SectionInfo } from "../section-container/SectionContainer";
+import { SectionInfo } from "../../components/section-container/SectionContainer";
 
 interface NamedIndexProps {
   currentIndex: number;
