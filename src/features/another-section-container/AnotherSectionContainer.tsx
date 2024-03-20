@@ -13,7 +13,7 @@ export const AnotherSectionContainer = ({ children }: AnotherSectionContainerPro
   const latestWheelEventRef = useRef<WheelEvent | null>(null);
 
   const onWheel = (e: WheelEvent) => {
-    const wheelDirection = e.deltaY > 0 ? 1 : -1;
+    const wheelDirection = e.deltaY > 0 ? 1 : e.deltaY < 0 ? -1 : 0;
 
     if (wheelDirection !== prevAppliedWheelDirectionRef.current) {
       if (e.timeStamp - timeStampRef.current >= 700 * 0.25) {
