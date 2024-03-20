@@ -8,7 +8,7 @@ import { Section } from "./Section";
 
 export interface SectionInfo {
   title: string;
-  Component: React.ComponentType;
+  Component: React.ReactNode;
 }
 
 interface SectionContainerProps {
@@ -59,9 +59,7 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
           style={{ transform: `translateY(${currentSectionIndex * -100}vh)` }}
         >
           {sections.map(({ Component }, idx) => (
-            <Section key={idx}>
-              <Component />
-            </Section>
+            <Section key={idx}>{Component}</Section>
           ))}
         </div>
       </div>
