@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { sections } from "../../app/sections";
 import { SectionsStoreProvider } from "../../stores/sections-store-provider";
 import { SectionContainer } from "./SectionContainer";
 
@@ -19,5 +20,9 @@ export const Default: Story = {
     );
   },
   parameters: { layout: "fullscreen" },
-  render: () => <SectionContainer></SectionContainer>,
+  render: () => (
+    <>
+      <SectionContainer sections={sections} />
+    </>
+  ),
 };

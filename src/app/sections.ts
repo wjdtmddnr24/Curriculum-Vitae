@@ -1,14 +1,10 @@
+import { SectionInfo } from "../features/section-container/SectionContainer";
 import { Awards } from "../features/sections/Awards";
 import { Profile } from "../features/sections/Profile";
 import { Projects } from "../features/sections/Projects";
 import { TechSkills } from "../features/sections/TechSkills";
 
-interface Section {
-  title: string;
-  Component: React.ComponentType;
-}
-
-export const sections: Section[] = [
+export const sections: SectionInfo[] = [
   {
     title: "Profile",
     Component: Profile,

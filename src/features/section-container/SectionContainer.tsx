@@ -1,172 +1,77 @@
 "use client";
 
-import classNames from "classnames";
-import { forwardRef, useEffect, useRef } from "react";
-import { Transition } from "react-transition-group";
+import { useRef, type WheelEvent } from "react";
 import { useShallow } from "zustand/react/shallow";
-import { sections } from "../../app/sections";
-import { useDebouncedScreenHeight, useScreenHeightRef } from "../../hooks/useScreenHeight";
-import NamedIndex from "../named-index/NamedIndex";
-import Section from "./Section";
-import { MovingState } from "../../stores/sections-store";
 import { useSectionsStore } from "../../stores/sections-store-provider";
+import NamedIndex from "../named-index/NamedIndex";
+import { Section } from "./Section";
 
-enum Direction {
-  UP = -1,
-  DOWN = 1,
-  NONE = 0,
+export interface SectionInfo {
+  title: string;
+  Component: React.ComponentType;
 }
 
-function getWheelDirection(e: WheelEvent): Direction {
-  if (e.deltaY > 0) {
-    return Direction.DOWN;
-  } else if (e.deltaY < 0) {
-    return Direction.UP;
-  } else {
-    return Direction.NONE;
-  }
+interface SectionContainerProps {
+  sections: SectionInfo[];
 }
 
-function getMovingDirection(y: number, screenHeight: number, targetSectionIndex: number): Direction {
-  if (targetSectionIndex * -screenHeight === y) {
-    return Direction.NONE;
-  } else if (targetSectionIndex * -screenHeight > y) {
-    return Direction.UP;
-  } else {
-    return Direction.DOWN;
-  }
-}
-
-export const SectionContainer = () => {
-  const screenHeightRef = useScreenHeightRef();
-  const outerSectionContainerRef = useRef<HTMLDivElement>(null);
-  const innerSectionContainerRef = useRef<HTMLDivElement>(null);
-  const movingState = useSectionsStore((state) => state.movingState);
-  const [currentSectionIndex, setCurrentSectionIndex, setMovingState] = useSectionsStore(
-    useShallow((state) => [state.sectionIndex, state.setSectionIndex, state.setMovingState])
+export const SectionContainer = ({ sections }: SectionContainerProps) => {
+  const [currentSectionIndex, setCurrentSectionIndex] = useSectionsStore(
+    useShallow((state) => [state.sectionIndex, state.setSectionIndex])
   );
-  const targetSectionIndexRef = useRef<number>(currentSectionIndex);
-  const prevEventRef = useRef<WheelEvent | null>(null);
+  const prevAppliedWheelDirectionRef = useRef<number>(1);
+  const timeStampRef = useRef<number>(0);
+  const latestWheelEventRef = useRef<WheelEvent | null>(null);
 
-  useEffect(() => {
-    if (!outerSectionContainerRef.current || !innerSectionContainerRef.current) return;
+  const onWheel = (e: WheelEvent) => {
+    const wheelDirection = e.deltaY > 0 ? 1 : e.deltaY < 0 ? -1 : 0;
 
-    const outerSectionContainerDiv = outerSectionContainerRef.current;
-    const innerSectionContainerDiv = innerSectionContainerRef.current;
-
-    const onWheel = (e: WheelEvent) => {
-      const { y } = innerSectionContainerDiv.getBoundingClientRect();
-      const wheelDirection: Direction = getWheelDirection(e);
-      const movingDirection: Direction = getMovingDirection(y, screenHeightRef.current, targetSectionIndexRef.current);
-
-      const nextCurrentSectionIndex = targetSectionIndexRef.current + wheelDirection;
-
-      const deltaTime = e.timeStamp - (prevEventRef.current?.timeStamp ?? 0);
-      const comparingEvent = prevEventRef.current;
-      prevEventRef.current = e;
-
-      // Check out of bounds
-      if (nextCurrentSectionIndex >= sections.length || nextCurrentSectionIndex < 0) {
-        return;
+    if (wheelDirection !== prevAppliedWheelDirectionRef.current) {
+      if (e.timeStamp - timeStampRef.current >= 700 * 0.25) {
+        setCurrentSectionIndex(Math.max(0, Math.min(currentSectionIndex + wheelDirection, sections.length - 1)));
+        timeStampRef.current = e.timeStamp;
+        prevAppliedWheelDirectionRef.current = wheelDirection;
       }
-
-      // Check if changing direction but goes more than 1 section(screen)
-      if (
-        movingDirection !== wheelDirection &&
-        Math.abs(nextCurrentSectionIndex * -screenHeightRef.current - y) > screenHeightRef.current
-      ) {
-        return;
-      }
-
-      // Check if same direction but goes more than 1.1 section(screen)
-      if (
-        movingDirection === wheelDirection &&
-        Math.abs(nextCurrentSectionIndex * -screenHeightRef.current - y) > screenHeightRef.current * 1.1
-      ) {
-        return;
-      }
+    } else {
+      const deltaTime = e.timeStamp - (latestWheelEventRef?.current?.timeStamp ?? 0);
 
       if (
-        deltaTime < 50 &&
-        comparingEvent &&
-        (comparingEvent.deltaY ^ e.deltaY) >= 0 &&
-        Math.abs(comparingEvent.deltaY) >= Math.abs(e.deltaY)
+        !(
+          latestWheelEventRef.current &&
+          deltaTime < 50 &&
+          Math.abs(latestWheelEventRef.current.deltaY) >= Math.abs(e.deltaY)
+        ) &&
+        e.timeStamp - timeStampRef.current > 700 * 0.5
       ) {
-        return;
+        setCurrentSectionIndex(Math.max(0, Math.min(currentSectionIndex + wheelDirection, sections.length - 1)));
+        timeStampRef.current = e.timeStamp;
       }
+    }
 
-      targetSectionIndexRef.current = nextCurrentSectionIndex;
-      setMovingState(MovingState.MOVING);
-    };
-
-    outerSectionContainerDiv.addEventListener("wheel", onWheel);
-
-    return () => outerSectionContainerDiv.removeEventListener("wheel", onWheel);
-  }, [screenHeightRef, setCurrentSectionIndex, setMovingState]);
+    latestWheelEventRef.current = e;
+  };
 
   return (
     <>
-      <div className="h-screen max-h-screen relative overflow-hidden" ref={outerSectionContainerRef}>
-        <Transition
-          in={movingState !== MovingState.IDLE}
-          nodeRef={innerSectionContainerRef}
-          timeout={350}
-          onEntered={() => {
-            setMovingState(MovingState.IDLE);
-            setCurrentSectionIndex(targetSectionIndexRef.current);
-          }}
+      <div className="h-screen overflow-hidden" onWheel={onWheel}>
+        <div
+          className="transition-transform ease-in-out duration-700"
+          style={{ transform: `translateY(${currentSectionIndex * -100}vh)` }}
         >
-          {(state) => {
-            return (
-              <InnerSectionContainer
-                ref={innerSectionContainerRef}
-                addTransitionDuration={state !== "exited"}
-                targetSectionIndex={targetSectionIndexRef.current}
-              />
-            );
-          }}
-        </Transition>
+          {sections.map(({ Component }, idx) => (
+            <Section key={idx}>
+              <Component />
+            </Section>
+          ))}
+        </div>
       </div>
       <div className="fixed right-8 top-1/2 -translate-y-1/2">
         <NamedIndex
-          sectionIndex={currentSectionIndex}
-          onSectionNameClick={(index) => {
-            targetSectionIndexRef.current = index;
-            setMovingState(MovingState.MOVING);
-          }}
+          sections={sections}
+          currentIndex={currentSectionIndex}
+          onSectionNameClick={setCurrentSectionIndex}
         />
       </div>
     </>
   );
 };
-
-interface InnerSectionContainerProps {
-  targetSectionIndex: number;
-  addTransitionDuration: boolean;
-}
-
-const InnerSectionContainer = forwardRef<HTMLDivElement, InnerSectionContainerProps>(function InnerSectionContainer(
-  { addTransitionDuration, targetSectionIndex }: InnerSectionContainerProps,
-  ref
-) {
-  const screenHeight = useDebouncedScreenHeight(200);
-
-  return (
-    <div
-      ref={ref}
-      className={classNames(
-        "transition-transform ease-in-out flex flex-col items-center justify-center",
-        addTransitionDuration && "duration-700"
-      )}
-      style={{
-        transform: `translateY(-${screenHeight * targetSectionIndex}px)`,
-      }}
-    >
-      {sections.map(({ Component }, idx) => (
-        <Section key={idx}>
-          <Component />
-        </Section>
-      ))}
-    </div>
-  );
-});

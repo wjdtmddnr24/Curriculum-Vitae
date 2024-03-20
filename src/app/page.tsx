@@ -1,8 +1,7 @@
 import { Viewport } from "next";
-import NamedIndex from "../features/named-index/NamedIndex";
-import { SectionContainer } from "../features/section-container/SectionContainer";
-import { ToggleDarkmodeButton } from "../features/toggle-darkmode-button/ToggleDarkmodeButton";
 import { ScrollDownIndicator } from "../components/scroll-down-indicator/ScrollDownIndicator";
+import MainSectionContainer from "../features/main-section-container/MainSectionContainer";
+import { ToggleDarkmodeButton } from "../features/toggle-darkmode-button/ToggleDarkmodeButton";
 
 export const metadata = {
   title: "Curriculum Vitae",
@@ -17,7 +16,7 @@ export const viewport: Viewport = {
 export default async function MainPage() {
   return (
     <>
-      <SectionContainer />
+      <MainSectionContainer />
 
       <div className="fixed bottom-8 right-8 flex flex-col gap-3 rounded-full">
         <ToggleDarkmodeButton />

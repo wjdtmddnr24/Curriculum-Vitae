@@ -2,20 +2,21 @@
 
 import classNames from "classnames";
 import { motion } from "framer-motion";
-import { sections } from "../../app/sections";
+import { SectionInfo } from "../section-container/SectionContainer";
 
 interface NamedIndexProps {
-  sectionIndex: number;
+  currentIndex: number;
   onSectionNameClick: (index: number) => void;
+  sections: SectionInfo[];
 }
 
-const NamedIndex = ({ onSectionNameClick, sectionIndex }: NamedIndexProps) => {
+const NamedIndex = ({ onSectionNameClick, currentIndex, sections }: NamedIndexProps) => {
   const titles = sections.map((s) => s.title);
 
   return (
     <ul className="flex flex-col items-end gap-1">
       {titles.map((title, index) => (
-        <Item key={index} title={title} isSelected={index === sectionIndex} onClick={() => onSectionNameClick(index)} />
+        <Item key={index} title={title} isSelected={index === currentIndex} onClick={() => onSectionNameClick(index)} />
       ))}
     </ul>
   );
