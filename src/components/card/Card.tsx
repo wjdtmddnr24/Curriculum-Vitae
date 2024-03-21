@@ -1,10 +1,6 @@
 import classNames from "classnames";
 import { ReactNode } from "react";
 
-/* 
-|| "min-w-[88rem]"
- || "min-h-[40rem]"
-*/
 interface CardProps {
   className?: string;
   children: ReactNode;
