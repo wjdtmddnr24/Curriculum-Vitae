@@ -27,17 +27,17 @@ export const useBreakpoint = (): ScreenVariant => {
   const [screenVariant, setScreenVariant] = useState<ScreenVariant>("sm");
 
   useEffect(() => {
-    const onResize = _.debounce(() => {
+    const onResize = () => {
       const screen = getSuitableScreen(window.innerWidth);
-      setScreenVariant(screen);
-    }, 100);
+      if (screenVariant !== screen) setScreenVariant(screen);
+    };
 
     window.addEventListener("resize", onResize);
 
     getSuitableScreen(window.innerWidth);
 
     return () => window.removeEventListener("resize", onResize);
-  }, []);
+  }, [screenVariant]);
 
   return screenVariant;
 };
