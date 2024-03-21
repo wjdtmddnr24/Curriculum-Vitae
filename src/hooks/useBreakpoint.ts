@@ -16,16 +16,24 @@ const screens: Screen[] = _.chain(Object.entries(fullConfig.theme.screens))
   .reverse()
   .value();
 
+function getSuitableScreen(width: number): ScreenVariant {
+  const screen = _.find(screens, ([, w]) => width >= w) || screens.at(-1) || ["sm", 0];
+  return screen[0];
+}
+
 export const useBreakpoint = (): ScreenVariant => {
-  const [screenVariant, setScreenVariant] = useState<ScreenVariant>("xl");
+  const [screenVariant, setScreenVariant] = useState<ScreenVariant>("sm");
 
   useEffect(() => {
     const onResize = _.debounce(() => {
-      const screen = _.find(screens, ([, width]) => window.innerWidth >= width) || screens.at(-1) || ["sm", 0];
-      setScreenVariant(screen[0]);
+      const screen = getSuitableScreen(window.innerWidth);
+      setScreenVariant(screen);
       console.log(screen);
     }, 100);
+
     window.addEventListener("resize", onResize);
+
+    getSuitableScreen(window.innerWidth);
 
     return () => window.removeEventListener("resize", onResize);
   }, []);
