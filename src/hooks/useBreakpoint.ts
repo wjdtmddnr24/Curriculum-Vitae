@@ -1,3 +1,5 @@
+"use client";
+
 import _ from "lodash";
 import { useEffect, useState } from "react";
 import resolveConfig from "tailwindcss/resolveConfig";
@@ -24,17 +26,22 @@ function getSuitableScreen(width: number): ScreenVariant {
 }
 
 export const useBreakpoint = (): ScreenVariant => {
-  const [screenVariant, setScreenVariant] = useState<ScreenVariant>("sm");
+  const [screenVariant, setScreenVariant] = useState<ScreenVariant>(getSuitableScreen(window.innerWidth));
 
   useEffect(() => {
     const onResize = () => {
       const screen = getSuitableScreen(window.innerWidth);
-      if (screenVariant !== screen) setScreenVariant(screen);
+      if (screenVariant !== screen) {
+        setScreenVariant(screen);
+      }
     };
 
     window.addEventListener("resize", onResize);
 
-    getSuitableScreen(window.innerWidth);
+    const screen = getSuitableScreen(window.innerWidth);
+    if (screenVariant !== screen) {
+      setScreenVariant(screen);
+    }
 
     return () => window.removeEventListener("resize", onResize);
   }, [screenVariant]);

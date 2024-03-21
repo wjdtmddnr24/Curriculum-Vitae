@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef, type WheelEvent } from "react";
+import { Fragment, useRef, type WheelEvent } from "react";
 import { useShallow } from "zustand/react/shallow";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { useSectionsStore } from "../../stores/sections-store-provider";
 import NamedIndex from "../named-index/NamedIndex";
 import { Section } from "./Section";
@@ -51,18 +52,28 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
     latestWheelEventRef.current = e;
   };
 
+  const screen = useBreakpoint();
+
   return (
     <>
-      <div className="h-screen overflow-hidden" onWheel={onWheel}>
-        <div
-          className="transition-transform ease-in-out duration-700"
-          style={{ transform: `translateY(${currentSectionIndex * -100}vh)` }}
-        >
+      {screen === "sm" || screen === "md" ? (
+        <div>
           {sections.map(({ Component }, idx) => (
-            <Section key={idx}>{Component}</Section>
+            <Fragment key={idx}> {Component}</Fragment>
           ))}
         </div>
-      </div>
+      ) : (
+        <div className="h-screen overflow-hidden" onWheel={onWheel}>
+          <div
+            className="transition-transform ease-in-out duration-700"
+            style={{ transform: `translateY(${currentSectionIndex * -100}vh)` }}
+          >
+            {sections.map(({ Component }, idx) => (
+              <Section key={idx}>{Component}</Section>
+            ))}
+          </div>
+        </div>
+      )}
       <div className="fixed right-8 top-1/2 -translate-y-1/2">
         <NamedIndex
           sections={sections}
