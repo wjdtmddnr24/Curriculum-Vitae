@@ -3,22 +3,24 @@ import { useEffect, useState } from "react";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config.js";
 
-type ScreenVariant = "sm" | "md" | "lg" | "xl" | "2xl" | string;
+type ScreenVariant = "sm" | "md" | "lg" | "xl" | "2xl";
 
-type Screen = [ScreenVariant, number];
+type Screen = { variant: ScreenVariant; width: number };
+
+const screenVariant: ScreenVariant[] = ["sm", "md", "lg", "xl", "2xl"];
 
 const fullConfig = resolveConfig(tailwindConfig);
 
 const screens: Screen[] = _.chain(Object.entries(fullConfig.theme.screens))
-  .map<[string, number]>(([key, value]) => [key, parseInt(value)])
-  .filter(([, v]) => _.isNumber(v))
-  .sort(([, v1], [, v2]) => v1 - v2)
+  .filter(([k, v]) => screenVariant.findIndex((v) => v === k) !== -1 && _.isNumber(parseInt(v)))
+  .map<Screen>(([k, v]) => ({ variant: k as ScreenVariant, width: parseInt(v) }))
+  .sort(({ width: v1 }, { width: v2 }) => v1 - v2)
   .reverse()
   .value();
 
 function getSuitableScreen(width: number): ScreenVariant {
-  const screen = _.find(screens, ([, w]) => width >= w) || screens.at(-1) || ["sm", 0];
-  return screen[0];
+  const screen = _.find(screens, ({ width: w }) => width >= w) || screens.at(-1) || { variant: "sm", width: 0 };
+  return screen.variant;
 }
 
 export const useBreakpoint = (): ScreenVariant => {
@@ -28,7 +30,6 @@ export const useBreakpoint = (): ScreenVariant => {
     const onResize = _.debounce(() => {
       const screen = getSuitableScreen(window.innerWidth);
       setScreenVariant(screen);
-      console.log(screen);
     }, 100);
 
     window.addEventListener("resize", onResize);
