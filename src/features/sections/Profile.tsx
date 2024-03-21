@@ -14,7 +14,7 @@ import { ProfileHeader } from "../profile-header/ProfileHeader";
 
 export function Profile() {
   return (
-    <Card className="grid grid-cols-[auto_1fr] divide-x dark:divide-slate-600">
+    <Card className="w-[88rem] h-[40rem] grid grid-cols-[auto_1fr] divide-x dark:divide-slate-600">
       <ProfileHeader />
       <div className="grid grid-cols-2 p-16 pr-0 pt-24 text-slate-600 dark:text-slate-300 text-lg">
         <div>

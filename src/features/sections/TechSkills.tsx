@@ -2,7 +2,7 @@ import Card from "../../components/card/Card";
 
 export function TechSkills() {
   return (
-    <Card className="p-10">
+    <Card className="p-10 w-[88rem]">
       <div className="text-3xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold">
         Tech Skills
       </div>

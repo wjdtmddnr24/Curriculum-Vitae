@@ -1,6 +1,10 @@
 import classNames from "classnames";
 import { ReactNode } from "react";
 
+/* 
+|| "min-w-[88rem]"
+ || "min-h-[40rem]"
+*/
 interface CardProps {
   className?: string;
   children: ReactNode;
@@ -8,16 +12,9 @@ interface CardProps {
   height?: string;
 }
 
-const Card = ({ className, children, width, height }: CardProps) => {
+const Card = ({ className, children }: CardProps) => {
   return (
-    <div
-      className={classNames([
-        "mx-auto bg-white dark:bg-slate-800 dark:text-slate-200 rounded-3xl shadow-2xl",
-        width || "min-w-[88rem]",
-        height || "min-h-[40rem]",
-        className,
-      ])}
-    >
+    <div className={classNames(["bg-white dark:bg-slate-800 dark:text-slate-200 rounded-3xl shadow-2xl", className])}>
       {children}
     </div>
   );
