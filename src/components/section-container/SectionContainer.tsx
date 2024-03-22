@@ -74,7 +74,7 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
           </div>
         </div>
       )}
-      <div className="fixed right-8 top-1/2 -translate-y-1/2">
+      <div className="hidden xl:block fixed right-4 top-1/2 -translate-y-1/2">
         <NamedIndex
           sections={sections}
           currentIndex={currentSectionIndex}

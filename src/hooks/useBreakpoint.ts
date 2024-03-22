@@ -25,8 +25,8 @@ function getSuitableScreen(width: number): ScreenVariant {
   return screen.variant;
 }
 
-export const useBreakpoint = (): ScreenVariant => {
-  const [screenVariant, setScreenVariant] = useState<ScreenVariant>(getSuitableScreen(window.innerWidth));
+export const useBreakpoint = (): ScreenVariant | undefined => {
+  const [screenVariant, setScreenVariant] = useState<ScreenVariant>();
 
   useEffect(() => {
     const onResize = () => {
@@ -38,8 +38,8 @@ export const useBreakpoint = (): ScreenVariant => {
 
     window.addEventListener("resize", onResize);
 
-    const screen = getSuitableScreen(window.innerWidth);
-    if (screenVariant !== screen) {
+    if (!screenVariant) {
+      const screen = getSuitableScreen(window.innerWidth);
       setScreenVariant(screen);
     }
 

@@ -35,9 +35,9 @@ const Item = ({ title, isSelected, onClick }: ItemProps) => {
     <li className="flex relative" onClick={onClick}>
       <span
         className={classNames(
-          "mr-3 text-2xl cursor-pointer transition-all",
+          "mr-2 text-xl cursor-pointer transition-colors",
           isSelected
-            ? "text-slate-50 dark:text-slate-100 duration-700"
+            ? "text-slate-50 dark:text-slate-100"
             : "text-slate-300 dark:text-slate-400 font-light hover:text-slate-200"
         )}
       >

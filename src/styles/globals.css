@@ -7,6 +7,12 @@
 }
 
 body {
-  min-width: 1280px;
-  min-height: 720px;
+  /* min-width: 1280px;
+  min-height: 720px; */
+}
+
+@media (min-width: 1280px) {
+  :root {
+    font-size: calc(min(1rem + (100vw - 1280px) / 275, 19px));
+  }
 }

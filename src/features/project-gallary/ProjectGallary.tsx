@@ -4,7 +4,7 @@ import captainHookPic from "../../../public/captain_hook.png";
 
 export const ProjectGallary = () => {
   return (
-    <div className="grid grid-cols-3 gap-4 text-lg">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center gap-4">
       <GallaryItem
         title="Portfolio"
         description="포트폴리오 웹페이지"
@@ -89,16 +89,14 @@ const GallaryItem = ({ title, year, description, imageURL, techs }: GallaryItemP
         </span>
       </div>
       <div className="absolute bottom-0 left-0 right-0 text-slate-50 p-4">
-        <span className="ml-auto text-base">{year}</span>
+        {/* <span className="ml-auto text-base">{year}</span> */}
 
-        <div className="flex">
-          <span className="text-xl font-bold">{title}</span>
-        </div>
-        <div className="mb-2 text-base">{description}</div>
-        <div className="flex items-center gap-4">
+        <span className="text-lg font-bold">{title}</span>
+        <div className="text-sm">{description}</div>
+        <div className="flex items-center gap-2 overflow-ellipsis">
           {techs.map((t) => (
-            <div className="text-base rounded-full" key={t}>
-              <div className="">{t}</div>
+            <div className="text-sm rounded-full" key={t}>
+              {t}
             </div>
           ))}
         </div>
