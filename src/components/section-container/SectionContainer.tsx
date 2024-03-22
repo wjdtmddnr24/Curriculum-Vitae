@@ -55,6 +55,8 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
 
   const screen = useBreakpoint();
 
+  if (!screen) return null;
+
   return (
     <>
       {screen === "sm" || screen === "md" ? (
