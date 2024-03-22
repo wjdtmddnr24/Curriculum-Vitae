@@ -6,7 +6,7 @@ export function Awards() {
       <div className="text-2xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold mb-8">
         Awards
       </div>
-      <div className="flex flex-col flex-wrap lg:max-h-full gap-x-8 gap-y-4 overflow-x-auto">
+      <div className="flex flex-col flex-wrap lg:max-h-[34rem] gap-x-8 gap-y-4 overflow-x-auto">
         <div>
           <div className="text-xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold mb-1">
             2024
