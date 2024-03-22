@@ -1,5 +1,4 @@
 import { Viewport } from "next";
-import { ScrollDownIndicator } from "../components/scroll-down-indicator/ScrollDownIndicator";
 import MainSectionContainer from "../features/main-section-container/MainSectionContainer";
 import { ToggleDarkmodeButton } from "../features/toggle-darkmode-button/ToggleDarkmodeButton";
 
@@ -17,12 +16,8 @@ export default async function MainPage() {
   return (
     <>
       <MainSectionContainer />
-
       <div className="fixed bottom-8 right-8 flex flex-col gap-3 rounded-full">
         <ToggleDarkmodeButton />
-      </div>
-      <div className="fixed bottom-5 left-1/2 -translate-x-1/2 pointer-events-none">
-        <ScrollDownIndicator />
       </div>
     </>
   );

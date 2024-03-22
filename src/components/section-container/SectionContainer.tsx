@@ -5,6 +5,7 @@ import { useShallow } from "zustand/react/shallow";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 import { useSectionsStore } from "../../stores/sections-store-provider";
 import NamedIndex from "../named-index/NamedIndex";
+import { ScrollDownIndicator } from "../scroll-down-indicator/ScrollDownIndicator";
 import { Section } from "./Section";
 
 export interface SectionInfo {
@@ -63,16 +64,21 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
           ))}
         </div>
       ) : (
-        <div className="h-screen overflow-hidden" onWheel={onWheel}>
-          <div
-            className="transition-transform ease-in-out duration-700"
-            style={{ transform: `translateY(${currentSectionIndex * -100}vh)` }}
-          >
-            {sections.map(({ Component }, idx) => (
-              <Section key={idx}>{Component}</Section>
-            ))}
+        <>
+          <div className="h-screen overflow-hidden" onWheel={onWheel}>
+            <div
+              className="transition-transform ease-in-out duration-700"
+              style={{ transform: `translateY(${currentSectionIndex * -100}vh)` }}
+            >
+              {sections.map(({ Component }, idx) => (
+                <Section key={idx}>{Component}</Section>
+              ))}
+            </div>
           </div>
-        </div>
+          <div className="fixed bottom-5 left-1/2 -translate-x-1/2 pointer-events-none">
+            <ScrollDownIndicator />
+          </div>
+        </>
       )}
       <div className="hidden xl:block fixed right-4 top-1/2 -translate-y-1/2">
         <NamedIndex
