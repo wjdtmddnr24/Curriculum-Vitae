@@ -40,6 +40,7 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
 
   useEffect(() => {
     const hash = decodeURI(window.location.hash);
+    console.log(hash);
     if (hash) {
       const sectionIndex = sections.findIndex(({ title }) => title === hash.slice(1));
       if (sectionIndex !== -1) {
@@ -50,7 +51,9 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
 
   const onWheel = (e: WheelEvent) => {
     const wheelDirection = e.deltaY > 0 ? 1 : e.deltaY < 0 ? -1 : 0;
+    const deltaTime = e.timeStamp - (latestWheelEventRef?.current?.timeStamp ?? 0);
 
+    // Different wheel direction
     if (wheelDirection !== prevAppliedWheelDirectionRef.current) {
       if (e.timeStamp - timeStampRef.current >= 700 * 0.25) {
         const nextIndex = Math.max(0, Math.min(currentSectionIndex + wheelDirection, sections.length - 1));
@@ -65,6 +68,7 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
         !(
           latestWheelEventRef.current &&
           deltaTime < 50 &&
+          // 가장 마지막 deltaY가 현재 deltaY보다 크거나 같을 때
           Math.abs(latestWheelEventRef.current.deltaY) >= Math.abs(e.deltaY)
         ) &&
         e.timeStamp - timeStampRef.current > 700 * 0.5
@@ -85,9 +89,7 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
       {isMobile ? (
         <div>
           {sections.map(({ Component, title }) => (
-            <Section key={title} id={title}>
-              {Component}
-            </Section>
+            <Section key={title}>{Component}</Section>
           ))}
         </div>
       ) : (
@@ -98,7 +100,7 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
               style={{ transform: `translateY(${currentSectionIndex * -100}vh)` }}
             >
               {sections.map(({ Component, title }) => (
-                <Section key={title} id={title} className="h-screen flex items-center justify-center">
+                <Section key={title} className="h-screen flex items-center justify-center">
                   {Component}
                 </Section>
               ))}
