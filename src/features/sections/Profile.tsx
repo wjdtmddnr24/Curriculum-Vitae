@@ -4,6 +4,7 @@ import {
   faCode,
   faEnvelope,
   faGraduationCap,
+  faIdCard,
   faJetFighterUp,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
@@ -47,10 +48,10 @@ export function Profile() {
         <div>
           <div className="text-slate-700 dark:text-slate-200 font-bold text-xl mb-2.5">Certificates</div>
           <IconList className="space-y-0.5 break-keep">
-            <IconList.Item>정보처리산업기사 (2021)</IconList.Item>
-            <IconList.Item>정보기기운용기능사 (2017)</IconList.Item>
-            <IconList.Item>정보처리기능사 (2016)</IconList.Item>
-            <IconList.Item>Oracle Certified Java Programmer (2016)</IconList.Item>
+            <IconList.Item icon={faIdCard}>정보처리산업기사 (2021)</IconList.Item>
+            <IconList.Item icon={faIdCard}>정보기기운용기능사 (2017)</IconList.Item>
+            <IconList.Item icon={faIdCard}>정보처리기능사 (2016)</IconList.Item>
+            <IconList.Item icon={faIdCard}>Oracle Certified Java Programmer (2016)</IconList.Item>
           </IconList>
         </div>
       </div>
