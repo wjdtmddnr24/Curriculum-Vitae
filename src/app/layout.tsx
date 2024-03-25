@@ -10,7 +10,7 @@ config.autoAddCss = false;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={pretendardFont.className} suppressHydrationWarning>
+    <html lang="ko" className={pretendardFont.className} suppressHydrationWarning>
       <body>
         <Providers>
           <div className="fixed inset-0 -z-10 bg-fixed bg-gradient-to-br from-pink-800 via-purple-800 to-indigo-800 opacity-0 dark:opacity-100 transition-opacity duration-500"></div>
