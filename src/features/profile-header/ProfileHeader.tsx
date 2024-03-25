@@ -7,7 +7,7 @@ import profilePic from "../../../public/profile.png";
 
 export function ProfileHeader() {
   return (
-    <div className="w-max flex flex-col items-center justify-center justify-self-center py-16">
+    <div className="w-max flex flex-col items-center justify-center justify-self-center py-20 lg:py-0">
       <Image
         className="z-10 size-52 rounded-full object-cover self-center justify-self-center"
         draggable={false}
