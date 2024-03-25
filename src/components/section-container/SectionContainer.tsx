@@ -2,7 +2,7 @@
 
 import { Fragment, useRef, type WheelEvent } from "react";
 import { useShallow } from "zustand/react/shallow";
-import { useBreakpoint } from "../../hooks/useBreakpoint";
+import { MobileWidthThreshold, useWindowWidth } from "../../hooks/useWindowWidth";
 import { useSectionsStore } from "../../stores/sections-store-provider";
 import NamedIndex from "../named-index/NamedIndex";
 import { ScrollDownIndicator } from "../scroll-down-indicator/ScrollDownIndicator";
@@ -24,6 +24,7 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
   const prevAppliedWheelDirectionRef = useRef<number>(1);
   const timeStampRef = useRef<number>(0);
   const latestWheelEventRef = useRef<WheelEvent | null>(null);
+  const windowWidth = useWindowWidth();
 
   const onWheel = (e: WheelEvent) => {
     const wheelDirection = e.deltaY > 0 ? 1 : e.deltaY < 0 ? -1 : 0;
@@ -53,13 +54,13 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
     latestWheelEventRef.current = e;
   };
 
-  const screen = useBreakpoint();
+  if (windowWidth === undefined) return null;
 
-  if (!screen) return null;
+  const isMobile = windowWidth < MobileWidthThreshold;
 
   return (
     <>
-      {screen === "sm" || screen === "md" ? (
+      {isMobile ? (
         <div>
           {sections.map(({ Component }, idx) => (
             <Fragment key={idx}> {Component}</Fragment>
