@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useRef, type WheelEvent } from "react";
+import { useRef, type WheelEvent } from "react";
 import { useShallow } from "zustand/react/shallow";
 import { MobileWidthThreshold, useWindowWidth } from "../../hooks/useWindowWidth";
 import { useSectionsStore } from "../../stores/sections-store-provider";
@@ -62,8 +62,10 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
     <>
       {isMobile ? (
         <div>
-          {sections.map(({ Component }, idx) => (
-            <Fragment key={idx}> {Component}</Fragment>
+          {sections.map(({ Component, title }) => (
+            <Section key={title} id={title}>
+              {Component}
+            </Section>
           ))}
         </div>
       ) : (
@@ -73,8 +75,10 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
               className="transition-transform ease-in-out duration-700"
               style={{ transform: `translateY(${currentSectionIndex * -100}vh)` }}
             >
-              {sections.map(({ Component }, idx) => (
-                <Section key={idx}>{Component}</Section>
+              {sections.map(({ Component, title }) => (
+                <Section key={title} id={title} className="h-screen flex items-center justify-center">
+                  {Component}
+                </Section>
               ))}
             </div>
           </div>

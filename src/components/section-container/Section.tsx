@@ -1,9 +1,15 @@
 import { ReactNode } from "react";
 
 interface SectionProps {
+  id?: string;
   children: ReactNode;
+  className?: string;
 }
 
-export const Section = ({ children }: SectionProps) => {
-  return <section className="h-screen flex items-center justify-center">{children}</section>;
+export const Section = ({ id, children, className }: SectionProps) => {
+  return (
+    <section id={id} className={className}>
+      {children}
+    </section>
+  );
 };
