@@ -19,7 +19,7 @@ interface ItemProps {
 function Item({ icon, children }: ItemProps) {
   return (
     <li className="flex gap-1.5">
-      {icon && <FontAwesomeIcon icon={icon} className="mt-[0.2rem]" fixedWidth />}
+      {icon && <FontAwesomeIcon icon={icon} className="mt-[0.2rem] shrink-0" fixedWidth />}
       <div className="align-text-bottom">{children}</div>
     </li>
   );
