@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, type WheelEvent } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, type WheelEvent } from "react";
 import { useShallow } from "zustand/react/shallow";
 import { MobileWidthThreshold, useWindowWidth } from "../../hooks/useWindowWidth";
 import { useSectionsStore } from "../../stores/sections-store-provider";
@@ -11,6 +12,7 @@ import { Section } from "./Section";
 export interface SectionInfo {
   title: string;
   Component: React.ReactNode;
+  hash: string;
 }
 
 interface SectionContainerProps {
@@ -25,13 +27,34 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
   const timeStampRef = useRef<number>(0);
   const latestWheelEventRef = useRef<WheelEvent | null>(null);
   const windowWidth = useWindowWidth();
+  const router = useRouter();
+
+  const isClient = windowWidth !== undefined;
+  const isMobile = isClient && windowWidth < MobileWidthThreshold;
+
+  const changeSectionIndex = (index: number) => {
+    setCurrentSectionIndex(index);
+    const nextHash = sections[index].hash;
+    router.replace(`./${nextHash}`, { scroll: false });
+  };
+
+  useEffect(() => {
+    const hash = decodeURI(window.location.hash);
+    if (hash) {
+      const sectionIndex = sections.findIndex(({ title }) => title === hash.slice(1));
+      if (sectionIndex !== -1) {
+        setCurrentSectionIndex(sectionIndex);
+      }
+    }
+  }, [sections, setCurrentSectionIndex]);
 
   const onWheel = (e: WheelEvent) => {
     const wheelDirection = e.deltaY > 0 ? 1 : e.deltaY < 0 ? -1 : 0;
 
     if (wheelDirection !== prevAppliedWheelDirectionRef.current) {
       if (e.timeStamp - timeStampRef.current >= 700 * 0.25) {
-        setCurrentSectionIndex(Math.max(0, Math.min(currentSectionIndex + wheelDirection, sections.length - 1)));
+        const nextIndex = Math.max(0, Math.min(currentSectionIndex + wheelDirection, sections.length - 1));
+        changeSectionIndex(nextIndex);
         timeStampRef.current = e.timeStamp;
         prevAppliedWheelDirectionRef.current = wheelDirection;
       }
@@ -46,7 +69,8 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
         ) &&
         e.timeStamp - timeStampRef.current > 700 * 0.5
       ) {
-        setCurrentSectionIndex(Math.max(0, Math.min(currentSectionIndex + wheelDirection, sections.length - 1)));
+        const nextIndex = Math.max(0, Math.min(currentSectionIndex + wheelDirection, sections.length - 1));
+        changeSectionIndex(nextIndex);
         timeStampRef.current = e.timeStamp;
       }
     }
@@ -54,9 +78,7 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
     latestWheelEventRef.current = e;
   };
 
-  if (windowWidth === undefined) return null;
-
-  const isMobile = windowWidth < MobileWidthThreshold;
+  if (!isClient) return null;
 
   return (
     <>
@@ -88,11 +110,7 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
         </>
       )}
       <div className="hidden xl:block fixed right-4 top-1/2 -translate-y-1/2">
-        <NamedIndex
-          sections={sections}
-          currentIndex={currentSectionIndex}
-          onSectionNameClick={setCurrentSectionIndex}
-        />
+        <NamedIndex sections={sections} currentIndex={currentSectionIndex} onSectionNameClick={changeSectionIndex} />
       </div>
     </>
   );

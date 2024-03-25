@@ -10,18 +10,22 @@ const sections: SectionInfo[] = [
   {
     title: "Profile",
     Component: <Profile />,
+    hash: "",
   },
   {
     title: "Tech Skills",
     Component: <TechSkills />,
+    hash: "#Tech Skills",
   },
   {
     title: "Projects",
     Component: <Projects />,
+    hash: "#Projects",
   },
   {
     title: "Awards",
     Component: <Awards />,
+    hash: "#Awards",
   },
 ];
 
