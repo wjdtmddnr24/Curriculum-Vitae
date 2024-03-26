@@ -15,7 +15,7 @@ export function ProfileHeader() {
         alt="Profile Image"
         priority
       />
-      <div className="w-full mt-12 rounded-b justify-self-center flex flex-col items-center justify-center y-4">
+      <div className="w-full mt-12 rounded-b justify-self-center flex flex-col items-center justify-center">
         <div className="text-slate-800 dark:text-slate-200 text-3xl mb-2 font-semibold">정승욱</div>
         <div className="text-xl mb-1 text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold">
           소프트웨어 엔지니어
