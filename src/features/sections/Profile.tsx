@@ -19,7 +19,7 @@ export function Profile() {
       <ProfileHeader />
       <div className="grid lg:grid-cols-[18rem_18rem] content-center gap-8">
         <div>
-          <div className="text-slate-900 dark:text-slate-200 font-bold text-xl mb-2.5">Info</div>
+          <div className="text-slate-800 dark:text-slate-200 font-bold text-xl mb-2.5">Info</div>
           <IconList className="space-y-0.5 break-keep">
             <IconList.Item icon={faLocationDot}>서울, 한국</IconList.Item>
             <IconList.Item icon={faCalendar}>{getAge()}살, 1999년생</IconList.Item>
@@ -30,7 +30,7 @@ export function Profile() {
           </IconList>
         </div>
         <div>
-          <div className="text-slate-900 dark:text-slate-200 font-bold text-xl mb-2.5">Career</div>
+          <div className="text-slate-800 dark:text-slate-200 font-bold text-xl mb-2.5">Career</div>
           <IconList className="space-y-0.5 break-keep">
             <IconList.Item icon={faJetFighterUp}>공군 교육훈련매체개발병 (2022~2023)</IconList.Item>
             <IconList.Item icon={faChalkboardTeacher}>코딩학원 강사 (2018~2021)</IconList.Item>
@@ -38,7 +38,7 @@ export function Profile() {
           </IconList>
         </div>
         <div>
-          <div className="text-slate-900 dark:text-slate-200 font-bold text-xl mb-2.5">Education</div>
+          <div className="text-slate-800 dark:text-slate-200 font-bold text-xl mb-2.5">Education</div>
           <IconList className="space-y-0.5 break-keep">
             <IconList.Item icon={faGraduationCap}>숭실대학교 4학년 졸업</IconList.Item>
             <IconList.Item icon={faGraduationCap}>선린인터넷고등학교 졸업</IconList.Item>
@@ -46,7 +46,7 @@ export function Profile() {
           </IconList>
         </div>
         <div>
-          <div className="text-slate-900 dark:text-slate-200 font-bold text-xl mb-2.5">Certificates</div>
+          <div className="text-slate-800 dark:text-slate-200 font-bold text-xl mb-2.5">Certificates</div>
           <IconList className="space-y-0.5 break-keep">
             <IconList.Item icon={faIdCard}>정보처리산업기사 (2021)</IconList.Item>
             <IconList.Item icon={faIdCard}>정보기기운용기능사 (2017)</IconList.Item>
