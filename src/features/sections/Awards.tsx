@@ -41,7 +41,6 @@ export function Awards() {
             2020
           </div>
           <ul>
-            {" "}
             <li>2020 하반기 TOPCIT 특별평가 교내 성적 우수자 - 우수상</li>
             <li>2020 상반기 TOPCIT 특별평가 교내 성적 우수자 - 최우수상</li>
           </ul>
@@ -75,7 +74,6 @@ export function Awards() {
             <li>제2회 국민대학교 알고리즘 대회 - 장려상</li>
             <li>선린정보올림피아드 대회 - 은상</li>
             <li>선린알고리즘 대회 - 동상</li>
-            <li>디지털 콘텐츠 경진대회 - 은상</li>
           </ul>
         </div>
         <div>
@@ -83,6 +81,7 @@ export function Awards() {
             2016
           </div>
           <ul>
+            <li>디지털 콘텐츠 경진대회 - 은상</li>
             <li>네트워크 구축 대회 - 동상</li>
             <li>Smarteen App Challenge - 장려상</li>
             <li>선린정보올림피아드 경시대회 - 금상</li>
@@ -93,7 +92,6 @@ export function Awards() {
             2015
           </div>
           <ul>
-            {" "}
             <li>2학기 교내 수학경시대회 - 동상</li>
             <li>선린정보올림피아드 경시대회 - 장려상</li>
           </ul>
