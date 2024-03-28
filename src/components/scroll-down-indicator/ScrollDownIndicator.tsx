@@ -18,7 +18,7 @@ export const ScrollDownIndicator = () => {
 const ArrowDownIcon = () => {
   return (
     <svg
-      className={`w-12 animate-bounce  mt-4 stroke-gray-100 dark:stroke-gray-300`}
+      className={`w-12 animate-bounce mt-4 stroke-gray-100 dark:stroke-gray-300`}
       strokeWidth="20"
       fill="none"
       viewBox="0 0 300 300"
