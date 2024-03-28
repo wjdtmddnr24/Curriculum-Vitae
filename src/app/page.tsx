@@ -16,7 +16,7 @@ export default async function MainPage() {
   return (
     <>
       <MainSectionContainer />
-      <div className="fixed bottom-8 right-8 flex flex-col gap-3 rounded-full">
+      <div className="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 flex flex-col gap-3 rounded-full">
         <ToggleDarkmodeButton />
       </div>
     </>
