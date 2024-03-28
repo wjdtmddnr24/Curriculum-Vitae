@@ -40,7 +40,6 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
 
   useEffect(() => {
     const hash = decodeURI(window.location.hash);
-    console.log(hash);
     if (hash) {
       const sectionIndex = sections.findIndex(({ title }) => title === hash.slice(1));
       if (sectionIndex !== -1) {
