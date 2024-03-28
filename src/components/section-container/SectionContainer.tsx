@@ -106,7 +106,7 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
               ))}
             </div>
           </div>
-          <div className="fixed bottom-5 left-1/2 -translate-x-1/2 pointer-events-none">
+          <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
             <ScrollDownIndicator />
           </div>
         </>
