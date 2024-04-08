@@ -2,7 +2,7 @@ import captainHookPic from "../../../public/captain_hook.png";
 import portfolioPic from "../../../public/portfolio_combined_compressed.png";
 import GallaryItem from "./GallaryItem";
 
-export const ProjectGallary = () => {
+const ProjectGallary = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center gap-4">
       <GallaryItem
@@ -61,3 +61,5 @@ export const ProjectGallary = () => {
     </div>
   );
 };
+
+export default ProjectGallary;

@@ -1,5 +1,5 @@
 import Card from "../../components/card/Card";
-import { ProjectGallary } from "../project-gallary/ProjectGallary";
+import ProjectGallary from "../project-gallary/ProjectGallary";
 
 export function Projects() {
   return (
