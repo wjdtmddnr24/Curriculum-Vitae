@@ -16,5 +16,11 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
+  staticDirs: [
+    {
+      from: "../src/fonts/pretendard",
+      to: "src/fonts/pretendard",
+    },
+  ],
 };
 export default config;

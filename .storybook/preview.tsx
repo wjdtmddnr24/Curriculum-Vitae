@@ -1,7 +1,8 @@
 import { withThemeByClassName } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react";
+import React from "react";
 import "../src/styles/globals.css";
-import "../src/styles/fonts.css";
+import { pretendardFont } from "../src/fonts";
 
 const preview: Preview = {
   parameters: {
@@ -21,6 +22,11 @@ const preview: Preview = {
       },
       defaultTheme: "light",
     }),
+    (Story) => (
+      <div style={pretendardFont.style}>
+        <Story />
+      </div>
+    ),
   ],
 };
 
