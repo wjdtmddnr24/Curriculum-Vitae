@@ -29,7 +29,7 @@ export function TechSkills() {
           </div>
           <div>
             <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
-              Program Languages
+              Languages
             </GradientTypography>
             <ul>
               <li>JavaScript</li>
