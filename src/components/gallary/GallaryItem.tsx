@@ -7,16 +7,14 @@ import GradientTypography from "../gradient-typography/GradientTypography";
 interface GallaryItemProps {
   title: string;
   description: string;
-  year: number;
-  techs: string[];
-  imageURL: StaticImageData | string | undefined;
-  sourceURL: string;
+  thumbnailURL: StaticImageData | string | undefined;
+  href: string;
 }
 
-const GallaryItem = ({ title, year, description, imageURL, techs }: GallaryItemProps) => {
+const GallaryItem = ({ title, href, description, thumbnailURL }: GallaryItemProps) => {
   return (
     <Link
-      href="#"
+      href={href}
       draggable={false}
       className="hover:bg-gray-100 dark:hover:bg-gray-700 -m-2 p-2 rounded-xl transition-colors duration-200 group"
     >
@@ -30,19 +28,25 @@ const GallaryItem = ({ title, year, description, imageURL, techs }: GallaryItemP
           <FontAwesomeIcon icon={faArrowRight} />
         </div>
       </div>
-      <ThumbnailHolder title={title} imageURL={imageURL} />
+      <ThumbnailHolder title={title} thumbnailURL={thumbnailURL} />
     </Link>
   );
 };
 
 export default GallaryItem;
 
-const ThumbnailHolder = ({ title, imageURL }: { imageURL: StaticImageData | string | undefined; title: string }) => {
-  if (imageURL) {
+const ThumbnailHolder = ({
+  title,
+  thumbnailURL,
+}: {
+  title: string;
+  thumbnailURL: StaticImageData | string | undefined;
+}) => {
+  if (thumbnailURL) {
     return (
       <Image
         className="w-full aspect-[304/193] bg-slate-300 dark:bg-slate-500 object-cover dark:brightness-95 dark:group-hover:brightness-100 transition-all duration-500 outline outline-1 outline-slate-200 dark:outline-slate-700 rounded-3xl"
-        src={imageURL}
+        src={thumbnailURL}
         alt="thmbnail"
         priority
         draggable={false}
