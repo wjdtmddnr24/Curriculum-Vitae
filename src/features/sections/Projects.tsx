@@ -2,7 +2,9 @@ import Card from "../../components/card/Card";
 import ProjectGallary from "../project-gallary/ProjectGallary";
 import captainHookPic from "../../../public/captain_hook.png";
 import portfolioPic from "../../../public/portfolio_combined_compressed.png";
+import camtactPic from "../../../public/camtact.png";
 import GradientTypography from "../../components/gradient-typography/GradientTypography";
+import weboxLogoPic from "../../../public/webox_logo.png";
 import { Section } from "../../components/section-container/Section";
 
 export function Projects() {
@@ -24,10 +26,10 @@ export function Projects() {
 
           <ProjectGallary.Item
             title="Webox"
-            description="퍼스널 모빌리티를 위한 클라우드 기반 블랙박스 애플리케이션"
+            description="클라우드 기반 블랙박스 애플리케이션"
             year={2021}
             techs={["Nestjs", "Kubernetes", "Flutter"]}
-            imageURL={undefined}
+            imageURL={weboxLogoPic}
             sourceURL="#"
           />
 
@@ -51,15 +53,15 @@ export function Projects() {
 
           <ProjectGallary.Item
             title="Camtact"
-            description="원격 회전캠을 이용한 비대면 감독 플랫폼"
+            description="원격 회전캠을 이용한 비대면 시험 감독 플랫폼"
             year={2020}
             techs={["React", "Electron", "Nestjs", "Raspberrypi"]}
-            imageURL={undefined}
+            imageURL={camtactPic}
             sourceURL="#"
           />
 
           <ProjectGallary.Item
-            title="TCQR (Text Compressed QRCode)"
+            title="TCQR"
             description="문자열 압축기반 QR코드 애플리케이션"
             year={2016}
             techs={["Android", "Java"]}
