@@ -15,7 +15,7 @@ interface GallaryItemProps {
 
 const GallaryItem = ({ title, year, description, imageURL, techs }: GallaryItemProps) => {
   return (
-    <Link href="#" className="" draggable={false}>
+    <Link href="#" className="group" draggable={false}>
       <div className="flex mb-2 gap-2">
         <div className="grid overflow-hidden">
           <GradientTypography className="w-max text-xl font-bold truncate">{title}</GradientTypography>
@@ -35,13 +35,15 @@ export default GallaryItem;
 
 const ImageHolder = ({ imageURL }: { imageURL: StaticImageData | string | undefined }) => {
   return imageURL ? (
-    <Image
-      className="w-full aspect-[304/193] bg-slate-300 object-cover rounded-3xl"
-      src={imageURL}
-      alt=""
-      priority
-      draggable={false}
-    />
+    <div className="relative overflow-hidden rounded-3xl">
+      <Image
+        className="w-full aspect-[304/193] bg-slate-300 object-cover group-hover:scale-105 transition-transform duration-500"
+        src={imageURL}
+        alt=""
+        priority
+        draggable={false}
+      />
+    </div>
   ) : (
     <div className="w-full aspect-[304/193] bg-slate-300 object-cover rounded-3xl" />
   );
