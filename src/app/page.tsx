@@ -1,5 +1,9 @@
 import { Viewport } from "next";
-import MainSectionContainer from "../features/main-section-container/MainSectionContainer";
+import { SectionContainer, SectionInfo } from "../components/section-container/SectionContainer";
+import { Awards } from "../features/sections/awards/Awards";
+import { Profile } from "../features/sections/profile/Profile";
+import { Projects } from "../features/sections/projects/Projects";
+import { TechSkills } from "../features/sections/tech-skills/TechSkills";
 import { ToggleDarkmodeButton } from "../features/toggle-darkmode-button/ToggleDarkmodeButton";
 
 export const metadata = {
@@ -12,10 +16,33 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const sections: SectionInfo[] = [
+  {
+    title: "Profile",
+    Component: <Profile />,
+    hash: "",
+  },
+  {
+    title: "Tech Skills",
+    Component: <TechSkills />,
+    hash: "#Tech Skills",
+  },
+  {
+    title: "Projects",
+    Component: <Projects />,
+    hash: "#Projects",
+  },
+  {
+    title: "Awards",
+    Component: <Awards />,
+    hash: "#Awards",
+  },
+];
+
 export default async function MainPage() {
   return (
     <>
-      <MainSectionContainer />
+      <SectionContainer sections={sections} />
       <div className="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 flex flex-col gap-3 rounded-full">
         <ToggleDarkmodeButton />
       </div>
