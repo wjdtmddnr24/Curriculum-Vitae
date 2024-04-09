@@ -1,5 +1,5 @@
-import SectionCard from "../../components/section-card/SectionCard";
-import GradientTypography from "../../components/gradient-typography/GradientTypography";
+import SectionCard from "@components/section-card/SectionCard";
+import GradientTypography from "@components/gradient-typography/GradientTypography";
 
 export function Awards() {
   return (

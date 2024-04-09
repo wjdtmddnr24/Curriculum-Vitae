@@ -1,10 +1,10 @@
 "use client";
 
 import { SectionContainer, type SectionInfo } from "../../components/section-container/SectionContainer";
-import { Awards } from "../sections/Awards";
-import { Profile } from "../profile/Profile";
-import { Projects } from "../sections/Projects";
-import { TechSkills } from "../sections/TechSkills";
+import { Awards } from "../sections/awards/Awards";
+import { Profile } from "../sections/profile/Profile";
+import { Projects } from "../sections/projects/Projects";
+import { TechSkills } from "../sections/tech-skills/TechSkills";
 
 const sections: SectionInfo[] = [
   {
