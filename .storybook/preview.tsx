@@ -26,7 +26,7 @@ const preview: Preview = {
       defaultTheme: "light",
     }),
     (Story) => (
-      <div style={pretendardFont.style} className="text-slate-700 dark:text-slate-300 w-max">
+      <div style={pretendardFont.style} className="text-slate-700 dark:text-slate-300">
         <Story />
       </div>
     ),
