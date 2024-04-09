@@ -1,9 +1,9 @@
 import { Viewport } from "next";
-import { SectionContainer, SectionInfo } from "../components/section-container/SectionContainer";
-import { Awards } from "../features/sections/awards/Awards";
-import { Profile } from "../features/sections/profile/Profile";
-import { Projects } from "../features/sections/projects/Projects";
-import { TechSkills } from "../features/sections/tech-skills/TechSkills";
+import { SectionContainer, SectionInfo } from "@/components/section-container/SectionContainer";
+import { Awards } from "@/components/sections/awards/Awards";
+import { Profile } from "@/components/sections/profile/Profile";
+import { Projects } from "@/components/sections/projects/Projects";
+import { TechSkills } from "@/components/sections/tech-skills/TechSkills";
 import { ToggleDarkmodeButton } from "@/components/toggle-darkmode-button/ToggleDarkmodeButton";
 
 export const metadata = {
