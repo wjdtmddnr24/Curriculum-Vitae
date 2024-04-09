@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import camtactPic from "../../../public/camtact.png";
-import captainHookPic from "../../../public/captain_hook.png";
-import portfolioPic from "../../../public/portfolio_combined_compressed.png";
-import weboxLogoPic from "../../../public/webox_logo.png";
+import camtactPic from "@public/camtact.png";
+import captainHookPic from "@public/captain_hook.png";
+import portfolioPic from "@public/portfolio_combined_compressed.png";
+import weboxLogoPic from "@public/webox_logo.png";
 import Gallary from "./Gallary";
 
 const meta: Meta<typeof Gallary> = {

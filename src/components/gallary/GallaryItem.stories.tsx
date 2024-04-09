@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import portfolioPic from "../../../public/portfolio_combined_compressed.png";
+import portfolioPic from "@public/portfolio_combined_compressed.png";
 import GallaryItem from "./GallaryItem";
 
 const meta: Meta<typeof GallaryItem> = {

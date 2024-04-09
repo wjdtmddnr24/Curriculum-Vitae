@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Awards } from "../sections/awards/Awards";
-import { Profile } from "../sections/profile/Profile";
-import { Projects } from "../sections/projects/Projects";
-import { TechSkills } from "../sections/tech-skills/TechSkills";
+import { Awards } from "@components/sections/awards/Awards";
+import { Profile } from "@components/sections/profile/Profile";
+import { Projects } from "@components/sections/projects/Projects";
+import { TechSkills } from "@components/sections/tech-skills/TechSkills";
 import { SectionsStoreProvider } from "../../stores/sections-store-provider";
 import { SectionContainer, SectionInfo } from "./SectionContainer";
 
