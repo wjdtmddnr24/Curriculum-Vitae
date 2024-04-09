@@ -4,7 +4,7 @@ import { Awards } from "../features/sections/awards/Awards";
 import { Profile } from "../features/sections/profile/Profile";
 import { Projects } from "../features/sections/projects/Projects";
 import { TechSkills } from "../features/sections/tech-skills/TechSkills";
-import { ToggleDarkmodeButton } from "../features/toggle-darkmode-button/ToggleDarkmodeButton";
+import { ToggleDarkmodeButton } from "@/components/toggle-darkmode-button/ToggleDarkmodeButton";
 
 export const metadata = {
   title: "Curriculum Vitae",
