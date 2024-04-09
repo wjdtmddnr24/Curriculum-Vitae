@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import ProjectGallary from "./ProjectGallary";
-import Card from "../../components/card/Card";
 import captainHookPic from "../../../public/captain_hook.png";
 import portfolioPic from "../../../public/portfolio_combined_compressed.png";
+import ProjectGallary from "./ProjectGallary";
 
 const meta: Meta<typeof ProjectGallary> = {
   component: ProjectGallary,
