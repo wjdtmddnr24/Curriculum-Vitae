@@ -1,9 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import GallaryItem from "./GallaryItem";
 import portfolioPic from "../../../public/portfolio_combined_compressed.png";
+import GallaryItem from "./GallaryItem";
 
 const meta: Meta<typeof GallaryItem> = {
   component: GallaryItem,
+  decorators: (Story) => (
+    <div className="bg-white dark:bg-slate-800 w-[19rem]">
+      <Story />
+    </div>
+  ),
 };
 
 export default meta;
