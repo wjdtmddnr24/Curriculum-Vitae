@@ -6,7 +6,7 @@ export function Awards() {
   return (
     <Section>
       <Card className="p-6 lg:p-10">
-        <GradientTypography as="h1" className="w-max text-2xl font-bold mb-8">
+        <GradientTypography as="h1" className="w-max text-3xl font-bold mb-8">
           Awards
         </GradientTypography>
         <div className="flex flex-col flex-wrap lg:max-h-[34rem] gap-x-8 gap-y-4 overflow-x-auto">

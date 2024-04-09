@@ -6,7 +6,7 @@ export function TechSkills() {
   return (
     <Section>
       <Card className="p-6 lg:p-10">
-        <GradientTypography as="h1" className="w-max text-2xl font-bold">
+        <GradientTypography as="h1" className="w-max text-3xl font-bold mb-8">
           Tech Skills
         </GradientTypography>
         <div className="grid sm:grid-cols-[auto_auto] md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-[repeat(2,minmax(12rem,auto))] gap-10 mt-10">

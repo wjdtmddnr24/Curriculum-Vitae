@@ -9,7 +9,7 @@ export function Projects() {
   return (
     <Section>
       <Card className="p-6 lg:p-10">
-        <GradientTypography as="h1" className="w-max text-2xl font-bold mb-8">
+        <GradientTypography as="h1" className="w-max text-3xl font-bold mb-8">
           Projects
         </GradientTypography>
         <ProjectGallary>
