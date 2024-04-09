@@ -6,7 +6,7 @@ import ProjectGallary from "./ProjectGallary";
 const meta: Meta<typeof ProjectGallary> = {
   component: ProjectGallary,
   decorators: (Story) => (
-    <div className="w-[1280px]">
+    <div className="w-[1024px] p-10">
       <Story />
     </div>
   ),
