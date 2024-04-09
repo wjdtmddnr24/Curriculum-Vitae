@@ -9,7 +9,7 @@ export function TechSkills() {
         <GradientTypography as="h1" className="w-max text-3xl font-bold mb-8">
           Tech Skills
         </GradientTypography>
-        <div className="grid sm:grid-cols-[auto_auto] md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-[repeat(2,minmax(12rem,auto))] gap-10 mt-10">
+        <div className="grid sm:grid-cols-[auto_auto] md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-[repeat(2,minmax(12rem,auto))] gap-10">
           <div>
             <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">General</div>
             <ul>
