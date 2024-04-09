@@ -1,8 +1,8 @@
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useShallow } from "zustand/react/shallow";
-import FloatingActionButton from "../../components/floating-action-button/FloatingActionButton";
 import { useSectionsStore } from "../../stores/sections-store-provider";
+import FloatingActionButton from "../floating-action-button/FloatingActionButton";
 
 export const ScrollUpButton = () => {
   const [pageIndex, setPageIndex] = useSectionsStore(
