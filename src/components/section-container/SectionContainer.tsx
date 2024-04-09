@@ -34,7 +34,7 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
   const changeSectionIndex = (index: number) => {
     setCurrentSectionIndex(index);
     const nextHash = sections[index].hash;
-    router.replace(`./${nextHash}`, { scroll: false });
+    router.replace(`${nextHash}`, { scroll: false });
   };
 
   useEffect(() => {
