@@ -42,7 +42,7 @@ export function Profile() {
           <div>
             <div className="text-slate-800 dark:text-slate-200 font-bold text-xl mb-2">Education</div>
             <IconList className="space-y-0.5 break-keep">
-              <IconList.Item icon={faGraduationCap}>숭실대학교 4학년 졸업</IconList.Item>
+              <IconList.Item icon={faGraduationCap}>숭실대학교 졸업</IconList.Item>
               <IconList.Item icon={faGraduationCap}>선린인터넷고등학교 졸업</IconList.Item>
               <IconList.Item icon={faGraduationCap}>Kunming International Academy & 언주중학교 졸업</IconList.Item>
             </IconList>
