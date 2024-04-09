@@ -17,9 +17,9 @@ import { ProfileHeader } from "../profile-header/ProfileHeader";
 export function Profile() {
   return (
     <Section>
-      <Card className="grid lg:grid-cols-[repeat(2,1fr)] p-6 lg:p-0 lg:pr-16 dark:divide-slate-600">
+      <Card className="grid lg:grid-cols-[1fr,1fr] px-6 py-8 lg:p-0 lg:pr-16 dark:divide-slate-600">
         <ProfileHeader />
-        <div className="grid lg:grid-cols-[18rem_18rem] content-center gap-8">
+        <div className="grid sm:grid-cols-[18rem_18rem] sm:justify-around content-center gap-8">
           <div>
             <div className="text-slate-800 dark:text-slate-200 font-bold text-xl mb-2">Info</div>
             <IconList className="space-y-0.5 break-keep">

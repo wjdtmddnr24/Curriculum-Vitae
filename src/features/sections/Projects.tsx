@@ -8,7 +8,7 @@ import { Section } from "../../components/section-container/Section";
 export function Projects() {
   return (
     <Section>
-      <Card className="p-6 lg:p-10">
+      <Card className="px-6 py-8 lg:p-10">
         <GradientTypography as="h1" className="w-max text-3xl font-bold mb-8">
           Projects
         </GradientTypography>
