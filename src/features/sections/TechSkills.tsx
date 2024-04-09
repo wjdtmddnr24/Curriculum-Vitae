@@ -1,14 +1,15 @@
 import Card from "../../components/card/Card";
+import GradientTypography from "../../components/gradient-typography/GradientTypography";
 
 export function TechSkills() {
   return (
     <Card className="p-6 lg:p-10">
-      <div className="text-2xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold">
+      <GradientTypography as="header" className="w-max text-2xl font-bold">
         Tech Skills
-      </div>
+      </GradientTypography>
       <div className="grid sm:grid-cols-[auto_auto] md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-[repeat(2,minmax(12rem,auto))] gap-10 mt-10">
         <div>
-          <div className="text-xl text-slate-800 dark:text-slate-200 font-bold mb-2 w-max">General</div>
+          <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">General</div>
           <ul>
             {/* ETC */}
             <li>Algorithm & Problem Solving</li>
@@ -23,7 +24,7 @@ export function TechSkills() {
           </ul>
         </div>
         <div>
-          <div className="text-xl text-slate-800 dark:text-slate-200 font-bold mb-2 w-max">Program Languages</div>
+          <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">Program Languages</div>
           <ul>
             <li>JavaScript</li>
             <li>TypeScript</li>
@@ -33,7 +34,7 @@ export function TechSkills() {
           </ul>
         </div>
         <div>
-          <div className="text-xl text-slate-800 dark:text-slate-200 font-bold mb-2 w-max">Web Frontend</div>
+          <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">Web Frontend</div>
           <ul>
             <li>HTML5</li>
             <li>React, NextJS</li>
@@ -46,7 +47,7 @@ export function TechSkills() {
           </ul>
         </div>
         <div>
-          <div className="text-xl text-slate-800 dark:text-slate-200 font-bold mb-2 w-max">Backend</div>
+          <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">Backend</div>
           <ul>
             <li>NodeJS</li>
             <li>ExpressJS, NestJS</li>
@@ -57,7 +58,7 @@ export function TechSkills() {
           </ul>
         </div>
         <div>
-          <div className="text-xl text-slate-800 dark:text-slate-200 font-bold mb-2 w-max">Database</div>
+          <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">Database</div>
           <ul>
             <li>MySQL</li>
             <li>PostgreSQL</li>
@@ -66,7 +67,7 @@ export function TechSkills() {
           </ul>
         </div>
         <div>
-          <div className="text-xl text-slate-800 dark:text-slate-200 font-bold mb-2 w-max">DevOps</div>
+          <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">DevOps</div>
           <ul>
             <li>Docker</li>
             <li>Kubernetes</li>
@@ -76,7 +77,7 @@ export function TechSkills() {
           </ul>
         </div>
         <div>
-          <div className="text-xl text-slate-800 dark:text-slate-200 font-bold mb-2 w-max">Mobile</div>
+          <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">Mobile</div>
           <ul>
             <li>Flutter</li>
             <li>Android(Java)</li>

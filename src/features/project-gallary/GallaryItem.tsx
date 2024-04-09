@@ -17,8 +17,8 @@ const GallaryItem = ({ title, year, description, imageURL, techs }: GallaryItemP
   return (
     <Link href="#" className="" draggable={false}>
       <div className="flex mb-2 gap-2">
-        <div className="grid">
-          <GradientTypography className="text-xl font-bold truncate">{title}</GradientTypography>
+        <div className="grid overflow-hidden">
+          <GradientTypography className="w-max text-xl font-bold truncate">{title}</GradientTypography>
           <div className="text-xs truncate">{description}</div>
         </div>
         <div className="ml-auto text-sm self-center shrink-0 mx-2 flex gap-1 items-center">

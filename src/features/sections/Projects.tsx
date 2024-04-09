@@ -2,13 +2,14 @@ import Card from "../../components/card/Card";
 import ProjectGallary from "../project-gallary/ProjectGallary";
 import captainHookPic from "../../../public/captain_hook.png";
 import portfolioPic from "../../../public/portfolio_combined_compressed.png";
+import GradientTypography from "../../components/gradient-typography/GradientTypography";
 
 export function Projects() {
   return (
     <Card className="p-6 lg:p-10">
-      <div className="text-2xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold mb-8">
+      <GradientTypography as="header" className="w-max text-2xl font-bold mb-8">
         Projects
-      </div>
+      </GradientTypography>
       <ProjectGallary>
         <ProjectGallary.Item
           title="Portfolio"
