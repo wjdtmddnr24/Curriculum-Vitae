@@ -2,6 +2,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import GradientTypography from "../../components/gradient-typography/GradientTypography";
 
 interface GallaryItemProps {
   title: string;
@@ -17,9 +18,7 @@ const GallaryItem = ({ title, year, description, imageURL, techs }: GallaryItemP
     <Link href="#" className="" draggable={false}>
       <div className="flex mb-2 gap-2">
         <div className="grid">
-          <div className="text-xl text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-500 dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 font-bold truncate">
-            {title}
-          </div>
+          <GradientTypography className="text-xl font-bold truncate">{title}</GradientTypography>
           <div className="text-xs truncate">{description}</div>
         </div>
         <div className="ml-auto text-sm self-center shrink-0 mx-2 flex gap-1 items-center">
