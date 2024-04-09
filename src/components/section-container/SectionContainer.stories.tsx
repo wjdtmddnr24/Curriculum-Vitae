@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Awards } from "../../features/sections/Awards";
-import { Profile } from "../../features/sections/Profile";
+import { Profile } from "../../features/profile/Profile";
 import { Projects } from "../../features/sections/Projects";
 import { TechSkills } from "../../features/sections/TechSkills";
 import { SectionsStoreProvider } from "../../stores/sections-store-provider";

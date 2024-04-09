@@ -2,7 +2,7 @@
 
 import { SectionContainer, type SectionInfo } from "../../components/section-container/SectionContainer";
 import { Awards } from "../sections/Awards";
-import { Profile } from "../sections/Profile";
+import { Profile } from "../profile/Profile";
 import { Projects } from "../sections/Projects";
 import { TechSkills } from "../sections/TechSkills";
 

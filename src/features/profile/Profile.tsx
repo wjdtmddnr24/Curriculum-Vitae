@@ -1,3 +1,4 @@
+import { faFacebook, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import {
   faCalendar,
   faChalkboardTeacher,
@@ -7,18 +8,69 @@ import {
   faIdCard,
   faJetFighterUp,
   faLocationDot,
+  faRocket,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import Link from "next/link";
+import profilePic from "../../../public/profile.png";
 import Card from "../../components/card/Card";
+import GradientTypography from "../../components/gradient-typography/GradientTypography";
 import { IconList } from "../../components/icon-list/IconList";
 import { Section } from "../../components/section-container/Section";
 import { getAge } from "../../utils/getAge";
-import { ProfileHeader } from "../profile-header/ProfileHeader";
 
 export function Profile() {
   return (
     <Section>
       <Card className="grid lg:grid-cols-[1fr,1fr] px-6 py-8 lg:p-0 lg:pr-16 dark:divide-slate-600">
-        <ProfileHeader />
+        <div className="w-max flex flex-col items-center justify-center justify-self-center py-20 lg:py-0">
+          <Image
+            className="z-10 size-52 rounded-full object-cover self-center justify-self-center"
+            draggable={false}
+            src={profilePic}
+            alt="Profile Image"
+            priority
+          />
+          <div className="w-full mt-12 rounded-b justify-self-center flex flex-col items-center justify-center">
+            <div className="text-slate-800 dark:text-slate-200 text-3xl mb-2 font-semibold">정승욱</div>
+            <GradientTypography className="text-xl mb-1 font-bold">소프트웨어 엔지니어</GradientTypography>
+            <div className="flex gap-2 text-slate-600 dark:text-slate-300 text-xl">
+              <Link
+                href="https://github.com/wjdtmddnr24"
+                className="hover:text-slate-800 dark:hover:text-slate-100 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </Link>
+              <Link
+                href="https://www.facebook.com/wjdtmddnr24"
+                className="hover:text-slate-800 dark:hover:text-slate-100 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faFacebook} />
+              </Link>
+              <Link
+                href="https://www.rocketpunch.com/@cindyjack369"
+                className="hover:text-slate-800 dark:hover:text-slate-100 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faRocket} className="pt-1" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/wjdtmddnr24/"
+                className="hover:text-slate-800 dark:hover:text-slate-100 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faLinkedin} />
+              </Link>
+            </div>
+          </div>
+        </div>
         <div className="grid sm:grid-cols-[18rem_18rem] sm:justify-around content-center gap-8">
           <div>
             <div className="text-slate-800 dark:text-slate-200 font-bold text-xl mb-2">Info</div>
