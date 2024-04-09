@@ -2,14 +2,14 @@ import { ReactNode } from "react";
 
 import GallaryItem from "./GallaryItem";
 
-interface ProjectGallaryProps {
+interface GallaryProps {
   children: ReactNode;
 }
 
-const ProjectGallary = ({ children }: ProjectGallaryProps) => {
+const Gallary = ({ children }: GallaryProps) => {
   return <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center gap-4">{children}</div>;
 };
 
-ProjectGallary.Item = GallaryItem;
+Gallary.Item = GallaryItem;
 
-export default ProjectGallary;
+export default Gallary;
