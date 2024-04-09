@@ -11,7 +11,9 @@ export function TechSkills() {
         </GradientTypography>
         <div className="grid sm:grid-cols-[auto_auto] md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-[repeat(2,minmax(12rem,auto))] gap-10">
           <div>
-            <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">General</div>
+            <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+              General
+            </GradientTypography>
             <ul>
               {/* ETC */}
               <li>Algorithm & Problem Solving</li>
@@ -26,7 +28,9 @@ export function TechSkills() {
             </ul>
           </div>
           <div>
-            <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">Program Languages</div>
+            <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+              Program Languages
+            </GradientTypography>
             <ul>
               <li>JavaScript</li>
               <li>TypeScript</li>
@@ -36,7 +40,9 @@ export function TechSkills() {
             </ul>
           </div>
           <div>
-            <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">Web Frontend</div>
+            <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+              Web Frontend
+            </GradientTypography>
             <ul>
               <li>HTML5</li>
               <li>React, NextJS</li>
@@ -49,7 +55,9 @@ export function TechSkills() {
             </ul>
           </div>
           <div>
-            <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">Backend</div>
+            <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+              Backend
+            </GradientTypography>
             <ul>
               <li>NodeJS</li>
               <li>ExpressJS, NestJS</li>
@@ -60,7 +68,9 @@ export function TechSkills() {
             </ul>
           </div>
           <div>
-            <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">Database</div>
+            <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+              Database
+            </GradientTypography>
             <ul>
               <li>MySQL</li>
               <li>PostgreSQL</li>
@@ -69,7 +79,9 @@ export function TechSkills() {
             </ul>
           </div>
           <div>
-            <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">DevOps</div>
+            <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+              DevOps
+            </GradientTypography>
             <ul>
               <li>Docker</li>
               <li>Kubernetes</li>
@@ -79,7 +91,9 @@ export function TechSkills() {
             </ul>
           </div>
           <div>
-            <div className="w-max text-xl text-slate-800 dark:text-slate-200 font-bold mb-2">Mobile</div>
+            <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+              Mobile
+            </GradientTypography>
             <ul>
               <li>Flutter</li>
               <li>Android(Java)</li>
