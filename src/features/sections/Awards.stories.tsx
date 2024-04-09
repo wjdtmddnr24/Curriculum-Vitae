@@ -10,8 +10,5 @@ export default meta;
 type Story = StoryObj<typeof Awards>;
 
 export const Default: Story = {
-  parameters: {
-    layout: "fullscreen",
-  },
   render: () => <Awards />,
 };
