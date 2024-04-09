@@ -1,17 +1,16 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, type WheelEvent } from "react";
+import { Fragment, ReactNode, useEffect, useRef, type WheelEvent } from "react";
 import { useShallow } from "zustand/react/shallow";
 import { MobileWidthThreshold, useWindowWidth } from "../../hooks/useWindowWidth";
 import { useSectionsStore } from "../../stores/sections-store-provider";
 import NamedIndex from "../named-index/NamedIndex";
 import { ScrollDownIndicator } from "../scroll-down-indicator/ScrollDownIndicator";
-import { Section } from "./Section";
 
 export interface SectionInfo {
   title: string;
-  Component: React.ReactNode;
+  Component: ReactNode;
   hash: string;
 }
 
@@ -88,7 +87,7 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
       {isMobile ? (
         <div>
           {sections.map(({ Component, title }) => (
-            <Section key={title}>{Component}</Section>
+            <Fragment key={title}>{Component}</Fragment>
           ))}
         </div>
       ) : (
@@ -99,9 +98,9 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
               style={{ transform: `translateY(${currentSectionIndex * -100}vh)` }}
             >
               {sections.map(({ Component, title }) => (
-                <Section key={title} className="h-screen flex items-center justify-center">
+                <div key={title} className="h-screen flex items-center justify-center">
                   {Component}
-                </Section>
+                </div>
               ))}
             </div>
           </div>
