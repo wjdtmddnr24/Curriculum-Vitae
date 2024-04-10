@@ -25,18 +25,7 @@ export function TechSkills() {
             <li>Intellij IDEA Series</li>
           </ul>
         </div>
-        <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
-            Languages
-          </GradientTypography>
-          <ul>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>C, C++</li>
-            <li>Java</li>
-            <li>Dart</li>
-          </ul>
-        </div>
+
         <div>
           <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
             Web Frontend
@@ -95,6 +84,18 @@ export function TechSkills() {
           <ul>
             <li>Flutter</li>
             <li>Android(Java)</li>
+          </ul>
+        </div>
+        <div>
+          <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+            Languages
+          </GradientTypography>
+          <ul>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>C, C++</li>
+            <li>Java</li>
+            <li>Dart</li>
           </ul>
         </div>
       </div>
