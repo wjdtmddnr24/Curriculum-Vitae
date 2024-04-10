@@ -1,5 +1,8 @@
 import SectionCard from "@components/section-card/SectionCard";
 import GradientTypography from "@components/gradient-typography/GradientTypography";
+import TitledList from "../../titled-list/TitledList";
+
+const { Title, List, Item } = TitledList;
 
 export function TechSkills() {
   return (
@@ -8,96 +11,84 @@ export function TechSkills() {
         Tech Skills
       </GradientTypography>
       <div className="grid sm:grid-cols-[auto_auto] md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-[repeat(2,minmax(12rem,auto))] gap-10">
-        <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
-            General
-          </GradientTypography>
-          <ul>
-            {/* ETC */}
-            <li>Algorithm & Problem Solving</li>
-            {/* Dev */}
-            <li>Bash, Zsh</li>
-            <li>Git</li>
-            {/* Editor & IDE */}
-            <li>Visual Studio</li>
-            <li>Visual Studio Code</li>
-            <li>Vim</li>
-            <li>Intellij IDEA Series</li>
-          </ul>
-        </div>
+        <TitledList>
+          <Title>General</Title>
+          <List>
+            <Item>Algorithm & Problem Solving</Item>
+            <Item>Bash, Zsh</Item>
+            <Item>Git</Item>
+            <Item>Visual Studio</Item>
+            <Item>Visual Studio Code</Item>
+            <Item>Vim</Item>
+            <Item>Intellij IDEA Series</Item>
+          </List>
+        </TitledList>
 
-        <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
-            Web Frontend
-          </GradientTypography>
-          <ul>
-            <li>HTML5</li>
-            <li>React, NextJS</li>
-            <li>CSS, SCSS</li>
-            <li>Tailwind CSS</li>
-            <li>Styled Components</li>
-            <li>Ant Design</li>
-            <li>Redux</li>
-            <li>Zustand</li>
-          </ul>
-        </div>
-        <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
-            Backend
-          </GradientTypography>
-          <ul>
-            <li>NodeJS</li>
-            <li>ExpressJS, NestJS</li>
-            <li>TypeORM</li>
-            <li>Socket.IO</li>
-            <li>RabbitMQ</li>
-            <li>Amazon Web Services</li>
-          </ul>
-        </div>
-        <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
-            Database
-          </GradientTypography>
-          <ul>
-            <li>MySQL</li>
-            <li>PostgreSQL</li>
-            <li>MongoDB</li>
-            <li>Redis</li>
-          </ul>
-        </div>
-        <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
-            DevOps
-          </GradientTypography>
-          <ul>
-            <li>Docker</li>
-            <li>Kubernetes</li>
-            <li>Helm Charts</li>
-            <li>Argo CD</li>
-            <li>Gitlab CI</li>
-          </ul>
-        </div>
-        <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
-            Mobile
-          </GradientTypography>
-          <ul>
-            <li>Flutter</li>
-            <li>Android(Java)</li>
-          </ul>
-        </div>
-        <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
-            Languages
-          </GradientTypography>
-          <ul>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>C, C++</li>
-            <li>Java</li>
-            <li>Dart</li>
-          </ul>
-        </div>
+        <TitledList>
+          <Title>Web Frontend</Title>
+          <List>
+            <Item>HTML5</Item>
+            <Item>React, NextJS</Item>
+            <Item>CSS, SCSS</Item>
+            <Item>Tailwind CSS</Item>
+            <Item>Styled Components</Item>
+            <Item>Ant Design</Item>
+            <Item>Redux</Item>
+            <Item>Zustand</Item>
+          </List>
+        </TitledList>
+
+        <TitledList>
+          <Title>Backend</Title>
+          <List>
+            <Item>NodeJS</Item>
+            <Item>ExpressJS, NestJS</Item>
+            <Item>TypeORM</Item>
+            <Item>Socket.IO</Item>
+            <Item>RabbitMQ</Item>
+            <Item>Amazon Web Services</Item>
+          </List>
+        </TitledList>
+
+        <TitledList>
+          <Title>Database</Title>
+          <List>
+            <Item>MySQL</Item>
+            <Item>PostgreSQL</Item>
+            <Item>MongoDB</Item>
+            <Item>Redis</Item>
+          </List>
+        </TitledList>
+
+        <TitledList>
+          <Title>DevOps</Title>
+          <List>
+            <Item>Docker</Item>
+            <Item>Kubernetes</Item>
+            <Item>Helm Charts</Item>
+            <Item>Argo CD</Item>
+            <Item>Gitlab CI</Item>
+          </List>
+        </TitledList>
+
+        <TitledList>
+          <Title>Mobile</Title>
+          <List>
+            <Item>Flutter</Item>
+            <Item>Android(Java)</Item>
+          </List>
+        </TitledList>
+
+        <TitledList>
+          <Title>Languages</Title>
+          <List>
+            <Item>JavaScript</Item>
+            <Item>TypeScript</Item>
+            <Item>C, C++</Item>
+            <Item>Java</Item>
+            <Item>Dart</Item>
+          </List>
+        </TitledList>
       </div>
     </SectionCard>
   );
