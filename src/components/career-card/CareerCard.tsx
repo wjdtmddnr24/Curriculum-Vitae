@@ -33,7 +33,7 @@ const CareerCard = ({ time, title, techs, tags }: CareerCardProps) => {
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="text-xs text-slate-50 dark:text-slate-300 font-semibold px-1 py-0.5 bg-slate-500 dark:bg-slate-600 rounded-md"
+              className="text-xs text-slate-50 dark:text-slate-300 font-semibold px-1.5 py-0.5 bg-slate-500 dark:bg-slate-600 rounded-md"
             >
               {tag}
             </span>
