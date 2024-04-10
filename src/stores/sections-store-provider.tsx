@@ -5,7 +5,6 @@ import { StoreApi, useStore } from "zustand";
 
 import { SectionsState, SectionsStore, createSectionsStore } from "./sections-store";
 
-
 export const SectionsStoreContext = createContext<StoreApi<SectionsStore> | null>(null);
 
 export interface SedtionsStoreProviderProps {

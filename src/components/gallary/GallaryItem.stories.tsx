@@ -4,8 +4,6 @@ import GallaryItem from "./GallaryItem";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-
-
 const meta: Meta<typeof GallaryItem> = {
   component: GallaryItem,
   decorators: (Story) => (

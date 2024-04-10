@@ -14,7 +14,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 
-
 import GradientTypography from "@components/gradient-typography/GradientTypography";
 import { IconList } from "@components/icon-list/IconList";
 import SectionCard from "@components/section-card/SectionCard";

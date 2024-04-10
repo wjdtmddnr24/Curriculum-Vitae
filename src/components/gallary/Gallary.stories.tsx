@@ -1,5 +1,3 @@
-
-
 import camtactPic from "@public/camtact.png";
 import captainHookPic from "@public/captain_hook.png";
 import portfolioPic from "@public/portfolio_combined_compressed.png";

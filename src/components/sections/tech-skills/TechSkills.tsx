@@ -1,4 +1,3 @@
-
 import GradientTypography from "@components/gradient-typography/GradientTypography";
 import SectionCard from "@components/section-card/SectionCard";
 

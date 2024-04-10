@@ -16,7 +16,10 @@ const fullConfig = resolveConfig(tailwindConfig);
 
 const screens: Screen[] = _.chain(Object.entries(fullConfig.theme.screens))
   .filter(([k, v]) => screenVariant.findIndex((v) => v === k) !== -1 && _.isNumber(parseInt(v)))
-  .map<Screen>(([k, v]) => ({ variant: k as ScreenVariant, width: parseInt(v) }))
+  .map<Screen>(([k, v]) => ({
+    variant: k as ScreenVariant,
+    width: parseInt(v),
+  }))
   .sort(({ width: v1 }, { width: v2 }) => v1 - v2)
   .reverse()
   .value();

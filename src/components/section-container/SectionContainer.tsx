@@ -96,7 +96,9 @@ export const SectionContainer = ({ sections }: SectionContainerProps) => {
           <div className="h-screen overflow-hidden" onWheel={onWheel}>
             <div
               className="transition-transform ease-in-out duration-700"
-              style={{ transform: `translateY(${currentSectionIndex * -100}vh)` }}
+              style={{
+                transform: `translateY(${currentSectionIndex * -100}vh)`,
+              }}
             >
               {sections.map(({ Component, title }) => (
                 <div key={title} className="h-screen flex items-center justify-center">
