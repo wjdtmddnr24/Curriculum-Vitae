@@ -1,5 +1,7 @@
-import SectionCard from "@components/section-card/SectionCard";
+
 import GradientTypography from "@components/gradient-typography/GradientTypography";
+import SectionCard from "@components/section-card/SectionCard";
+
 import TitledList from "../../titled-list/TitledList";
 
 const { Title, List, Item } = TitledList;

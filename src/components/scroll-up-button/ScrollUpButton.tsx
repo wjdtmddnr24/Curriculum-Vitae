@@ -1,6 +1,7 @@
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useShallow } from "zustand/react/shallow";
+
 import { useSectionsStore } from "../../stores/sections-store-provider";
 import FloatingActionButton from "../floating-action-button/FloatingActionButton";
 

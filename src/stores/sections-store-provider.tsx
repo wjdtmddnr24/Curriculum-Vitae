@@ -1,8 +1,10 @@
 "use client";
 
-import { createContext, ReactNode, useContext, useRef } from "react";
+import { ReactNode, createContext, useContext, useRef } from "react";
 import { StoreApi, useStore } from "zustand";
-import { createSectionsStore, SectionsState, SectionsStore } from "./sections-store";
+
+import { SectionsState, SectionsStore, createSectionsStore } from "./sections-store";
+
 
 export const SectionsStoreContext = createContext<StoreApi<SectionsStore> | null>(null);
 

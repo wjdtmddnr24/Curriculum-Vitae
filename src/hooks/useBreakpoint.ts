@@ -3,6 +3,7 @@
 import _ from "lodash";
 import { useEffect, useState } from "react";
 import resolveConfig from "tailwindcss/resolveConfig";
+
 import tailwindConfig from "../../tailwind.config.js";
 
 type ScreenVariant = "sm" | "md" | "lg" | "xl" | "2xl";

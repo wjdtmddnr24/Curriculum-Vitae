@@ -1,6 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react";
 import portfolioPic from "@public/portfolio_combined_compressed.png";
+
 import GallaryItem from "./GallaryItem";
+
+import type { Meta, StoryObj } from "@storybook/react";
+
+
 
 const meta: Meta<typeof GallaryItem> = {
   component: GallaryItem,

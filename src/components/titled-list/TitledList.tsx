@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { ReactNode } from "react";
+
 import GradientTypography from "../gradient-typography/GradientTypography";
 
 const TitledList = ({ className, children }: { className?: string; children: ReactNode }) => {

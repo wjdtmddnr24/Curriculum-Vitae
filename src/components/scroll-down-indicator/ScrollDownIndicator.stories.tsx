@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { useEffect } from "react";
-import { SectionsStoreProvider, useSectionsStore } from "../../stores/sections-store-provider";
+
 import { ScrollDownIndicator } from "./ScrollDownIndicator";
+import { SectionsStoreProvider, useSectionsStore } from "../../stores/sections-store-provider";
 
 const meta: Meta<typeof ScrollDownIndicator> = {
   component: ScrollDownIndicator,

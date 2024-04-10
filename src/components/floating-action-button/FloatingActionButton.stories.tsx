@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+
 import FloatingActionButton from "./FloatingActionButton";
 
 const meta: Meta<typeof FloatingActionButton> = {

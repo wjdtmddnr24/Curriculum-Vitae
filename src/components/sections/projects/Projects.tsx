@@ -1,10 +1,10 @@
+import Gallary from "@components/gallary/Gallary";
+import GradientTypography from "@components/gradient-typography/GradientTypography";
+import SectionCard from "@components/section-card/SectionCard";
 import camtactPic from "@public/camtact.png";
 import captainHookPic from "@public/captain_hook.png";
 import portfolioPic from "@public/portfolio_combined_compressed.png";
 import weboxLogoPic from "@public/webox_logo.png";
-import SectionCard from "@components/section-card/SectionCard";
-import Gallary from "@components/gallary/Gallary";
-import GradientTypography from "@components/gradient-typography/GradientTypography";
 
 export function Projects() {
   return (

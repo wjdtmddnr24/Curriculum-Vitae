@@ -1,4 +1,5 @@
 import { Viewport } from "next";
+
 import { SectionContainer, SectionInfo } from "@/components/section-container/SectionContainer";
 import { Awards } from "@/components/sections/awards/Awards";
 import { Profile } from "@/components/sections/profile/Profile";

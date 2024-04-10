@@ -1,9 +1,13 @@
-import type { Meta, StoryObj } from "@storybook/react";
+
+
 import camtactPic from "@public/camtact.png";
 import captainHookPic from "@public/captain_hook.png";
 import portfolioPic from "@public/portfolio_combined_compressed.png";
 import weboxLogoPic from "@public/webox_logo.png";
+
 import Gallary from "./Gallary";
+
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Gallary> = {
   component: Gallary,

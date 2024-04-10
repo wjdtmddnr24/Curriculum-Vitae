@@ -2,6 +2,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+
 import GradientTypography from "@components/gradient-typography/GradientTypography";
 
 interface GallaryItemProps {

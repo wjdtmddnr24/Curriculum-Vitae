@@ -1,8 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Fragment, ReactNode, useEffect, useRef, type WheelEvent } from "react";
+import { Fragment, ReactNode, type WheelEvent, useEffect, useRef } from "react";
 import { useShallow } from "zustand/react/shallow";
+
 import { MobileWidthThreshold, useWindowWidth } from "../../hooks/useWindowWidth";
 import { useSectionsStore } from "../../stores/sections-store-provider";
 import NamedIndex from "../named-index/NamedIndex";

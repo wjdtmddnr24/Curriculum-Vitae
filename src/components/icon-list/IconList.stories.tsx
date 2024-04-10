@@ -1,5 +1,6 @@
 import { faBaby, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Meta, StoryObj } from "@storybook/react";
+
 import { IconList } from "./IconList";
 
 const meta: Meta<typeof IconList> = {

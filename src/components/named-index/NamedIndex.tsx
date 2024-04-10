@@ -1,8 +1,9 @@
 "use client";
 
-import { SectionInfo } from "@components/section-container/SectionContainer";
 import classNames from "classnames";
 import { motion } from "framer-motion";
+
+import { SectionInfo } from "@components/section-container/SectionContainer";
 
 interface NamedIndexProps {
   currentIndex: number;

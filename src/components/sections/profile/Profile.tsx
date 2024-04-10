@@ -1,6 +1,3 @@
-import GradientTypography from "@components/gradient-typography/GradientTypography";
-import { IconList } from "@components/icon-list/IconList";
-import SectionCard from "@components/section-card/SectionCard";
 import { faFacebook, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import {
   faCalendar,
@@ -14,9 +11,15 @@ import {
   faRocket,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import profilePic from "@public/profile.png";
 import Image from "next/image";
 import Link from "next/link";
+
+
+import GradientTypography from "@components/gradient-typography/GradientTypography";
+import { IconList } from "@components/icon-list/IconList";
+import SectionCard from "@components/section-card/SectionCard";
+import profilePic from "@public/profile.png";
+
 import { getAge } from "../../../utils/getAge";
 
 export function Profile() {

@@ -4,6 +4,7 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+
 import FloatingActionButton from "@components/floating-action-button/FloatingActionButton";
 
 export const ToggleDarkmodeButton = () => {
