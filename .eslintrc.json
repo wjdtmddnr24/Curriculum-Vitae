@@ -2,5 +2,54 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:storybook/recommended"
-  ]
+  ],
+  "rules": {
+    "no-console": "warn",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": [
+          "none",
+          "all",
+          "multiple",
+          "single"
+        ],
+        "allowSeparatedGroups": false
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "sibling",
+            "parent"
+          ],
+          "index",
+          "object",
+          "type",
+          "unknown"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": false
+        },
+        "warnOnUnassignedImports": true
+      }
+    ]
+  }
 }
