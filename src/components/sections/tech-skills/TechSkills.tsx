@@ -9,7 +9,7 @@ export function TechSkills() {
       </GradientTypography>
       <div className="grid sm:grid-cols-[auto_auto] md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-[repeat(2,minmax(12rem,auto))] gap-10">
         <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
             General
           </GradientTypography>
           <ul>
@@ -27,7 +27,7 @@ export function TechSkills() {
         </div>
 
         <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
             Web Frontend
           </GradientTypography>
           <ul>
@@ -42,7 +42,7 @@ export function TechSkills() {
           </ul>
         </div>
         <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
             Backend
           </GradientTypography>
           <ul>
@@ -55,7 +55,7 @@ export function TechSkills() {
           </ul>
         </div>
         <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
             Database
           </GradientTypography>
           <ul>
@@ -66,7 +66,7 @@ export function TechSkills() {
           </ul>
         </div>
         <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
             DevOps
           </GradientTypography>
           <ul>
@@ -78,7 +78,7 @@ export function TechSkills() {
           </ul>
         </div>
         <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
             Mobile
           </GradientTypography>
           <ul>
@@ -87,7 +87,7 @@ export function TechSkills() {
           </ul>
         </div>
         <div>
-          <GradientTypography as="div" className="w-max text-xl font-bold mb-2">
+          <GradientTypography as="div" className="w-max text-xl font-bold mb-1">
             Languages
           </GradientTypography>
           <ul>
