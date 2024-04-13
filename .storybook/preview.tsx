@@ -6,7 +6,6 @@ import { pretendardFont } from "../src/fonts";
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
     nextjs: {
       appDirectory: true,
     },

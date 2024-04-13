@@ -8,6 +8,7 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
     "@storybook/addon-themes",
+    "@chromatic-com/storybook",
   ],
   framework: {
     name: "@storybook/nextjs",
@@ -22,5 +23,8 @@ const config: StorybookConfig = {
       to: "src/fonts/pretendard",
     },
   ],
+  features: {
+    experimentalRSC: true,
+  },
 };
 export default config;
