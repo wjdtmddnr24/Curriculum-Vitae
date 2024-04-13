@@ -1,17 +1,15 @@
 import classNames from "classnames";
 import { ReactNode } from "react";
 
-import GradientTypography from "../gradient-typography/GradientTypography";
-
 const TitledList = ({ className, children }: { className?: string; children: ReactNode }) => {
   return <div className={className}>{children}</div>;
 };
 
 const Title = ({ className, children }: { className?: string; children: ReactNode }) => {
   return (
-    <GradientTypography as="h1" className={classNames("w-max text-xl font-bold mb-1", className)}>
+    <h1 className={classNames("w-max text-xl font-bold text-slate-800 dark:text-slate-200 mb-1", className)}>
       {children}
-    </GradientTypography>
+    </h1>
   );
 };
 
