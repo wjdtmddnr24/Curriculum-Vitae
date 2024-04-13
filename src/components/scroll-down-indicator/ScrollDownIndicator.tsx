@@ -1,17 +1,29 @@
 "use client";
 
+import { Transition } from "@headlessui/react";
+
 import { useSectionsStore } from "../../stores/sections-store-provider";
 
 export const ScrollDownIndicator = () => {
   const isSettledAtFirstPage = useSectionsStore((state) => state.sectionIndex === 0);
 
-  if (!isSettledAtFirstPage) return null;
+  // if (!isSettledAtFirstPage) return null;
 
   return (
-    <div className={`flex flex-col items-center text-lg text-gray-100 dark:text-gray-300`}>
-      <div>아래에 더 많은 내용이 있어요</div>
-      <ArrowDownIcon />
-    </div>
+    <Transition
+      show={isSettledAtFirstPage}
+      enter="transition delay-300 duration-200"
+      enterFrom="opacity-0 translate-y-1"
+      enterTo="opacity-100 translate-y-0"
+      leave="transition duration-200"
+      leaveFrom="opacity-100 translate-y-0"
+      leaveTo="opacity-0 translate-y-1"
+    >
+      <div className={`flex flex-col items-center text-lg text-gray-100 dark:text-gray-300`}>
+        <div>아래에 더 많은 내용이 있어요</div>
+        <ArrowDownIcon />
+      </div>
+    </Transition>
   );
 };
 
