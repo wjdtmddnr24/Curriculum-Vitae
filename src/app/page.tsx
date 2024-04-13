@@ -5,7 +5,6 @@ import { Awards } from "@/components/sections/awards/Awards";
 import { Profile } from "@/components/sections/profile/Profile";
 import { Projects } from "@/components/sections/projects/Projects";
 import { TechSkills } from "@/components/sections/tech-skills/TechSkills";
-import { ToggleDarkmodeButton } from "@/components/toggle-darkmode-button/ToggleDarkmodeButton";
 
 import { Careers } from "../components/sections/careers/Careers";
 
@@ -51,9 +50,6 @@ export default async function MainPage() {
   return (
     <>
       <SectionContainer sections={sections} />
-      <div className="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 flex flex-col gap-3 rounded-full">
-        <ToggleDarkmodeButton />
-      </div>
     </>
   );
 }
