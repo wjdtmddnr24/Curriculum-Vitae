@@ -17,7 +17,7 @@ const CareerCard = ({ time, title, techs, tags }: CareerCardProps) => {
         icon={faArrowUpRightFromSquare}
       />
       <span className="text-xs text-slate-400 dark:text-slate-400">{time}</span>
-      <h3 className="text-base font-bold mb-1.5">{title}</h3>
+      <h3 className="text-base font-bold text-slate-800 mb-1.5">{title}</h3>
       <div className="flex gap-4">
         <div className="min-h-[2.875rem] flex flex-wrap gap-1.5 items-start">
           {techs.map((tech, index) => (
