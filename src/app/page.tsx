@@ -46,7 +46,7 @@ const sections: SectionInfo[] = [
   },
 ];
 
-export default async function MainPage() {
+export default function MainPage() {
   return (
     <>
       <SectionContainer sections={sections} />
