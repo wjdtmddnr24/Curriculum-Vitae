@@ -21,15 +21,15 @@ export function Projects() {
           href="#"
         />
         <Gallary.Item
-          title="Captain Hook"
-          description="Webhook 기반 알림 서비스"
-          thumbnailURL={captainHookPic}
-          href="#"
-        />
-        <Gallary.Item
           title="SWM Chatbot"
           description="소프트웨어 마에스트로 유저 검색과 멘토링 알림 챗봇"
           thumbnailURL={undefined}
+          href="#"
+        />
+        <Gallary.Item
+          title="Captain Hook"
+          description="Webhook 기반 알림 서비스"
+          thumbnailURL={captainHookPic}
           href="#"
         />
         <Gallary.Item
