@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
-import GradientTypography from "@components/gradient-typography/GradientTypography";
-
 interface GallaryItemProps {
   title: string;
   description: string;
@@ -21,7 +19,7 @@ const GallaryItem = ({ title, href, description, thumbnailURL }: GallaryItemProp
     >
       <div className="flex mb-2 gap-2">
         <div className="grid overflow-hidden">
-          <GradientTypography className="w-max text-xl font-bold truncate">{title}</GradientTypography>
+          <span className="w-max text-xl font-bold text-slate-800 dark:text-slate-200 truncate">{title}</span>
           <div className="text-xs truncate">{description}</div>
         </div>
         <div className="lg:hidden ml-auto text-sm self-center shrink-0 mx-2 flex gap-1 items-center">
