@@ -44,7 +44,7 @@ const ThumbnailHolder = ({
   if (thumbnailURL) {
     return (
       <Image
-        className="w-full aspect-[304/193] bg-slate-300 dark:bg-slate-500 object-cover dark:brightness-95 dark:group-hover:brightness-100 transition-all duration-500 outline outline-1 outline-slate-200 dark:outline-slate-700 rounded-3xl"
+        className="w-full aspect-[304/193] bg-slate-300 dark:bg-slate-500 object-cover dark:brightness-90 dark:group-hover:brightness-100 transition-all duration-500 outline outline-1 outline-slate-200 dark:outline-slate-700 rounded-3xl"
         src={thumbnailURL}
         alt="thmbnail"
         priority
