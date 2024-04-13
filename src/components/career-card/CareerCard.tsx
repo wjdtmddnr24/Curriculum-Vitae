@@ -16,14 +16,14 @@ const CareerCard = ({ time, title, techs, tags }: CareerCardProps) => {
         className="absolute top-4 right-4 text-slate-500 dark:text-slate-300 dark:group-hover:text-slate-200 group-hover:text-slate-600"
         icon={faArrowUpRightFromSquare}
       />
-      <span className="text-xs text-slate-400 dark:text-slate-400">{time}</span>
-      <h3 className="text-base font-bold text-slate-800 mb-1.5">{title}</h3>
+      <span className="text-xs text-slate-600 dark:text-slate-400">{time}</span>
+      <h3 className="text-base font-bold text-slate-800 dark:text-slate-200 mb-1.5">{title}</h3>
       <div className="flex gap-4">
         <div className="min-h-[2.875rem] flex flex-wrap gap-1.5 items-start">
           {techs.map((tech, index) => (
             <span
               key={index}
-              className="text-xs text-slate-500 dark:text-slate-400 w-max h-max px-1.5 py-0.5 border border-slate-500 dark:border-slate-400 rounded-full"
+              className="text-xs w-max h-max px-1.5 py-0.5 border border-slate-700 dark:border-slate-300 rounded-full"
             >
               {tech}
             </span>
