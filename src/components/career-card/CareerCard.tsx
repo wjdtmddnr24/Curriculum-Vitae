@@ -11,12 +11,12 @@ interface CareerCardProps {
 
 const CareerCard = ({ time, title, techs, tags }: CareerCardProps) => {
   return (
-    <div className="p-4 bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 outline outline-1 outline-slate-200 dark:outline-slate-600 rounded-md shadow-sm relative group cursor-pointer">
+    <div className="p-4 bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 outline outline-1 outline-slate-300 dark:outline-slate-700 rounded-md relative group cursor-pointer">
       <FontAwesomeIcon
         className="absolute top-4 right-4 text-slate-500 dark:text-slate-300 dark:group-hover:text-slate-200 group-hover:text-slate-600"
         icon={faArrowUpRightFromSquare}
       />
-      <span className="text-xs text-slate-600 dark:text-slate-400">{time}</span>
+      <div className="text-xs text-slate-600 dark:text-slate-400">{time}</div>
       <h3 className="text-base font-bold text-slate-800 dark:text-slate-200 mb-1.5">{title}</h3>
       <div className="flex gap-4">
         <div className="min-h-[2.875rem] flex flex-wrap gap-1.5 items-start">
