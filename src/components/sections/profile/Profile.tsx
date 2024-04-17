@@ -72,7 +72,7 @@ export function Profile() {
             </div>
           </div>
         </div>
-        <div className="grid sm:grid-cols-[18rem_18rem] sm:justify-around content-center gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-[18rem_18rem] lg:content-center gap-4 lg:gap-8">
           <div>
             <div className="text-slate-800 dark:text-slate-200 font-bold text-xl mb-2">Info</div>
             <IconList className="space-y-0.5 break-keep">
