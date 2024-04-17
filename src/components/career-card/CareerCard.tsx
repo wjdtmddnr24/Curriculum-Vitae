@@ -11,7 +11,7 @@ interface CareerCardProps {
 
 const CareerCard = ({ time, title, techs, tags }: CareerCardProps) => {
   return (
-    <div className="p-4 bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 outline outline-1 outline-slate-300 dark:outline-slate-700 rounded-md relative group cursor-pointer">
+    <div className="p-4 bg-white hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 outline outline-1 outline-slate-300 dark:outline-slate-700 rounded-md relative group cursor-pointer">
       <FontAwesomeIcon
         className="absolute top-4 right-4 text-slate-500 dark:text-slate-300 dark:group-hover:text-slate-200 group-hover:text-slate-600"
         icon={faArrowUpRightFromSquare}
