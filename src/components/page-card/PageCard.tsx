@@ -10,7 +10,7 @@ const PageCard = ({ className, children }: CardProps) => {
   return (
     <div
       className={classNames(
-        "lg:w-[64rem] bg-white dark:bg-slate-800 lg:rounded-3xl lg:shadow-2xl px-6 py-8 lg:p-10 lg:my-[12vh] transition-colors duration-500",
+        "lg:w-[64rem] bg-white dark:bg-slate-800 lg:rounded-3xl lg:shadow-2xl px-6 py-8 lg:p-10 transition-colors duration-500",
         className
       )}
     >
