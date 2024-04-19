@@ -1,16 +1,16 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import WeboxArticle from "./WeboxArticle";
-import ProjectLayout from "../../../layout";
+import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof WeboxArticle> = {
   title: "article/Webox",
   component: WeboxArticle,
   decorators: (Story) => (
     <>
-      <ProjectLayout>
+      <ProjectsLayout>
         <Story />
-      </ProjectLayout>
+      </ProjectsLayout>
     </>
   ),
   parameters: { layout: "fullscreen" },

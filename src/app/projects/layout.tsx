@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import PageCard from "@components/page-card/PageCard";
 
-export default function ProjectLayout({ children }: { children: React.ReactNode }) {
+export default function ProjectsLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex justify-center">
       <PageCard className="lg:my-[12vh]">

@@ -1,16 +1,16 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import PortfolioArticle from "./PortfolioArticle";
-import ProjectLayout from "../../../layout";
+import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof PortfolioArticle> = {
   title: "article/Portfolio",
   component: PortfolioArticle,
   decorators: (Story) => (
     <>
-      <ProjectLayout>
+      <ProjectsLayout>
         <Story />
-      </ProjectLayout>
+      </ProjectsLayout>
     </>
   ),
   parameters: { layout: "fullscreen" },

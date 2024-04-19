@@ -1,16 +1,16 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import TCQRArticle from "./TCQRArticle";
-import ProjectLayout from "../../../layout";
+import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof TCQRArticle> = {
   title: "article/TCQR",
   component: TCQRArticle,
   decorators: (Story) => (
     <>
-      <ProjectLayout>
+      <ProjectsLayout>
         <Story />
-      </ProjectLayout>
+      </ProjectsLayout>
     </>
   ),
   parameters: { layout: "fullscreen" },

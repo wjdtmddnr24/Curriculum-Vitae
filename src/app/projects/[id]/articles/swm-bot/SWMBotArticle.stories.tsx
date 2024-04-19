@@ -1,16 +1,16 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import SWMBotArticle from "./SWMBotArticle";
-import ProjectLayout from "../../../layout";
+import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof SWMBotArticle> = {
   title: "article/SWMBot",
   component: SWMBotArticle,
   decorators: (Story) => (
     <>
-      <ProjectLayout>
+      <ProjectsLayout>
         <Story />
-      </ProjectLayout>
+      </ProjectsLayout>
     </>
   ),
   parameters: { layout: "fullscreen" },

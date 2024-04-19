@@ -1,16 +1,16 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import CaptainHookArticle from "./CaptainHookArticle";
-import ProjectLayout from "../../../layout";
+import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof CaptainHookArticle> = {
   title: "article/CaptianHook",
   component: CaptainHookArticle,
   decorators: (Story) => (
     <>
-      <ProjectLayout>
+      <ProjectsLayout>
         <Story />
-      </ProjectLayout>
+      </ProjectsLayout>
     </>
   ),
   parameters: { layout: "fullscreen" },
