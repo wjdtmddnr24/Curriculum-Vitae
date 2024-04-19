@@ -3,6 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Projects } from "./Projects";
 
 const meta: Meta<typeof Projects> = {
+  title: "sections/Projects",
   component: Projects,
 };
 

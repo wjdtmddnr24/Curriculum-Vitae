@@ -3,6 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { TechSkills } from "./TechSkills";
 
 const meta: Meta<typeof TechSkills> = {
+  title: "sections/TechSkills",
   component: TechSkills,
 };
 
