@@ -16,7 +16,7 @@ export function Projects() {
         <Gallary.Item title="Portfolio" description="포트폴리오 웹페이지" thumbnailURL={portfolioPic} href="#" />
         <Gallary.Item
           title="Webox"
-          description="클라우드 기반 블랙박스 애플리케이션"
+          description="퍼스널 모빌리티를 위한 클라우드 기반 블랙박스 애플리케이션"
           thumbnailURL={weboxLogoPic}
           href="#"
         />
