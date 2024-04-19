@@ -13,6 +13,6 @@ const Header = ({ className, children }: HeaderProps) => {
 };
 
 Header.Title = Title;
-Header.Subtitle = SubTitle;
+Header.SubTitle = SubTitle;
 
 export default Header;
