@@ -10,11 +10,12 @@ import profilePic from "@public/profile.png";
 import { Careers } from "../components/sections/careers/Careers";
 
 export const metadata: Metadata = {
-  title: "정승욱 - 소프트웨어 엔지니어",
-  description: "Web Portfolio for introducing 정승욱",
+  title: "Portfolio: 정승욱",
+  description: "Web Portfolio introducing 정승욱",
+  metadataBase: new URL("https://me.chocola.moe"),
   openGraph: {
-    title: "정승욱 - 소프트웨어 엔지니어",
-    description: "Web Portfolio for introducing 정승욱",
+    title: "Portfolio: 정승욱",
+    description: "Web Portfolio introducing 정승욱",
     url: "https://me.chocola.moe",
     locale: "ko_KR",
     type: "website",
