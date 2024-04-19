@@ -34,7 +34,7 @@ export function Profile() {
             priority
           />
           <div className="justify-self-center flex flex-col items-center justify-center">
-            <div className="text-slate-800 dark:text-slate-200 text-3xl mb-2 font-semibold">정승욱</div>
+            <h1 className="text-slate-800 dark:text-slate-200 text-3xl mb-2 font-semibold">정승욱</h1>
             <GradientTypography className="text-xl mb-1 font-bold">소프트웨어 엔지니어</GradientTypography>
             <div className="flex gap-2 text-slate-600 dark:text-slate-300 text-xl">
               <Link
