@@ -1,14 +1,12 @@
 import classNames from "classnames";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import NextImage from "next/image";
+import { ComponentProps } from "react";
 
 export type ImageSize = "small" | "medium" | "large" | "full";
 
-interface ImageProps {
+interface ImageProps extends ComponentProps<typeof NextImage> {
   className?: string;
   size?: ImageSize;
-  src: string | StaticImport;
-  alt: string;
   caption?: React.ReactNode;
 }
 
@@ -19,14 +17,13 @@ const sizeClassNames = {
   full: "w-full",
 };
 
-const Image = ({ alt, caption, className, size = "medium", src }: ImageProps) => {
+const Image = ({ caption, className, size = "medium", ...props }: ImageProps) => {
   return (
     <div className={classNames("mb-8 align-middle text-center", className)}>
       <NextImage
         className={classNames("mx-auto border border-1 border-slate-500 mb-2", sizeClassNames[size])}
-        src={src}
-        alt={alt}
         draggable={false}
+        {...props}
       />
       {caption && <span>{caption}</span>}
     </div>
