@@ -1,5 +1,6 @@
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 interface CareerCardProps {
@@ -7,11 +8,15 @@ interface CareerCardProps {
   title: ReactNode;
   techs: ReactNode[];
   tags: ReactNode[];
+  href: string;
 }
 
-const CareerCard = ({ time, title, techs, tags }: CareerCardProps) => {
+const CareerCard = ({ time, title, techs, tags, href }: CareerCardProps) => {
   return (
-    <div className="p-4 bg-white hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 outline outline-1 outline-slate-300 dark:outline-slate-700 rounded-md relative group cursor-pointer">
+    <Link
+      href={href}
+      className="p-4 bg-white hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 outline outline-1 outline-slate-300 dark:outline-slate-700 rounded-md relative group cursor-pointer"
+    >
       <FontAwesomeIcon
         className="absolute text-sm top-4 right-4 text-slate-500 dark:text-slate-300 dark:group-hover:text-slate-200 group-hover:text-slate-600"
         icon={faArrowUpRightFromSquare}
@@ -40,7 +45,7 @@ const CareerCard = ({ time, title, techs, tags }: CareerCardProps) => {
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
