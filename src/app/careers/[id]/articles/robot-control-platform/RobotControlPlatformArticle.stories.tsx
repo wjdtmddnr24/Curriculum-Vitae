@@ -4,7 +4,7 @@ import RobotControlPlatformArticle from "./RobotControlPlatformArticle";
 import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof RobotControlPlatformArticle> = {
-  title: "article/RobotControlPlatform",
+  title: "careers/article/RobotControlPlatform",
   component: RobotControlPlatformArticle,
   decorators: (Story) => (
     <>

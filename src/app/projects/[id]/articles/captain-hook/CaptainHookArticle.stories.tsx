@@ -4,7 +4,7 @@ import CaptainHookArticle from "./CaptainHookArticle";
 import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof CaptainHookArticle> = {
-  title: "article/CaptianHook",
+  title: "projects/article/CaptianHook",
   component: CaptainHookArticle,
   decorators: (Story) => (
     <>

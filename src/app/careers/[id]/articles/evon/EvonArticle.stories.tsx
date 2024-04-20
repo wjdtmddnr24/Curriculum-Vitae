@@ -4,7 +4,7 @@ import EvonArticle from "./EvonArticle";
 import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof EvonArticle> = {
-  title: "article/Evon",
+  title: "careers/article/Evon",
   component: EvonArticle,
   decorators: (Story) => (
     <>

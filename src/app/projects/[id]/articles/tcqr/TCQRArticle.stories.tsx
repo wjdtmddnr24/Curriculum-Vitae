@@ -4,7 +4,7 @@ import TCQRArticle from "./TCQRArticle";
 import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof TCQRArticle> = {
-  title: "article/TCQR",
+  title: "projects/article/TCQR",
   component: TCQRArticle,
   decorators: (Story) => (
     <>

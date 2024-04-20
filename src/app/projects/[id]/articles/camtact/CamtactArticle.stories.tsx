@@ -4,7 +4,7 @@ import CamtactArticle from "./CamtactArticle";
 import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof CamtactArticle> = {
-  title: "article/Camtact",
+  title: "projects/article/Camtact",
   component: CamtactArticle,
   decorators: (Story) => (
     <>

@@ -4,7 +4,7 @@ import AirforceArticle from "./AirforceArticle";
 import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof AirforceArticle> = {
-  title: "article/Airforce",
+  title: "careers/article/Airforce",
   component: AirforceArticle,
   decorators: (Story) => (
     <>

@@ -4,7 +4,7 @@ import WeboxArticle from "./WeboxArticle";
 import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof WeboxArticle> = {
-  title: "article/Webox",
+  title: "projects/article/Webox",
   component: WeboxArticle,
   decorators: (Story) => (
     <>

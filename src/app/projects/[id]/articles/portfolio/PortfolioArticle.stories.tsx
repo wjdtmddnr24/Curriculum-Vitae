@@ -4,7 +4,7 @@ import PortfolioArticle from "./PortfolioArticle";
 import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof PortfolioArticle> = {
-  title: "article/Portfolio",
+  title: "projects/article/Portfolio",
   component: PortfolioArticle,
   decorators: (Story) => (
     <>

@@ -4,7 +4,7 @@ import SWMBotArticle from "./SWMBotArticle";
 import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof SWMBotArticle> = {
-  title: "article/SWMBot",
+  title: "projects/article/SWMBot",
   component: SWMBotArticle,
   decorators: (Story) => (
     <>

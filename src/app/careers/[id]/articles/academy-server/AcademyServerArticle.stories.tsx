@@ -4,7 +4,7 @@ import AcademyServerArticle from "./AcademyServerArticle";
 import ProjectsLayout from "../../../layout";
 
 const meta: Meta<typeof AcademyServerArticle> = {
-  title: "article/AcademyServer",
+  title: "careers/article/AcademyServer",
   component: AcademyServerArticle,
   decorators: (Story) => (
     <>
