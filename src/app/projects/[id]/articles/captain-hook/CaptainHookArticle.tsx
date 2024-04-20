@@ -13,7 +13,7 @@ function CaptainHookArticle() {
     <Article>
       <Header>
         <Title>Captain Hook</Title>
-        <SubTitle>소프트웨어 마에스트로 12기 메인 프로젝트</SubTitle>
+        <SubTitle>부제목</SubTitle>
         <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
         <div className="flex gap-2 text-2xl text-slate py-2">
           <FontAwesomeIcon icon={faGithub} />
@@ -30,7 +30,7 @@ function CaptainHookArticle() {
         lacinia mi quis elit pellentesque, quis aliquet nisl faucibus.
       </Paragraph>
       <Image
-        src={"https://placehold.co/600x400"}
+        src={"https://placehold.co/600x400/png"}
         alt="webox logo"
         size="medium"
         width={600}

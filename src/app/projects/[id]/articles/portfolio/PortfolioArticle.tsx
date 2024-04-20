@@ -13,7 +13,7 @@ function PortfolioArticle() {
     <Article>
       <Header>
         <Title>Portfolio</Title>
-        <SubTitle>포트폴리오~~~</SubTitle>
+        <SubTitle>부제목</SubTitle>
         <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
         <div className="flex gap-2 text-2xl text-slate py-2">
           <FontAwesomeIcon icon={faGithub} />
@@ -30,7 +30,7 @@ function PortfolioArticle() {
         lacinia mi quis elit pellentesque, quis aliquet nisl faucibus.
       </Paragraph>
       <Image
-        src={"https://placehold.co/600x400"}
+        src={"https://placehold.co/600x400/png"}
         alt="webox logo"
         size="medium"
         width={600}
