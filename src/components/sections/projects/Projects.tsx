@@ -4,6 +4,7 @@ import SectionCard from "@components/section-card/SectionCard";
 import camtactPic from "@public/camtact.png";
 import captainHookPic from "@public/captain_hook.png";
 import portfolioPic from "@public/portfolio_combined_compressed.png";
+import swmBotPic from "@public/swm_bot.png";
 import weboxLogoPic from "@public/webox_logo.png";
 
 export function Projects() {
@@ -28,7 +29,7 @@ export function Projects() {
         <Gallary.Item
           title="SWM Bot"
           description="소프트웨어 마에스트로 유저 검색과 멘토링 알림 챗봇"
-          thumbnailURL={undefined}
+          thumbnailURL={swmBotPic}
           href="/projects/swm-bot"
         />
         <Gallary.Item
