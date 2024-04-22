@@ -50,13 +50,13 @@ export function Awards() {
             <Item>제12회 TOPCIT 정기평가 교내 성적우수자 - 우수상</Item>
             <Item>SCON 프로그래밍 경진대회 - 4th Prize</Item>
             <Item>숭실대학교 소프트웨어학부 소프트웨어 공모전 - 대상</Item>
+            <Item>소프트웨어학부 성적우수자 - 최고학점상</Item>
           </List>
         </TitledList>
 
         <TitledList>
           <Title>2018</Title>
           <List>
-            <Item>소프트웨어학부 성적우수자 - 최고학점상</Item>
             <Item>숭실대학교 창의적공학설계 - 대상</Item>
             <Item>숭실 알고리즘 대회 - 우수상</Item>
           </List>
