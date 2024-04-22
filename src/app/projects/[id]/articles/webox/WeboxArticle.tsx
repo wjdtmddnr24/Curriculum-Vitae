@@ -12,7 +12,7 @@ function WeboxArticle() {
   return (
     <Article>
       <Header>
-        <Title>Webox 클라우드 기반 블랙박스 어플리케이션</Title>
+        <Title>Webox - 클라우드 기반 블랙박스 어플리케이션</Title>
         <SubTitle>부제목</SubTitle>
         <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
         <div className="flex gap-2 text-2xl text-slate py-2">

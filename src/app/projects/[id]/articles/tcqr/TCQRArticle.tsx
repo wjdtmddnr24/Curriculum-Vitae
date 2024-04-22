@@ -12,7 +12,7 @@ function TCQRArticle() {
   return (
     <Article>
       <Header>
-        <Title>Portfolio</Title>
+        <Title>TCQR - Text Compressed QR Code</Title>
         <SubTitle>부제목</SubTitle>
         <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
         <div className="flex gap-2 text-2xl text-slate py-2">

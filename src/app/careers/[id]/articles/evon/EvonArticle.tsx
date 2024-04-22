@@ -12,7 +12,7 @@ function EvonArticle() {
   return (
     <Article>
       <Header>
-        <Title>Evon</Title>
+        <Title>이비온(evon) 안드로이드 개발자</Title>
         <SubTitle>부제목</SubTitle>
         <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
         <div className="flex gap-2 text-2xl text-slate py-2">

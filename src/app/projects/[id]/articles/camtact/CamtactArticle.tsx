@@ -12,7 +12,7 @@ function CamtactArticle() {
   return (
     <Article>
       <Header>
-        <Title>Portfolio</Title>
+        <Title>Camtact</Title>
         <SubTitle>부제목</SubTitle>
         <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
         <div className="flex gap-2 text-2xl text-slate py-2">
