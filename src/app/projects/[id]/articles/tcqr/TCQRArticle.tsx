@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Article from "@components/article/Article";
 import Heading from "@components/article/Heading";
+import NotFinishedNotification from "@components/article/NotFinishedNotification";
 import Badges from "@components/article/header/Badges";
 
 const { Header, Footer, Paragraph, Image } = Article;
@@ -12,6 +13,7 @@ function TCQRArticle() {
   return (
     <Article>
       <Header>
+        <NotFinishedNotification className="my-4" />
         <Title>TCQR - Text Compressed QR Code</Title>
         <SubTitle>부제목</SubTitle>
         <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />

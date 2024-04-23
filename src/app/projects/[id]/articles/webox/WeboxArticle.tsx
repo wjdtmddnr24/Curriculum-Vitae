@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Article from "@components/article/Article";
 import Heading from "@components/article/Heading";
+import NotFinishedNotification from "@components/article/NotFinishedNotification";
 import Badges from "@components/article/header/Badges";
 
 const { Header, Footer, Paragraph, Image } = Article;
@@ -12,6 +13,7 @@ function WeboxArticle() {
   return (
     <Article>
       <Header>
+        <NotFinishedNotification className="my-4" />
         <Title>Webox - 클라우드 기반 블랙박스 어플리케이션</Title>
         <SubTitle>부제목</SubTitle>
         <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
