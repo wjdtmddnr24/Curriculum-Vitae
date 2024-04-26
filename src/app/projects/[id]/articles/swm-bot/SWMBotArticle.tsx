@@ -1,5 +1,6 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 import Article from "@components/article/Article";
 import Heading from "@components/article/Heading";
@@ -18,7 +19,9 @@ function SWMBotArticle() {
         <SubTitle>부제목</SubTitle>
         <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
         <div className="flex gap-2 text-2xl text-slate py-2">
-          <FontAwesomeIcon icon={faGithub} />
+          <Link href="https://github.com/SOMA-MINI-TEAM-15/chatbot_project" target="_blank">
+            <FontAwesomeIcon icon={faGithub} />
+          </Link>
         </div>
       </Header>
       <Heading>Heading</Heading>
