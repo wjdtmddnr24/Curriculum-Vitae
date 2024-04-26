@@ -2,11 +2,10 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Article from "@components/article/Article";
-import Heading from "@components/article/Heading";
 import NotFinishedNotification from "@components/article/NotFinishedNotification";
 import Badges from "@components/article/header/Badges";
 
-const { Header, Footer, Paragraph, Image } = Article;
+const { Header, Footer, Paragraph, Image, Heading } = Article;
 const { Title, SubTitle } = Header;
 
 function AcademyServerArticle() {

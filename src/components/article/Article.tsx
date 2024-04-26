@@ -1,5 +1,6 @@
 import classNames from "classnames";
 
+import Heading from "./Heading";
 import Image from "./Image";
 import Paragraph from "./Paragraph";
 import Footer from "./footer/Footer";
@@ -18,5 +19,6 @@ Article.Header = Header;
 Article.Footer = Footer;
 Article.Image = Image;
 Article.Paragraph = Paragraph;
+Article.Heading = Heading;
 
 export default Article;
