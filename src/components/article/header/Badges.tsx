@@ -7,7 +7,7 @@ interface BadgesProps {
 
 const Badges = ({ badges, className }: BadgesProps) => {
   return (
-    <div className={classNames("flex gap-2", className)}>
+    <div className={classNames("flex flex-wrap gap-2", className)}>
       {badges?.map((badge, index) => (
         <span
           key={index}
