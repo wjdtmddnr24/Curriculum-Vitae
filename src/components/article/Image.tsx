@@ -1,6 +1,8 @@
+"use client";
+
 import classNames from "classnames";
 import NextImage from "next/image";
-import { ComponentProps } from "react";
+import { ComponentProps, MouseEvent } from "react";
 
 export type ImageSize = "small" | "medium" | "large" | "full";
 
@@ -18,9 +20,17 @@ const sizeClassNames = {
 };
 
 const Image = ({ caption, className, size = "medium", ...props }: ImageProps) => {
+  const onClick = (e: MouseEvent<HTMLImageElement>) => {
+    window.open(e.currentTarget.src, "_blank");
+  };
   return (
     <div className={classNames("align-middle text-center", className)}>
-      <NextImage className={classNames("mx-auto mb-2", sizeClassNames[size])} draggable={false} {...props} />
+      <NextImage
+        className={classNames("mx-auto mb-2 cursor-pointer", sizeClassNames[size])}
+        draggable={false}
+        {...props}
+        onClick={onClick}
+      />
       {caption && <span>{caption}</span>}
     </div>
   );
