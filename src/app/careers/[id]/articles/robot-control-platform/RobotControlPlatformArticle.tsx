@@ -1,8 +1,10 @@
 import Article from "@components/article/Article";
 import NotFinishedNotification from "@components/article/NotFinishedNotification";
 import Badges from "@components/article/header/Badges";
+import robotManagementArchitecure from "@public/robot_management_architecture.png";
+import unitcompanyRobot from "@public/unitcompany_robot.png";
 
-const { Header, Footer, Paragraph, Image, Heading } = Article;
+const { Header, Footer, Paragraph, Heading, Image } = Article;
 const { Title, SubTitle } = Header;
 
 function RobotControlPlatformArticle() {
@@ -33,13 +35,17 @@ function RobotControlPlatformArticle() {
         로봇을 이용한 서비스 개발 등의 영역은 우리가 진행해야 한다는 뜻이었다. 로봇의 서버연동이나 서비스 개발을 하나의
         서비스 묶어 개발을 진행하면 두부분이 긴밀하게 엮여, 추후 로봇을 이용한 새로운 서비스를 개발할 때 다시 로봇의
         연동부터 시작해야하기 때문에 로봇의 관제와 로봇을 이용한 서비스, 이 두 영역으로 분리하여 개발을 진행하기로
-        하였다. 이렇게 하면 로봇 관제 플랫폼을 먼저 설계하고 구축하고, 이후에 이 관제 플랫폼 위에 로봇을 이용한
+        하였다. 이렇게 하면 로봇 관제 플랫폼을 먼저 설계하고 구축하고, 이후에 로봇 관제 플랫폼 위에 로봇을 이용한
         서비스들을 개발할 수 있기 때문이었다.
         <br />
         <br />
-        이렇게 로봇의 관제 플랫폼을 먼저 개발하게 되었고, 개발자를 고용하거나 외주업체를 찾기 전까지 이 로봇 관제
-        플랫폼의 설계와 초기 개발을 진행하게 되었다.
+        이렇게 로봇의 관제 플랫폼을 먼저 개발하게 되었고, 개발자를 고용하거나 외주업체를 찾기 전까지 로봇 관제 플랫폼의
+        설계와 초기 개발을 맡아 진행하게 되었다.
       </Paragraph>
+      <br />
+      <Image size="large" src={unitcompanyRobot} alt="로봇 활용 예시" caption={"로봇을 학원 서비스와 연동한 모습"} />
+      <br />
+      <br />
 
       <Heading>로봇 관제 플랫폼의 요구사항</Heading>
       <Paragraph>
@@ -48,7 +54,7 @@ function RobotControlPlatformArticle() {
         정리를 했다.
         <br />
         <br />
-        로봇 관제 플랫폼의 기능적인 요구사항은 다음과 같았다:
+        로봇 관제 플랫폼의 기능적인 요구사항은 다음과 같았다.
         <br />
         <br />
         <b>1. 로봇 개체 구성 설정</b>
@@ -76,11 +82,73 @@ function RobotControlPlatformArticle() {
         작업을 수행하도록 해야한다.
         <br />
         <br />
-        이러한 요구사항 외에 로봇 관제 플랫폼을 설계하고 개발하면서 염두하고 진행해야하는 항목들이 있었다. 한번에
-        수천/수만대의 로봇들을 관제할 수 있어야 한다는 점. 개발자가 확정되지 않아 추후 최종적으로 어느 언어, 런타임
-        환경으로 관제 플랫폼과 서비스 개발을 진행하게 될지 모른다는 점 등이었다.
+        이러한 기능적인 요구사항 외에 로봇 관제 플랫폼을 설계 및 개발을 하면서 염두하며 진행해야하는 요구사항들이
+        있었다. 한번에 수천/수만대의 로봇들을 관제할 수 있어야 한다는 점. 개발자가 확정되지 않아 추후 최종적으로 어느
+        언어, 런타임 환경으로 관제 플랫폼과 서비스 개발을 진행하게 될지 모른다는 점 등이었다.
       </Paragraph>
 
+      <Heading>로봇 관제 플랫폼의 설계</Heading>
+      <Paragraph>
+        로봇 관제 플랫폼은 AWS의 다양한 서비스를 이용해 개발하기로 하였다. 대용량 트래픽 및 확장성을 고려하고, 추후에
+        개발을 할 개발자분들이 개발언어 및 환경에 맞춰 다시 처음부터 서비스들을 개발하는 것이 아닌 점진적으로 변경할 수
+        있도록 Microservice Architecture로 설계하기로 결정하였다. 여기에 쿠버네티스 사용하기 위해 관리형 쿠버네티스인
+        AWS EKS를 이용하였다.
+        <br />
+        <br />
+        서비스간의 세부적인 라우팅 설정과 외부 트래픽 요청의 JWT 검증, 트래픽 흐름 추적 등의 목적을 위해 Istio를 이용해
+        Service Mesh를 도입하였다. AWS Network LoadBalancer를 이용해 외부 트래픽을 Istio Gateway로 전달 할 수 있도록
+        설정하였다.
+        <br />
+        <br />
+        사용자 관리는 AWS Cognito를 이용해 인증 및 권한 관리를 하기로 하였다. 사용자 관리 서비스를 내부에서 직접 구현할
+        수도 있겠지만 빠른 개발 진행을 위해 AWS Cognito를 사용하였다. 덕분에 사용자 회원가입, 로그인, JWT 발급 등의
+        기능을 빠르게 도입할 수 있었고, Istio를 이용해 JWT 기반 트래픽 거부 및 사용자 인증 기능을 쉽게 구현할 수 있었다.
+        <br />
+        <br />
+        <br />
+        <Image
+          size="large"
+          alt="로봇 아키텍서 설계도"
+          src={robotManagementArchitecure}
+          caption="설계한 로봇 관제 시스템 서버 아키텍처 다이어그램"
+        />
+        <br />
+        <br />
+        로봇과 서버간의 실시간 양방향 통신을 위해 WebSocket을 채택했는데, 로봇을 서비스와 직접적으로 WebSocket으로
+        연결하면 서비스의 업데이트 혹은 롤백 작업때 연결이 끊기는 이슈가 발생할 것이다. 이러한 일에 의해 연결 끊김이
+        발생하지 않게 하기 위해 WebSocket 연결과 통신 기능을 위임해주는 AWS WebSocket API Gateway를 이용하였다. 그리고
+        WebSocket API Gateway는 AWS에서 관리를 해주기 때문에 많은 로봇이 접속을 해도 백엔드 서비스 쪽으로 통신 수립에
+        대한 부하가 전파되지 않는다. 게다가 WebSocket API Gateway는 로봇에서 정보를 전달하면 백엔드에 HTTP로 정보를
+        전달해주고, 반대로 전달하고자 하는 정보를 대상 WebSocket ID와 함께 HTTP로 전달하면 해당 단말에 전달해주기 때문에
+        사용하기 편리하다.
+        <br />
+        <br />
+        로봇이 WebSocket API Gateway로 WebSocket 연결을 하거나 끊으면, 이 정보가 AWS Lambda로 전달되어 처리가
+        이루어진다. AWS Lambda를 채택한 이유도 WebSocket API Gateway를 도입한 이유와 마찬가지로 서비스의 일시적인 다운에
+        의해 이벤트의 유실이 발생하지 않도록 하기 위해서였다.
+        <br />
+        <br />
+        두 대 이상의 로봇들이 같은 인증정보로 연결을 요청을 하거나 한 로봇에게 여러개의 작업 할당이 일어나는 등의 동시성
+        문제가 발생 할 수 있다. 이런 동시성 문제를 해결하기 위해 Redis(Elasticache)를 이용하였다. Redis는 원자성을 가진
+        값 할당을 할 수 있기에 이를 이용해 일종의 Lock을 구현하였고, 동시성 문제를 해결하였다.
+        <br />
+        <br />
+        서버 인프라의 모니터링과 어플리케이션 로그, 메트릭들을 관리할 수 있어야 했고, 웹 콘솔에서 일종의 로봇 상태에
+        대한 메트릭 대시보드를 제공하는 기능이 필요했다. 컨테이너 로그를 수집하기 위해 EKS에 Fluent Bit를 DaemonSet로
+        배포했고, Cloudwatch Logs에 전송하도록 설정하였다. 또한 EKS Metric 정보를 수집하기 위해 Prometheus를 사용하고,
+        Grafana로 대시보드를 생성하였다. 쿠버네티스에 이러한 모니터링 스택을 구축하기 위해 Helm Chart를 이용하였다.
+        <br />
+        <br />
+        쿠버네티스에 서비스들이 배포되야 하는 형태를 Infrastructure as Code(IaC)로 관리하기 위해 Infrastructure
+        리포지토리를 생성하고 내부에 Helm Chart로 구성을 하였다. 그리고 각 서비스들의 CI/CD 파이프라인을 구축했는데,
+        Github Actions를 이용해 각 서비스 코드 리포지토리에 커밋을 하면 Docker Image로 빌드하고 AWS Elastic Container
+        Registry(ECR)에 올리도록 설정하였다. 그 후 ArgoCD를 통해 쿠버네티스 배포 상태가 Infrastructure 리포지토리와
+        동기화되도록 설정하였다.
+      </Paragraph>
+
+      <Heading>로봇 관제 플랫폼의 개발</Heading>
+
+      <Paragraph>.</Paragraph>
       <Footer>Last Update: 2024-04-28</Footer>
     </Article>
   );
