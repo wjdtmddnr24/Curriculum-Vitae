@@ -19,7 +19,7 @@ const sizeClassNames = {
 
 const Image = ({ caption, className, size = "medium", ...props }: ImageProps) => {
   return (
-    <div className={classNames("mb-8 align-middle text-center", className)}>
+    <div className={classNames("align-middle text-center", className)}>
       <NextImage className={classNames("mx-auto mb-2", sizeClassNames[size])} draggable={false} {...props} />
       {caption && <span>{caption}</span>}
     </div>
