@@ -14,7 +14,7 @@ export function Careers() {
           href="/careers/robot-control-platform"
           time="2023.11 ~ 2023.01 (3개월)"
           title="로봇 관제 플랫폼 설계 및 개발"
-          techs={["Kubernetes", "Next.js"]}
+          techs={["Kubernetes", "Istio", "Nest.js", "AWS Lambda", "WebSocket", "Redis", "Next.js"]}
           tags={["프리랜서", "개인"]}
         />
         <CareerCard
