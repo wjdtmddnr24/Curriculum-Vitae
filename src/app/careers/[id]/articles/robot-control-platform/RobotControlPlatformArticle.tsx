@@ -91,16 +91,16 @@ function RobotControlPlatformArticle() {
       <Paragraph>
         로봇 관제 플랫폼은 AWS의 다양한 서비스를 이용해 개발하기로 하였다. 대용량 트래픽 및 확장성을 고려하고, 추후에
         개발을 할 개발자분들이 개발언어 및 환경에 맞춰 다시 처음부터 서비스들을 개발하는 것이 아닌 점진적으로 변경할 수
-        있도록 Microservice Architecture로 설계하기로 결정하였다. 여기에 쿠버네티스 사용하기 위해 관리형 쿠버네티스인
+        있도록 Microservice Architecture로 설계하기로 결정하였다. 여기에 쿠버네티스를 사용하기 위해 관리형 쿠버네티스인
         AWS EKS를 이용하였다.
         <br />
         <br />
-        서비스간의 세부적인 라우팅 설정과 외부 트래픽 요청의 JWT 검증, 트래픽 흐름 추적 등의 목적을 위해 Istio를 이용해
+        서비스 간의 세부적인 라우팅 설정과 외부 트래픽 요청의 JWT 검증, 트래픽 흐름 추적 등의 목적을 위해 Istio를 이용해
         Service Mesh를 도입하였다. AWS Network LoadBalancer를 이용해 외부 트래픽을 Istio Gateway로 전달 할 수 있도록
         설정하였다.
         <br />
         <br />
-        사용자 관리는 AWS Cognito를 이용해 인증 및 권한 관리를 하기로 하였다. 사용자 관리 서비스를 내부에서 직접 구현할
+        사용자 관리는 AWS Cognito를 이용해 인증 및 권한 관리를 하기로 하였다. 사용자 관리 서비스를 내부에서 직접 개발할
         수도 있겠지만 빠른 개발 진행을 위해 AWS Cognito를 사용하였다. 덕분에 사용자 회원가입, 로그인, JWT 발급 등의
         기능을 빠르게 도입할 수 있었고, Istio를 이용해 JWT 기반 트래픽 거부 및 사용자 인증 기능을 쉽게 구현할 수 있었다.
         <br />
@@ -114,11 +114,11 @@ function RobotControlPlatformArticle() {
         />
         <br />
         <br />
-        로봇과 서버간의 실시간 양방향 통신을 위해 WebSocket을 채택했는데, 로봇을 서비스와 직접적으로 WebSocket으로
-        연결하면 서비스의 업데이트 혹은 롤백 작업때 연결이 끊기는 이슈가 발생할 것이다. 이러한 일에 의해 연결 끊김이
+        로봇과 서버 간의 실시간 양방향 통신을 위해 WebSocket을 채택했는데, 로봇을 서비스와 직접적으로 WebSocket으로
+        연결하면 서비스의 업데이트 혹은 롤백 작업 때 연결이 끊기는 이슈가 발생할 것이다. 이러한 일로 연결 끊김이
         발생하지 않게 하기 위해 WebSocket 연결과 통신 기능을 위임해주는 AWS WebSocket API Gateway를 이용하였다. 그리고
-        WebSocket API Gateway는 AWS에서 관리를 해주기 때문에 많은 로봇이 접속을 해도 백엔드 서비스 쪽으로 통신 수립에
-        대한 부하가 전파되지 않는다. 게다가 WebSocket API Gateway는 로봇에서 정보를 전달하면 백엔드에 HTTP로 정보를
+        WebSocket API Gateway는 AWS에서 관리를 하기 때문에 많은 로봇이 접속을 해도 백엔드 서비스 쪽으로 통신 수립에 대한
+        부하가 전파되지 않는다. 게다가 WebSocket API Gateway는 로봇에서 정보를 전달하면 백엔드에 HTTP로 정보를
         전달해주고, 반대로 전달하고자 하는 정보를 대상 WebSocket ID와 함께 HTTP로 전달하면 해당 단말에 전달해주기 때문에
         사용하기 편리하다.
         <br />
@@ -128,20 +128,21 @@ function RobotControlPlatformArticle() {
         의해 이벤트의 유실이 발생하지 않도록 하기 위해서였다.
         <br />
         <br />
-        두 대 이상의 로봇들이 같은 인증정보로 연결을 요청을 하거나 한 로봇에게 여러개의 작업 할당이 일어나는 등의 동시성
-        문제가 발생 할 수 있다. 이런 동시성 문제를 해결하기 위해 Redis(Elasticache)를 이용하였다. Redis는 원자성을 가진
-        값 할당을 할 수 있기에 이를 이용해 일종의 Lock을 구현하였고, 동시성 문제를 해결하였다.
+        두 대 이상의 로봇들이 같은 인증정보로 연결을 요청을 하거나 한 로봇에게 여러 개의 작업 할당이 일어나는 등의
+        동시성 문제가 발생할 수 있다. 이런 동시성 문제를 해결하기 위해 Redis(Elasticache)를 이용하였다. Redis는 원자성을
+        가진 값 할당 연산을 할 수 있기에 이를 이용해 일종의 Lock을 구현하여 동시성 문제를 해결하였다.
         <br />
         <br />
         서버 인프라의 모니터링과 어플리케이션 로그, 메트릭들을 관리할 수 있어야 했고, 웹 콘솔에서 일종의 로봇 상태에
         대한 메트릭 대시보드를 제공하는 기능이 필요했다. 컨테이너 로그를 수집하기 위해 EKS에 Fluent Bit를 DaemonSet로
-        배포했고, Cloudwatch Logs에 전송하도록 설정하였다. 또한 EKS Metric 정보를 수집하기 위해 Prometheus를 사용하고,
-        Grafana로 대시보드를 생성하였다. 쿠버네티스에 이러한 모니터링 스택을 구축하기 위해 Helm Chart를 이용하였다.
+        배포했고, 로그들을 Cloudwatch Logs에 전송하도록 설정하였다. 또한 EKS Metric 정보를 수집하기 위해 Prometheus를
+        사용하고, Grafana로 대시보드를 생성하였다. 쿠버네티스에 이러한 모니터링 스택을 구축하기 위해 Helm Chart를
+        이용하였다.
         <br />
         <br />
-        쿠버네티스에 서비스들이 배포되야 하는 형태를 Infrastructure as Code(IaC)로 관리하기 위해 Infrastructure
-        리포지토리를 생성하고 내부에 Helm Chart로 구성을 하였다. 그리고 각 서비스들의 CI/CD 파이프라인을 구축했는데,
-        Github Actions를 이용해 각 서비스 코드 리포지토리에 커밋을 하면 Docker Image로 빌드하고 AWS Elastic Container
+        쿠버네티스에 서비스들이 배포되어야 하는 형태를 Infrastructure as Code(IaC)로 관리하기 위해 Infrastructure
+        리포지토리를 생성하고 내부에 Helm Chart로 구성하였다. 그리고 각 서비스들의 CI/CD 파이프라인을 구축했는데, Github
+        Actions를 이용해 각 서비스 코드 리포지토리에 커밋을 하면 Docker Image로 빌드하고 AWS Elastic Container
         Registry(ECR)에 올리도록 설정하였다. 그 후 ArgoCD를 통해 쿠버네티스 배포 상태가 Infrastructure 리포지토리와
         동기화되도록 설정하였다.
       </Paragraph>
