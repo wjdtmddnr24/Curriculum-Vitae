@@ -6,7 +6,7 @@ interface ParagraphProps {
 }
 
 const Paragraph = ({ className, children }: ParagraphProps) => {
-  return <p className={classNames("mb-8", className)}>{children}</p>;
+  return <div className={classNames("mb-8", className)}>{children}</div>;
 };
 
 export default Paragraph;
