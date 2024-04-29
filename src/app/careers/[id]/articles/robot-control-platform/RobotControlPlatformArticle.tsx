@@ -144,12 +144,53 @@ function RobotControlPlatformArticle() {
         서비스 코드 리포지토리에 커밋을 하면 Github Actions를 통해 Docker Image로 빌드하고 AWS Elastic Container
         Registry(ECR)에 올리도록 구성하였다. 그 후 ArgoCD를 통해 쿠버네티스 배포 상태가 Infrastructure 리포지토리와
         동기화되도록 구성하였다.
+        <br />
+        <br />
+        로봇 관제 플랫폼의 마이크로서비스들은 Nest.js를 기반으로 개발을 진행했다. 먼저 각 서비스들에서 공통으로 사용될
+        코드들을 Boilerplate 코드로 작성했는데, 여기에는 TypeORM을 이용한 DB 연결, Readiness/Liveness 확인을 위한 Health
+        Checking, 환경변수 Validation, Graceful Shutdown, Swagger API 문서 자동 생성 등의 기능을 포함시켰다. 각
+        서비스들을 만들 때마다 이 Boilerplate 코드를 받아 중복된 작업들을 줄이고 빠르게 개발을 시작할 수 있었다.
+        <br />
+        <br />
+        관제 플랫폼의 웹 콘솔은 Next.js(React)로 구성하였다. Next.js 프로젝트는 AWS Amplify를 이용해 배포하였는데,
+        리포지토리에 코드를 올리면 Amplify에서 CI/CD 파이프라인을 제공해 자동으로 빌드 및 배포를 하도록 구성할 수
+        있었다.
+        <br />
+        <br />
+        AWS Lambda의 서버리스 코드들은 TypeScript로 작성하였고, 각 Lambda 함수들은 Serverless Framework를 이용해 배포를
+        하였다. Serverless Framework를 이용하면 API Gateway와의 연동 테스트, VPC 설정, IAM Role 설정, S3에 코드 업로드
+        등의 작업을 자동으로 해주거나 설정 파일로 쉽게 구성할 수 있게 해주기 때문에 간편하게 서버리스 코드를 배포할 수
+        있었다.
       </Paragraph>
 
       <Heading>로봇 관제 플랫폼의 개발</Heading>
-
+      <Paragraph>
+        본격적인 개발 진행에 앞서 개발 환경을 구축하였다. 개발 환경을 구축하기 위해 Dev Container의 도움을 많이 받았다.
+        Dev Container는 개발을 로컬 머신이 아닌 Docker Container 위에서 진행할 수 있도록 해주는 도구로, 호스트
+        컴퓨터에서 독립되어진 일관된 환경에서 개발을 진행할 수 있게 해준다. 이것을 이용하면 다른 컴퓨터에서 개발을
+        진행할 때에도 별다른 문제없이 동일한 환경에서 개발을 진행할 수 있고, Dockerfile 및 json 파일로 구성한 환경을
+        코드로 Dev Container를 구성하기 때문에 재사용하기도 편리하다. 서비스를 개발 할 때 여러 서비스를 동시에 실행해
+        놓고 개발할 때가 많았는데 Dev Container 덕분에 동일 포트 충돌을 방지하고 개발을 진행할 수도 있었다.
+        <br />
+        <br />
+        마이크로서비스 코드를 개발할 Dev Container에는 Node.js 런타임이 설치된 이미지를 사용하였다. 이 이미지는 Docker
+        Compose로 로컬에서 테스트를 위한 MySQL 데이터베이스 컨테이너도 함께 연결하여 실행할 수 있도록 설정하였다. 또한
+        ZSH와 oh-my-zsh plugin을 설치하여 히스토리 기반 터미널 자동완성 등의 편의기능을 사용할 수 있도록 하였다.
+        <br />
+        <br />
+        인프라를 구축할 때 사용할 Dev Container도 구성을 했다. aws cli, eksctl, kubectl, helm, github cli 등의 cli 툴을
+        미리 설치해 놓은 Dev Container를 만들어 놓아, 인프라 구축을 위한 작업을 할 때에도 편리하게 작업을 진행할 수
+        있었다.
+        <br />
+        <br />
+        서버리스 코드 개발이나 웹 개발을 위한 Dev Container들도 구성을 했다. 이 Dev Container들은 마이크로서비스 개발용
+        Dev Container와 유사하게 Node.js, ZSH 등이 설치되도록 구성하였다.
+      </Paragraph>
+      <Heading>테스트</Heading>
       <Paragraph>.</Paragraph>
-      <Footer>Last Update: 2024-04-28</Footer>
+      <Heading>정리</Heading>
+      <Paragraph>.</Paragraph>
+      <Footer>Last Update: 2024-04-29</Footer>
     </Article>
   );
 }
