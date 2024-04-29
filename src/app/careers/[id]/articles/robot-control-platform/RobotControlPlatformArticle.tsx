@@ -180,7 +180,7 @@ function RobotControlPlatformArticle() {
         <br />
         인프라를 구축할 때 사용할 Dev Container도 구성하였다. aws cli, eksctl, kubectl, helm, github cli 등의 cli 툴들을
         미리 설치해 놓은 Dev Container를 생성해 인프라를 구축하였다. 덕분에 호스트 컴퓨터에서 이러한 cli 툴들을 설치하며
-        생기는 버전 충돌이나 설정 문제를 방지할 수 있었다.
+        생길 수 있는 설정 문제를 방지할 수 있었다.
         <br />
         <br />
         서버리스 코드 개발이나 웹 개발을 위한 Dev Container들도 구성을 했다. 이 Dev Container들은 마이크로서비스 개발용
