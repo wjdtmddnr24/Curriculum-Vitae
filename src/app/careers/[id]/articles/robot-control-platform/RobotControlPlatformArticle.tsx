@@ -174,7 +174,7 @@ function RobotControlPlatformArticle() {
         <br />
         <br />
         마이크로서비스 코드를 개발할 Dev Container에는 Node.js 런타임이 설치된 이미지를 사용하였다. 이 이미지는 Docker
-        Compose로 MySQL 데이터베이스 컨테이너와 함께 연결하여 로컬에서 테스트를 할 수 있도록 설정하였다. 또한 ZSH와
+        Compose로 MySQL 데이터베이스 컨테이너와 함께 연결하여 로컬에서 테스트를 할 수 있도록 설정하였다. 또한 zsh와
         oh-my-zsh plugin을 설치하여 히스토리 기반 터미널 자동완성 등의 편의기능을 사용할 수 있도록 하였다.
         <br />
         <br />
@@ -184,7 +184,7 @@ function RobotControlPlatformArticle() {
         <br />
         <br />
         서버리스 코드 개발이나 웹 개발을 위한 Dev Container들도 구성을 했다. 이 Dev Container들은 마이크로서비스 개발용
-        Dev Container와 유사하게 Node.js, ZSH 등이 설치되도록 구성하였다.
+        Dev Container와 유사하게 Node.js, zsh 등이 설치되도록 구성하였다.
       </Paragraph>
       <Heading>테스트</Heading>
       <Paragraph>.</Paragraph>
