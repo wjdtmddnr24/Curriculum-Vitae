@@ -1,5 +1,7 @@
 "use client";
 
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 import NextImage from "next/image";
 import { ComponentProps, MouseEvent } from "react";
@@ -13,10 +15,10 @@ interface ImageProps extends ComponentProps<typeof NextImage> {
 }
 
 const sizeClassNames = {
-  small: "w-[24rem]",
-  medium: "w-[32rem]",
-  large: "w-[40rem]",
-  full: "w-full",
+  small: "max-w-[24rem]",
+  medium: "max-w-[32rem]",
+  large: "max-w-[40rem]",
+  full: "max-w-full",
 };
 
 const Image = ({ caption, className, size = "medium", ...props }: ImageProps) => {
@@ -25,12 +27,12 @@ const Image = ({ caption, className, size = "medium", ...props }: ImageProps) =>
   };
   return (
     <div className={classNames("align-middle text-center", className)}>
-      <NextImage
-        className={classNames("mx-auto mb-2 cursor-pointer", sizeClassNames[size])}
-        draggable={false}
-        {...props}
-        onClick={onClick}
-      />
+      <div className={classNames("relative mx-auto mb-2 cursor-pointer group", sizeClassNames[size])}>
+        <NextImage draggable={false} {...props} onClick={onClick} />
+        <div className="absolute opacity-0 group-hover:opacity-100 p-3 bg-slate-800/70 bottom-4 right-4 flex justify-center items-center rounded-lg text-slate-100 text-lg transition-opacity duration-200 pointer-events-none">
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </div>
+      </div>
       {caption && <span>{caption}</span>}
     </div>
   );
