@@ -167,20 +167,20 @@ function RobotControlPlatformArticle() {
       <Paragraph>
         본격적인 개발 진행에 앞서 개발 환경을 구축하였다. 개발 환경을 구축하기 위해 Dev Container의 도움을 많이 받았다.
         Dev Container는 개발을 로컬 머신이 아닌 Docker Container 위에서 진행할 수 있도록 해주는 도구로, 호스트
-        컴퓨터에서 독립되어진 일관된 환경에서 개발을 진행할 수 있게 해준다. 이것을 이용하면 다른 컴퓨터에서 개발을
-        진행할 때에도 별다른 문제없이 동일한 환경에서 개발을 진행할 수 있고, Dockerfile 및 json 파일로 구성한 환경을
-        코드로 Dev Container를 구성하기 때문에 재사용하기도 편리하다. 서비스를 개발 할 때 여러 서비스를 동시에 실행해
-        놓고 개발할 때가 많았는데 Dev Container 덕분에 동일 포트 충돌을 방지하고 개발을 진행할 수도 있었다.
+        컴퓨터에서 독립되어 일관된 환경에서 개발을 진행할 수 있게 해준다. 이것을 이용하면 다른 컴퓨터에서 개발을 진행할
+        때에도 별다른 문제없이 동일한 환경에서 개발을 진행할 수 있고, Dockerfile 및 json 파일로 Dev Container를 구성하기
+        때문에 재사용하기도 편리하다. 로컬에서 여러 서비스를 동시에 실행하며 개발할 때가 많았는데 Dev Container 덕분에
+        동일 포트 충돌을 방지하고 개발을 진행할 수도 있었다.
         <br />
         <br />
         마이크로서비스 코드를 개발할 Dev Container에는 Node.js 런타임이 설치된 이미지를 사용하였다. 이 이미지는 Docker
-        Compose로 로컬에서 테스트를 위한 MySQL 데이터베이스 컨테이너도 함께 연결하여 실행할 수 있도록 설정하였다. 또한
-        ZSH와 oh-my-zsh plugin을 설치하여 히스토리 기반 터미널 자동완성 등의 편의기능을 사용할 수 있도록 하였다.
+        Compose로 MySQL 데이터베이스 컨테이너와 함께 연결하여 로컬에서 테스트를 할 수 있도록 설정하였다. 또한 ZSH와
+        oh-my-zsh plugin을 설치하여 히스토리 기반 터미널 자동완성 등의 편의기능을 사용할 수 있도록 하였다.
         <br />
         <br />
-        인프라를 구축할 때 사용할 Dev Container도 구성을 했다. aws cli, eksctl, kubectl, helm, github cli 등의 cli 툴을
-        미리 설치해 놓은 Dev Container를 만들어 놓아, 인프라 구축을 위한 작업을 할 때에도 편리하게 작업을 진행할 수
-        있었다.
+        인프라를 구축할 때 사용할 Dev Container도 구성하였다. aws cli, eksctl, kubectl, helm, github cli 등의 cli 툴들을
+        미리 설치해 놓은 Dev Container를 생성해 인프라를 구축하였다. 덕분에 호스트 컴퓨터에서 이러한 cli 툴들을 설치하며
+        생기는 버전 충돌이나 설정 문제를 방지할 수 있었다.
         <br />
         <br />
         서버리스 코드 개발이나 웹 개발을 위한 Dev Container들도 구성을 했다. 이 Dev Container들은 마이크로서비스 개발용
