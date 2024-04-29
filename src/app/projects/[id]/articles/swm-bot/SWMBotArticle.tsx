@@ -15,8 +15,8 @@ function SWMBotArticle() {
       <Header>
         <NotFinishedNotification className="my-4" />
         <Title>SWM Bot</Title>
-        <SubTitle>부제목</SubTitle>
-        <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
+        <SubTitle>소프트웨어 마에스트로 유저 검색과 멘토링 알림 챗봇</SubTitle>
+        <Badges badges={["Express.js", "MongoDB", "Puppeteer"]} />
         <div className="flex gap-2 text-2xl text-slate py-2">
           <Link href="https://github.com/SOMA-MINI-TEAM-15/chatbot_project" target="_blank">
             <FontAwesomeIcon icon={faGithub} />

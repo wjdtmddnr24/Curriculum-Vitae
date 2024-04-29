@@ -14,9 +14,9 @@ function WeboxArticle() {
     <Article>
       <Header>
         <NotFinishedNotification className="my-4" />
-        <Title>Webox - 클라우드 기반 블랙박스 어플리케이션</Title>
-        <SubTitle>부제목</SubTitle>
-        <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
+        <Title>Webox</Title>
+        <SubTitle>퍼스널 모빌리티를 위한 클라우드 기반 블랙박스 애플리케이션</SubTitle>
+        <Badges badges={["AWS", "Kubernetes", "MSA", "RabbitMQ", "Nest.js", "Flutter", "FFMpeg", "YoloV5"]} />
         <div className="flex gap-2 text-2xl text-slate py-2">
           <Link href="https://github.com/wjdtmddnr24/webox" target="_blank">
             <FontAwesomeIcon icon={faGithub} />

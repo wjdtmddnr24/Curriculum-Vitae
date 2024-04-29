@@ -15,8 +15,8 @@ function CaptainHookArticle() {
       <Header>
         <NotFinishedNotification className="my-4" />
         <Title>Captain Hook</Title>
-        <SubTitle>부제목</SubTitle>
-        <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
+        <SubTitle>Webhook 기반 알림 서비스</SubTitle>
+        <Badges badges={["Webhook", "Nest.js", "Bot", "React", "Next.js", "Tailwind CSS"]} />
         <div className="flex gap-2 text-2xl text-slate py-2">
           <Link href="https://github.com/ideal6/Captain_Hook_Document" target="_blank">
             <FontAwesomeIcon icon={faGithub} />

@@ -15,8 +15,8 @@ function PortfolioArticle() {
       <Header>
         <NotFinishedNotification className="my-4" />
         <Title>Portfolio</Title>
-        <SubTitle>부제목</SubTitle>
-        <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
+        <SubTitle>개인 포트폴리오 웹페이지</SubTitle>
+        <Badges badges={["React", "Next.js", "Tailwind CSS", "Vercel"]} />
         <div className="flex gap-2 text-2xl text-slate py-2">
           <Link href="https://github.com/wjdtmddnr24/Curriculum-Vitae" target="_blank">
             <FontAwesomeIcon icon={faGithub} />

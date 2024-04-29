@@ -15,8 +15,8 @@ function CamtactArticle() {
       <Header>
         <NotFinishedNotification className="my-4" />
         <Title>Camtact</Title>
-        <SubTitle>부제목</SubTitle>
-        <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
+        <SubTitle>원격 회전캠을 이용한 비대면 시험 감독 플랫폼</SubTitle>
+        <Badges badges={["WebRTC", "React", "Electron.js", "Express.js", "Headless CMS", "Raspberry Pi"]} />
         <div className="flex gap-2 text-2xl text-slate py-2">
           <Link href="https://github.com/2020pingus/camtact_document" target="_blank">
             <FontAwesomeIcon icon={faGithub} />

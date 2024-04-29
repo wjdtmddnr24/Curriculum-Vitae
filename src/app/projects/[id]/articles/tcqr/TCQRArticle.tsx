@@ -15,8 +15,8 @@ function TCQRArticle() {
       <Header>
         <NotFinishedNotification className="my-4" />
         <Title>TCQR - Text Compressed QR Code</Title>
-        <SubTitle>부제목</SubTitle>
-        <Badges badges={["Badge", "Badge", "Badge", "Badge"]} />
+        <SubTitle>문자열 압축기반 QR코드 애플리케이션</SubTitle>
+        <Badges badges={["Android", "Java"]} />
         <div className="flex gap-2 text-2xl text-slate py-2">
           <Link href="https://github.com/wjdtmddnr24/TCQR" target="_blank">
             <FontAwesomeIcon icon={faGithub} />
