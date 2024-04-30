@@ -1,6 +1,7 @@
 import Article from "@components/article/Article";
 import NotFinishedNotification from "@components/article/NotFinishedNotification";
 import Badges from "@components/article/header/Badges";
+import awsWebSocketAPIGatewayPricing from "@public/aws_websocket_api_gateway_pricing.png";
 import robotManagementArchitecure from "@public/robot_management_architecture.png";
 import unitcompanyRobot from "@public/unitcompany_robot.png";
 
@@ -47,7 +48,7 @@ function RobotControlPlatformArticle() {
       <br />
       <br />
 
-      <Heading>로봇 관제 플랫폼의 요구사항</Heading>
+      <Heading>요구사항 정리</Heading>
       <Paragraph>
         로봇 관제 플랫폼 개발을 맡게 되었지만 막상 시작하려고 하니 이 작업을 어디서 어디까지 진행해야 하고 어떤 기능들을
         개발해야할지 정리가 되지 않았다. 그래서 먼저 로봇 관제 플랫폼의 요구사항들을 원장님과 연구원분들과 논의를 하여
@@ -87,7 +88,7 @@ function RobotControlPlatformArticle() {
         언어, 런타임 환경으로 관제 플랫폼과 서비스 개발을 진행하게 될지 모른다는 점 등이었다.
       </Paragraph>
 
-      <Heading>로봇 관제 플랫폼의 설계</Heading>
+      <Heading>클라우드 아키텍처 설계</Heading>
       <Paragraph>
         로봇 관제 플랫폼은 AWS의 다양한 서비스를 이용해 개발하기로 하였다. 대용량 트래픽 및 확장성을 고려하고, 추후에
         개발을 할 개발자분들이 개발언어 및 환경에 맞춰 다시 처음부터 서비스들을 개발하는 것이 아닌 점진적으로 변경할 수
@@ -120,7 +121,15 @@ function RobotControlPlatformArticle() {
         WebSocket API Gateway는 AWS에서 관리를 하기 때문에 많은 로봇이 접속을 해도 백엔드 서비스 쪽으로 통신 수립에 대한
         부하가 전파되지 않는다. 게다가 WebSocket API Gateway는 로봇에서 정보를 전달하면 백엔드에 HTTP로 정보를
         전달해주고, 반대로 전달하고자 하는 정보를 대상 WebSocket Connection ID와 함께 HTTP로 전달하면 해당 단말에
-        전달해주기 때문에 사용하기 편리하다.
+        전달해주기 때문에 사용하기 편리하다. 사용요금이 저렴하다는 점도 장점이다.
+        <br />
+        <br />
+        <Image
+          src={awsWebSocketAPIGatewayPricing}
+          alt="AWS API Gateway Pricing"
+          size="medium"
+          caption="WebSocket API Gateway 사용요금(서울 기준)"
+        />
         <br />
         <br />
         로봇이 WebSocket API Gateway로 WebSocket 연결을 하거나 끊으면, 이 정보가 AWS Lambda로 전달되어 처리가
@@ -144,33 +153,17 @@ function RobotControlPlatformArticle() {
         서비스 코드 리포지토리에 커밋을 하면 Github Actions를 통해 Docker Image로 빌드하고 AWS Elastic Container
         Registry(ECR)에 올리도록 구성하였다. 그 후 ArgoCD를 통해 쿠버네티스 배포 상태가 Infrastructure 리포지토리와
         동기화되도록 구성하였다.
-        <br />
-        <br />
-        로봇 관제 플랫폼의 마이크로서비스들은 Nest.js를 기반으로 개발을 진행했다. 먼저 각 서비스들에서 공통으로 사용될
-        코드들을 Boilerplate 코드로 작성했는데, 여기에는 TypeORM을 이용한 DB 연결, Readiness/Liveness 확인을 위한 Health
-        Checking, 환경변수 Validation, Graceful Shutdown, Swagger API 문서 자동 생성 등의 기능을 포함시켰다. 각
-        서비스들을 만들 때마다 이 Boilerplate 코드를 받아 중복된 작업들을 줄이고 빠르게 개발을 시작할 수 있었다.
-        <br />
-        <br />
-        관제 플랫폼의 웹 콘솔은 Next.js(React)로 구성하였다. Next.js 프로젝트는 AWS Amplify를 이용해 배포하였는데,
-        리포지토리에 코드를 올리면 Amplify에서 CI/CD 파이프라인을 제공해 자동으로 빌드 및 배포를 하도록 구성할 수
-        있었다.
-        <br />
-        <br />
-        AWS Lambda의 서버리스 코드들은 TypeScript로 작성하였고, 각 Lambda 함수들은 Serverless Framework를 이용해 배포를
-        하였다. Serverless Framework를 이용하면 API Gateway와의 연동 테스트, VPC 설정, IAM Role 설정, S3에 코드 업로드
-        등의 작업을 자동으로 해주거나 설정 파일로 쉽게 구성할 수 있게 해주기 때문에 간편하게 서버리스 코드를 배포할 수
-        있었다.
       </Paragraph>
 
-      <Heading>로봇 관제 플랫폼의 개발</Heading>
+      <Heading>개발 환경의 구축</Heading>
       <Paragraph>
-        본격적인 개발 진행에 앞서 개발 환경을 구축하였다. 개발 환경을 구축하기 위해 Dev Container의 도움을 많이 받았다.
-        Dev Container는 개발을 로컬 머신이 아닌 Docker Container 위에서 진행할 수 있도록 해주는 도구로, 호스트
-        컴퓨터에서 독립되어 일관된 환경에서 개발을 진행할 수 있게 해준다. 이것을 이용하면 다른 컴퓨터에서 개발을 진행할
-        때에도 별다른 문제없이 동일한 환경에서 개발을 진행할 수 있고, Dockerfile 및 json 파일로 Dev Container를 구성하기
-        때문에 재사용하기도 편리하다. 로컬에서 여러 서비스를 동시에 실행하며 개발할 때가 많았는데 Dev Container 덕분에
-        동일 포트 충돌을 방지하고 개발을 진행할 수도 있었다.
+        본격적인 개발 진행에 앞서 개발 환경을 구축하였다. 개인적으로 좋은 결과물은 좋은 문화와 환경에서 만들어진다고
+        생각해 상황에 맞춰 가장 적절한 개발 환경을 만들려고 노력한다. IDE로 Visual Studio Code를 이용했고 확장 도구로
+        Dev Container의 도움을 많이 받았다. Dev Container는 개발을 로컬 머신이 아닌 Docker Container 위에서 진행할 수
+        있도록 해주는 도구로, 호스트 컴퓨터에서 독립되어 일관된 환경에서 개발을 진행할 수 있게 해준다. 이것을 이용하면
+        다른 컴퓨터에서 개발을 진행할 때에도 별다른 문제없이 동일한 환경에서 개발을 진행할 수 있고, Dockerfile 및 json
+        파일로 Dev Container를 구성하기 때문에 재사용하기도 편리하다. 로컬에서 여러 서비스를 동시에 실행하며 개발할 때가
+        많았는데 Dev Container 덕분에 동일 포트 충돌을 방지하고 개발을 진행할 수도 있었다.
         <br />
         <br />
         마이크로서비스 코드를 개발할 Dev Container에는 Node.js 런타임이 설치된 이미지를 사용하였다. 이 이미지는 Docker
@@ -186,11 +179,47 @@ function RobotControlPlatformArticle() {
         서버리스 코드 개발이나 웹 개발을 위한 Dev Container들도 구성을 했다. 이 Dev Container들은 마이크로서비스 개발용
         Dev Container와 유사하게 Node.js, zsh 등이 설치되도록 구성하였다.
       </Paragraph>
+      <Heading>로봇 관제 플랫폼 개발</Heading>
+      <Paragraph>
+        개발환경을 구축하고 본격적으로 작업을 시작했다. 작업한 항목들은 크게 클라우드 인프라 구축, 마이크로서비스 개발,
+        서버리스 코드 개발, 프런트엔드 개발, 그리고 약간의 안드로이드 개발이었다.
+        <br />
+        <br />
+        <b> 클라우드 인프라 구축</b>
+        <br />
+        .
+        <br />
+        <br />
+        <b>마이크로서비스 개발</b>
+        <br />
+        로봇 관제 플랫폼의 마이크로서비스들은 Nest.js를 기반으로 개발을 진행했다. 먼저 각 서비스들에서 공통으로 사용될
+        코드들을 Boilerplate 코드로 작성했는데, 여기에는 TypeORM을 이용한 DB 연결, Readiness/Liveness 확인을 위한 Health
+        Checking, 환경변수 Validation, Graceful Shutdown, Swagger API 문서 자동 생성 등의 기능을 포함시켰다. 각
+        서비스들을 만들 때마다 이 Boilerplate 코드를 받아 중복된 작업들을 줄이고 빠르게 개발을 시작할 수 있었다.
+        <br />
+        <br />
+        <b>서버리스 코드 개발</b>
+        <br />
+        AWS Lambda의 서버리스 코드들은 TypeScript로 작성하였고, Serverless Framework를 이용해 배포를 하였다. Serverless
+        Framework를 이용하면 API Gateway와의 연동 테스트, VPC 설정, IAM Role 설정, S3에 코드 업로드 등의 작업을 자동으로
+        해주거나 설정 파일로 쉽게 구성할 수 있게 해주기 때문에 간편하게 서버리스 코드를 배포할 수 있었다.
+        <br />
+        <br />
+        <b>웹 콘솔(Frontend) 개발</b>
+        <br />
+        관제 플랫폼의 웹 콘솔은 Next.js(React)로 구성하였다. Next.js 프로젝트는 AWS Amplify를 이용해 배포하였는데,
+        리포지토리에 코드를 올리면 Amplify에서 CI/CD 파이프라인을 제공해 자동으로 빌드 및 배포를 하도록 구성할 수
+        있었다.
+        <br />
+        <br />
+        <b>안드로이드 앱 개발</b>
+        <br />.
+      </Paragraph>
       <Heading>테스트</Heading>
       <Paragraph>.</Paragraph>
-      <Heading>정리</Heading>
+      <Heading>마무리</Heading>
       <Paragraph>.</Paragraph>
-      <Footer>Last Update: 2024-04-29</Footer>
+      <Footer>Last Update: 2024-04-30</Footer>
     </Article>
   );
 }
