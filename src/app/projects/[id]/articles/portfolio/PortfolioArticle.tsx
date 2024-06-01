@@ -17,59 +17,14 @@ function PortfolioArticle() {
         <Title>Portfolio</Title>
         <SubTitle>개인 포트폴리오 웹페이지</SubTitle>
         <Badges badges={["React", "Next.js", "Tailwind CSS", "Vercel"]} />
-        <div className="flex gap-2 text-2xl text-slate py-2">
-          <Link href="https://github.com/wjdtmddnr24/Curriculum-Vitae" target="_blank">
-            <FontAwesomeIcon icon={faGithub} />
-          </Link>
-        </div>
+        <Link href="https://github.com/wjdtmddnr24/Curriculum-Vitae" target="_blank">
+          <div className="flex justify-start gap-1.5 py-2">
+            <FontAwesomeIcon className="text-2xl" icon={faGithub} fixedWidth />
+            <span className="underline">https://github.com/wjdtmddnr24/Curriculum-Vitae</span>
+          </div>
+        </Link>
       </Header>
-      <Heading>Heading</Heading>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed magna sit amet quam consequat ultrices quis et
-        est. Vivamus non maximus dolor. Sed mattis tellus aliquet dui consectetur, eget volutpat tellus viverra. Aliquam
-        tincidunt tortor eget dictum gravida. Cras rhoncus arcu lectus, eget mattis eros volutpat vitae. Fusce maximus
-        felis et iaculis eleifend. Nullam ut ultricies libero. Curabitur pulvinar commodo purus, accumsan euismod odio
-        suscipit at. Curabitur ac mauris dolor. Morbi id tristique nunc. Donec eu sodales dolor. Mauris quis suscipit
-        augue. Fusce tempor luctus dignissim. Maecenas mattis ullamcorper lorem, sed vulputate elit laoreet quis. Aenean
-        lacinia mi quis elit pellentesque, quis aliquet nisl faucibus.
-      </Paragraph>
-      <Image
-        src={"https://placehold.co/600x400/png"}
-        alt="webox logo"
-        size="medium"
-        width={600}
-        height={400}
-        caption={"Lorem ipsum dolor ist amet"}
-      />
-      <Heading>Heading</Heading>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed magna sit amet quam consequat ultrices quis et
-        est. Vivamus non maximus dolor. Sed mattis tellus aliquet dui consectetur, eget volutpat tellus viverra. Aliquam
-        tincidunt tortor eget dictum gravida. Cras rhoncus arcu lectus, eget mattis eros volutpat vitae. Fusce maximus
-        felis et iaculis eleifend. Nullam ut ultricies libero. Curabitur pulvinar commodo purus, accumsan euismod odio
-        suscipit at. Curabitur ac mauris dolor. Morbi id tristique nunc. Donec eu sodales dolor. Mauris quis suscipit
-        augue. Fusce tempor luctus dignissim. Maecenas mattis ullamcorper lorem, sed vulputate elit laoreet quis. Aenean
-        lacinia mi quis elit pellentesque, quis aliquet nisl faucibus.
-      </Paragraph>
-      <Heading>Heading</Heading>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed magna sit amet quam consequat ultrices quis et
-        est. Vivamus non maximus dolor. Sed mattis tellus aliquet dui consectetur, eget volutpat tellus viverra. Aliquam
-        tincidunt tortor eget dictum gravida. Cras rhoncus arcu lectus, eget mattis eros volutpat vitae. Fusce maximus
-        felis et iaculis eleifend. Nullam ut ultricies libero. Curabitur pulvinar commodo purus, accumsan euismod odio
-        suscipit at. Curabitur ac mauris dolor. Morbi id tristique nunc. Donec eu sodales dolor. Mauris quis suscipit
-        augue. Fusce tempor luctus dignissim. Maecenas mattis ullamcorper lorem, sed vulputate elit laoreet quis. Aenean
-        lacinia mi quis elit pellentesque, quis aliquet nisl faucibus.
-      </Paragraph>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed magna sit amet quam consequat ultrices quis et
-        est. Vivamus non maximus dolor. Sed mattis tellus aliquet dui consectetur, eget volutpat tellus viverra. Aliquam
-        tincidunt tortor eget dictum gravida. Cras rhoncus arcu lectus, eget mattis eros volutpat vitae. Fusce maximus
-        felis et iaculis eleifend. Nullam ut ultricies libero. Curabitur pulvinar commodo purus, accumsan euismod odio
-        suscipit at. Curabitur ac mauris dolor. Morbi id tristique nunc. Donec eu sodales dolor. Mauris quis suscipit
-        augue. Fusce tempor luctus dignissim. Maecenas mattis ullamcorper lorem, sed vulputate elit laoreet quis. Aenean
-        lacinia mi quis elit pellentesque, quis aliquet nisl faucibus.
-      </Paragraph>
+
       <Footer>Last Update: 2024-04-14</Footer>
     </Article>
   );

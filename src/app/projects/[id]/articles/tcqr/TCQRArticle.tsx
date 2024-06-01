@@ -1,4 +1,5 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
@@ -17,59 +18,23 @@ function TCQRArticle() {
         <Title>TCQR - Text Compressed QR Code</Title>
         <SubTitle>문자열 압축기반 QR코드 애플리케이션</SubTitle>
         <Badges badges={["Android", "Java"]} />
-        <div className="flex gap-2 text-2xl text-slate py-2">
-          <Link href="https://github.com/wjdtmddnr24/TCQR" target="_blank">
-            <FontAwesomeIcon icon={faGithub} />
-          </Link>
-        </div>
+
+        <Link href="https://github.com/wjdtmddnr24/TCQR" target="_blank">
+          <div className="flex justify-start gap-1.5 py-2">
+            <FontAwesomeIcon className="text-2xl" icon={faGithub} fixedWidth />
+            <span className="underline">https://github.com/wjdtmddnr24/TCQR</span>
+          </div>
+        </Link>
+        <Link href="https://apkcombo.com/tcqr-text-compressed-qr-code/org.dyndns.wjdtmddnr24.tcqr/" target="_blank">
+          <div className="flex justify-start gap-1.5 py-2">
+            <FontAwesomeIcon className="text-2xl" icon={faLink} fixedWidth />
+            <span className="underline">
+              https://apkcombo.com/tcqr-text-compressed-qr-code/org.dyndns.wjdtmddnr24.tcqr/
+            </span>
+          </div>
+        </Link>
       </Header>
-      <Heading>Heading</Heading>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed magna sit amet quam consequat ultrices quis et
-        est. Vivamus non maximus dolor. Sed mattis tellus aliquet dui consectetur, eget volutpat tellus viverra. Aliquam
-        tincidunt tortor eget dictum gravida. Cras rhoncus arcu lectus, eget mattis eros volutpat vitae. Fusce maximus
-        felis et iaculis eleifend. Nullam ut ultricies libero. Curabitur pulvinar commodo purus, accumsan euismod odio
-        suscipit at. Curabitur ac mauris dolor. Morbi id tristique nunc. Donec eu sodales dolor. Mauris quis suscipit
-        augue. Fusce tempor luctus dignissim. Maecenas mattis ullamcorper lorem, sed vulputate elit laoreet quis. Aenean
-        lacinia mi quis elit pellentesque, quis aliquet nisl faucibus.
-      </Paragraph>
-      <Image
-        src={"https://placehold.co/600x400/png"}
-        alt="webox logo"
-        size="medium"
-        width={600}
-        height={400}
-        caption={"Lorem ipsum dolor ist amet"}
-      />
-      <Heading>Heading</Heading>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed magna sit amet quam consequat ultrices quis et
-        est. Vivamus non maximus dolor. Sed mattis tellus aliquet dui consectetur, eget volutpat tellus viverra. Aliquam
-        tincidunt tortor eget dictum gravida. Cras rhoncus arcu lectus, eget mattis eros volutpat vitae. Fusce maximus
-        felis et iaculis eleifend. Nullam ut ultricies libero. Curabitur pulvinar commodo purus, accumsan euismod odio
-        suscipit at. Curabitur ac mauris dolor. Morbi id tristique nunc. Donec eu sodales dolor. Mauris quis suscipit
-        augue. Fusce tempor luctus dignissim. Maecenas mattis ullamcorper lorem, sed vulputate elit laoreet quis. Aenean
-        lacinia mi quis elit pellentesque, quis aliquet nisl faucibus.
-      </Paragraph>
-      <Heading>Heading</Heading>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed magna sit amet quam consequat ultrices quis et
-        est. Vivamus non maximus dolor. Sed mattis tellus aliquet dui consectetur, eget volutpat tellus viverra. Aliquam
-        tincidunt tortor eget dictum gravida. Cras rhoncus arcu lectus, eget mattis eros volutpat vitae. Fusce maximus
-        felis et iaculis eleifend. Nullam ut ultricies libero. Curabitur pulvinar commodo purus, accumsan euismod odio
-        suscipit at. Curabitur ac mauris dolor. Morbi id tristique nunc. Donec eu sodales dolor. Mauris quis suscipit
-        augue. Fusce tempor luctus dignissim. Maecenas mattis ullamcorper lorem, sed vulputate elit laoreet quis. Aenean
-        lacinia mi quis elit pellentesque, quis aliquet nisl faucibus.
-      </Paragraph>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed magna sit amet quam consequat ultrices quis et
-        est. Vivamus non maximus dolor. Sed mattis tellus aliquet dui consectetur, eget volutpat tellus viverra. Aliquam
-        tincidunt tortor eget dictum gravida. Cras rhoncus arcu lectus, eget mattis eros volutpat vitae. Fusce maximus
-        felis et iaculis eleifend. Nullam ut ultricies libero. Curabitur pulvinar commodo purus, accumsan euismod odio
-        suscipit at. Curabitur ac mauris dolor. Morbi id tristique nunc. Donec eu sodales dolor. Mauris quis suscipit
-        augue. Fusce tempor luctus dignissim. Maecenas mattis ullamcorper lorem, sed vulputate elit laoreet quis. Aenean
-        lacinia mi quis elit pellentesque, quis aliquet nisl faucibus.
-      </Paragraph>
+
       <Footer>Last Update: 2024-04-14</Footer>
     </Article>
   );
