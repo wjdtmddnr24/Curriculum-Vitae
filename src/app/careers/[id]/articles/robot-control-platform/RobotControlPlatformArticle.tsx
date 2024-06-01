@@ -14,7 +14,7 @@ function RobotControlPlatformArticle() {
       <Header>
         <Title>로봇 관제 플랫폼 설계 및 개발</Title>
         <SubTitle>프리랜서 근무</SubTitle>
-        <Badges badges={["Kubernetes", "Istio", "AWS Lambda", "WebSocket", "Redis", "Nest.js", "Next.js"]} />
+        <Badges badges={["Kubernetes", "Istio", "Nest.js", "AWS Lambda", "WebSocket", "Redis", "Next.js"]} />
       </Header>
 
       <Heading>진행 배경</Heading>
