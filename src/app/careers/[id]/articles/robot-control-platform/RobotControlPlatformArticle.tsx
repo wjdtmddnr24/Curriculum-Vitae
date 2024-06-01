@@ -1,7 +1,7 @@
 import Article from "@components/article/Article";
-import NotFinishedNotification from "@components/article/NotFinishedNotification";
 import Badges from "@components/article/header/Badges";
 import awsWebSocketAPIGatewayPricing from "@public/aws_websocket_api_gateway_pricing.png";
+import infrastructureInitialization from "@public/infra_initialization.png";
 import robotManagementArchitecure from "@public/robot_management_architecture.png";
 import unitcompanyRobot from "@public/unitcompany_robot.png";
 
@@ -12,13 +12,12 @@ function RobotControlPlatformArticle() {
   return (
     <Article>
       <Header>
-        <NotFinishedNotification className="my-4" />
         <Title>로봇 관제 플랫폼 설계 및 개발</Title>
         <SubTitle>프리랜서 근무</SubTitle>
         <Badges badges={["Kubernetes", "Istio", "AWS Lambda", "WebSocket", "Redis", "Nest.js", "Next.js"]} />
       </Header>
 
-      <Heading>작업의 시작</Heading>
+      <Heading>진행 배경</Heading>
       <Paragraph>
         23년 10월 초에 공군 전역을 하고, 전에 강사로 근무했던 학원의 원장님께 안부차 연락을 드렸는데 학원에서 새로운
         사업을 진행하고 있다는 소식을 들었다. 무슨 사업을 진행하고 있는지 물어보니 로봇 연구소와 협력하여 로봇을
@@ -157,18 +156,19 @@ function RobotControlPlatformArticle() {
 
       <Heading>개발 환경의 구축</Heading>
       <Paragraph>
-        본격적인 개발 진행에 앞서 개발 환경을 구축하였다. 개인적으로 좋은 결과물은 좋은 문화와 환경에서 만들어진다고
-        생각해 상황에 맞춰 가장 적절한 개발 환경을 만들려고 노력한다. IDE로 Visual Studio Code를 이용했고 확장 도구로
-        Dev Container의 도움을 많이 받았다. Dev Container는 개발을 로컬 머신이 아닌 Docker Container 위에서 진행할 수
-        있도록 해주는 도구로, 호스트 컴퓨터에서 독립되어 일관된 환경에서 개발을 진행할 수 있게 해준다. 이것을 이용하면
-        다른 컴퓨터에서 개발을 진행할 때에도 별다른 문제없이 동일한 환경에서 개발을 진행할 수 있고, Dockerfile 및 json
-        파일로 Dev Container를 구성하기 때문에 재사용하기도 편리하다. 로컬에서 여러 서비스를 동시에 실행하며 개발할 때가
-        많았는데 Dev Container 덕분에 동일 포트 충돌을 방지하고 개발을 진행할 수도 있었다.
+        본격적인 개발 진행에 앞서 원활한 개발 진행을 위해 개발 환경을 구축하였다. 개인적으로 좋은 결과물은 좋은 문화와
+        환경에서 만들어진다고 생각해 상황에 맞춰 가장 적절한 개발 환경을 만들려고 노력한다. IDE로 Visual Studio Code를
+        이용했고 확장 도구로 Dev Container의 도움을 많이 받았다. Dev Container는 개발을 로컬 머신이 아닌 Docker
+        Container 위에서 진행할 수 있도록 해주는 도구로, 호스트 컴퓨터에서 독립되어 일관된 환경에서 개발을 진행할 수
+        있게 해준다. 이것을 이용하면 다른 컴퓨터에서 개발을 진행할 때에도 별다른 문제없이 동일한 환경에서 개발을 진행할
+        수 있고, Dockerfile 및 json 파일로 Dev Container를 구성하기 때문에 재사용하기도 편리하다. 로컬에서 여러 서비스를
+        동시에 실행하며 개발할 때가 많았는데 Dev Container 덕분에 동일 포트 사용에 의한 충돌을 방지하고 개발을 진행할 수
+        있었다.
         <br />
         <br />
         마이크로서비스 코드를 개발할 Dev Container에는 Node.js 런타임이 설치된 이미지를 사용하였다. 이 이미지는 Docker
-        Compose로 MySQL 데이터베이스 컨테이너와 함께 연결하여 로컬에서 테스트를 할 수 있도록 설정하였다. 또한 zsh와
-        oh-my-zsh plugin을 설치하여 히스토리 기반 터미널 자동완성 등의 편의기능을 사용할 수 있도록 하였다.
+        Compose로 MySQL 데이터베이스 컨테이너와 함께 연결하여 로컬에서 DB연동 테스트를 할 수 있도록 설정하였다. 또한
+        zsh와 oh-my-zsh plugin을 설치하여 히스토리 기반 터미널 자동완성 등의 편의기능을 사용할 수 있도록 하였다.
         <br />
         <br />
         인프라를 구축할 때 사용할 Dev Container도 구성하였다. aws cli, eksctl, kubectl, helm, github cli 등의 cli 툴들을
@@ -176,50 +176,120 @@ function RobotControlPlatformArticle() {
         생길 수 있는 설정 문제를 방지할 수 있었다.
         <br />
         <br />
-        서버리스 코드 개발이나 웹 개발을 위한 Dev Container들도 구성을 했다. 이 Dev Container들은 마이크로서비스 개발용
-        Dev Container와 유사하게 Node.js, zsh 등이 설치되도록 구성하였다.
+        서버리스 코드 개발이나 프런트엔드 웹 콘솔 개발을 위한 Dev Container도 구성을 했다. 이 Dev Container들은
+        마이크로서비스 개발용 Dev Container와 유사하게 Node.js, zsh 등이 설치되도록 구성하였다.
       </Paragraph>
       <Heading>로봇 관제 플랫폼 개발</Heading>
       <Paragraph>
-        개발환경을 구축하고 본격적으로 작업을 시작했다. 작업한 항목들은 크게 클라우드 인프라 구축, 마이크로서비스 개발,
-        서버리스 코드 개발, 프런트엔드 개발, 그리고 약간의 안드로이드 개발이었다.
+        개발환경을 구축하고 본격적으로 작업을 시작했다. 각 영역들에 대해 대표적으로 진행한 개발 작업들은 다음과 같다:
         <br />
         <br />
-        <b> 클라우드 인프라 구축</b>
+        <span className="font-bold text-lg inline-block mb-1">클라우드 인프라 구축</span>
         <br />
-        .
-        <br />
-        <br />
-        <b>마이크로서비스 개발</b>
-        <br />
-        로봇 관제 플랫폼의 마이크로서비스들은 Nest.js를 기반으로 개발을 진행했다. 먼저 각 서비스들에서 공통으로 사용될
-        코드들을 Boilerplate 코드로 작성했는데, 여기에는 TypeORM을 이용한 DB 연결, Readiness/Liveness 확인을 위한 Health
-        Checking, 환경변수 Validation, Graceful Shutdown, Swagger API 문서 자동 생성 등의 기능을 포함시켰다. 각
-        서비스들을 만들 때마다 이 Boilerplate 코드를 받아 중복된 작업들을 줄이고 빠르게 개발을 시작할 수 있었다.
+        AWS 웹 콘솔, awscli, eksctl 들을 이용해 VPC, IAM, Load Balancer, API Gateway, RDS, ElastiCache, EKS 클러스터 등
+        AWS 리소스들을 설정했다. 이후 helm을 이용해 구축한 EKS 클러스터에 istio, prometheus 스택, argo cd 등을 설치했다.
         <br />
         <br />
-        <b>서버리스 코드 개발</b>
+        추후 재현성을 위해 구축에 이용한 터미널 명령어, 설정 json 파일 등을 Markdown 문서로 정리를 해두었다.
+        <br />
+        <br />
+        <Image
+          size="small"
+          src={infrastructureInitialization}
+          alt="쿠버네티스 구성 문서 정리"
+          caption={"쿠버네티스 인프라 구축 설정들을 문서로 정리한 모습"}
+        />
+        <br />
+        그리고 마이크로서비스에 대한 helm chart들을 작성하고 CI/CD 파이프라인 구축 및 연동을 진행했다.
+        마이크로서비스들에 필요한 설정 정보들을 ConfigMap으로 관리하고, Secret으로 민감한 정보들을 관리하였다. 이
+        정보들을 각 서비스들에 환경변수로 주입하도록 구성하였다.
+        <br />
+        <br />
+        <span className="font-bold text-lg inline-block mb-1">마이크로서비스 개발</span>
+        <br />
+        로봇 관제 플랫폼의 마이크로서비스들은 Nest.js 프레임워크를 기반으로 개발했다. 각 서비스들에서 공통으로 사용될
+        코드들을 Boilerplate 코드로 작성했는데, 여기에는 TypeORM을 이용한 DB 연결, Health Check 엔드포인트, 환경변수
+        Validation, Graceful Shutdown, Swagger API 문서 자동 생성 등의 기능을 포함시켰다.
+        <br />
+        <br />
+        기능적인 요구사항들을 Nest.js에서 제공하는 Module, Controller, Service, Repository, Request DTO, Response DTO
+        에너테이션 및 클래스들을 이용해 역할을 분리 및 구성하여 개발을 진행했고, Validation Pipe를 이용해 요청에
+        전달되는 파라미터들이 유효한지 검사하도록 설정하였다. 또 Guard를 이용해 인증된 사용자의 요청인지, 권한이 있는
+        사용자의 요청인지 검사하도록 구성하였다.
+        <br />
+        <br />
+        <span className="font-bold text-lg inline-block mb-1">서버리스 코드 개발</span>
         <br />
         AWS Lambda의 서버리스 코드들은 TypeScript로 작성하였고, Serverless Framework를 이용해 배포를 하였다. Serverless
-        Framework를 이용하면 API Gateway와의 연동 테스트, VPC 설정, IAM Role 설정, S3에 코드 업로드 등의 작업을 자동으로
-        해주거나 설정 파일로 쉽게 구성할 수 있게 해주기 때문에 간편하게 서버리스 코드를 배포할 수 있었다.
+        Framework를 이용하면 WebSocket API Gateway와의 연동 테스트, VPC 설정, IAM Role 설정, S3에 코드 업로드 등의
+        작업을 자동으로 해주거나 설정 파일로 쉽게 구성할 수 있게 해주기 때문에 간편하게 서버리스 코드를 배포할 수
+        있었다.
         <br />
         <br />
-        <b>웹 콘솔(Frontend) 개발</b>
+        Robot들이 WebSocket API Gateway로 연결 요청을 하면 AWS Lambda에서 이 요청을 받아 처리하도록 구성했다.
+        <br />
+        WebSocket 연결 수립 전 동작하는 람다 함수는 로봇의 인증을 처리하고 유효한 로봇이라면 Connection
+        Redis(Elasticache) 연동을 설정해 이미 연결된 혹은 연결중인 로봇인지 검사하고 연결의 허용 여부를 반환하도록
+        구성했다. 반대로 WebSocket 연결 해제 시 동작하는 람다 함수는 Redis(Elasticache)에서 연결 정보를 삭제하도록
+        구성했다.
+        <br />
+        <br />
+        <span className="font-bold text-lg inline-block mb-1">웹 콘솔(Frontend) 개발</span>
         <br />
         관제 플랫폼의 웹 콘솔은 Next.js(React)로 구성하였다. Next.js 프로젝트는 AWS Amplify를 이용해 배포하였는데,
         리포지토리에 코드를 올리면 Amplify에서 CI/CD 파이프라인을 제공해 자동으로 빌드 및 배포를 하도록 구성할 수
         있었다.
         <br />
         <br />
-        <b>안드로이드 앱 개발</b>
-        <br />.
+        사용자의 인증 및 인가 처리를 위해 NextAuth 라이브러리를 이용했고, AWS Cognito의 OAuth2 인증을 이용해 손쉽게
+        로그인/로그아웃 기능을 구현했다. NextAuth는 XSS 공격에 의한 Access 토큰 탈취를 Frontend 서버간의 http-only
+        쿠키에 토큰을 저장하는 방식을 이용하고, CSRF 공격 방지를 위해 로그인/로그아웃 post 요청에 CSRF 토큰을 이용한다.
+        Backend API 서버에 요청을 보낼 때는 Frontend 서버에서 http-only 쿠키에 담긴 Access 토큰을 요청하고 이를 api
+        서버에 http 헤더에 담아 요청을 보내도록 하여 Backend API 서버에 대한 CSRF 공격을 방지했다.
+        <br />
+        <br />
+        백엔드와 REST 통신을 하기 위해 Axios 라이브러리를 이용했는데, Tanstack React Query 라이브러리를 이용해
+        Stale-While-Revalidate 기능 및 컴포넌트들의 중복 요청 최소화 기능을 구현했다. Axios Interceptor를 이용해 요청
+        전에 토큰이 유효한지 검사하고 토큰이 만료되었다면 내부적으로 자동으로 Refresh Token으로 새로운 토큰을 발급받도록
+        구현하였다.
+        <br />
+        <br />
+        컴포넌트 개발은 Next.js 13버전에서 새로 추가된 App Router 방식으로 개발을 진행했다. 덕분에 SSR 및 React Server
+        Components를 이용해 서버에서 컴포넌트들을 미리 렌더링하여 빠른 페이지 로딩을 제공할 수 있었다.
+        <br />
+        <br />
+        <span className="font-bold text-lg inline-block mb-1">안드로이드 앱 개발</span>
+        <br />
+        연구실에서 몇번 로봇을 다뤄봤는데 안드로이드 기반 스마트폰과 다른점이 없다는 것을 확인했었다. 매번 로봇에 직접
+        앱을 설치하며 개발을 하기에는 지리적으로 먼곳에 있어 어려웠다. 플랫폼 개발 초반에는 백엔드 서버와 연동이
+        잘되는지만 확인할 정도로만 App 개발 작업을 하면 되었기에, 혼자 개발하는 도중에는 스마트폰 혹은 안드로이드
+        에뮬레이터로 개발 및 테스트를 진행하고 추후 안드로이드 개발자를 고용하거나 아웃소싱을 통해 개발을 진행할 계획을
+        세우고 진행했다.
+        <br />
+        <br />
+        안드로이드 앱은 Android Studio에서 Kotlin을 이용해 개발을 진행했고 websocket 연결을 위해 OkHttp3 라이브러리를
+        이용했다. 간단하게 백엔드 연결/연결해제 버튼을 통해 백엔드 서버와의 연결을 확인할 수 있도록 화면을 구성해 개발을
+        했다. 앱에서 연결 버튼을 누르면 포그라운드에서 websocket으로 백엔드 서버와 연결을 시도하고, 연결을 성공하면 웹
+        콘솔에서 실시간으로 연결이 된 것을 확인할 수 있었다.
       </Paragraph>
-      <Heading>테스트</Heading>
-      <Paragraph>.</Paragraph>
+
       <Heading>마무리</Heading>
-      <Paragraph>.</Paragraph>
-      <Footer>Last Update: 2024-04-30</Footer>
+      <Paragraph>
+        최종적으로 웹콘솔에서 조직, 사용자, 로봇 개체에 대한 등록을 하고, 로봇을 위한 안드로이드 앱에서 등록된 로봇의
+        신원으로 WebSocket 연결을 수립하고 웹 콘솔에서 로봇의 상태를 실시간으로 확인하는 모습을 연구실에서 시연을 통해
+        보여주었다. 시연을 통해 사업의 방향성과 개발 진행 상황을 공유하고, 추가적인 요구사항이나 수정사항을 논의하였다.
+        이후 연구실에서 후속적인 로봇 관제 플랫폼의 개발을 진행할 아웃소싱 업체와 협의를 진행할 계획을 세웠고 해당
+        업체에 지금까지 작업한 내용들을 공유 및 전달하며 작업을 마무리하였다.
+        <br />
+        <br />
+        인프라 구축에서 백엔드 서비스 개발, 서버리스 코드 개발, 웹 콘솔 개발, 안드로이드 앱 개발까지 다양한 영역에
+        대해서 1인 개발 작업을 진행했다. 다양한 영역에 대해 새롭게 배우는 부분들이 많았고, 많은 성장을 얻었다고
+        생각한다. 특히 로깅 시스템 구축, 쿠버네티스 클러스터 구성과 서비스 메시 구축을 통해 엔터프라이즈급 기능 구현을
+        위한 관측가능성에 대한 중요성을 느낄 수 있었다. 추후 취업을 하면 그곳에서 운영되는 환경과 지금까지 진행했던
+        작업들에 대해서 비교를 해보며 더 깊이 이해하고, 앞으로 더 나은 방향으로 설계 및 구축할 수 있는 방법을 찾아보고
+        싶다.
+      </Paragraph>
+      <Footer>Last Update: 2024-06-01</Footer>
     </Article>
   );
 }
