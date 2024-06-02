@@ -16,6 +16,7 @@ const GallaryItem = ({ title, href, description, thumbnailURL }: GallaryItemProp
       href={href}
       draggable={false}
       className="hover:bg-gray-100 dark:hover:bg-gray-700 -m-2 p-2 rounded-xl transition-colors duration-200 group"
+      target="_blank"
     >
       <div className="flex mb-2 gap-2">
         <div className="grid overflow-hidden">
