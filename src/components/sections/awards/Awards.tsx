@@ -78,6 +78,7 @@ export function Awards() {
             <Item>디지털 콘텐츠 경진대회 - 은상</Item>
             <Item>네트워크 구축 대회 - 동상</Item>
             <Item>Smarteen App Challenge - 장려상</Item>
+            <Item>한양공업고등학교 제1회 프로그래밍 경진대회 - 대상</Item>
             <Item>선린정보올림피아드 경시대회 - 금상</Item>
           </List>
         </TitledList>
