@@ -4,6 +4,7 @@ import {
   faChalkboardTeacher,
   faCode,
   faEnvelope,
+  faGamepad,
   faGraduationCap,
   faIdCard,
   faJetFighterUp,
@@ -87,7 +88,7 @@ export function Profile() {
           <div>
             <div className="text-slate-800 dark:text-slate-200 font-bold text-xl mb-2">Career</div>
             <IconList className="space-y-0.5 break-keep">
-              <IconList.Item icon={faJetFighterUp}>크래프톤 펍지 백엔드 개발자 (2024~)</IconList.Item>
+              <IconList.Item icon={faGamepad}>크래프톤 펍지 백엔드 개발자 (2024~)</IconList.Item>
               <IconList.Item icon={faJetFighterUp}>공군 교육훈련매체개발병 (2022~2023)</IconList.Item>
               <IconList.Item icon={faChalkboardTeacher}>코딩학원 강사 (2018~2021)</IconList.Item>
               <IconList.Item icon={faCode}>이비온(evon) 안드로이드 개발자 (2018~2019)</IconList.Item>
