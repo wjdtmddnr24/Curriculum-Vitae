@@ -13,7 +13,7 @@ export interface SedtionsStoreProviderProps {
 }
 
 export const SectionsStoreProvider = ({ children, initialState }: SedtionsStoreProviderProps) => {
-  const storeRef = useRef<StoreApi<SectionsStore>>();
+  const storeRef = useRef<StoreApi<SectionsStore>>(undefined);
   if (!storeRef.current) {
     storeRef.current = createSectionsStore(initialState);
   }

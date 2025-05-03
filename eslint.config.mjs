@@ -1,0 +1,54 @@
+import { FlatCompat } from "@eslint/eslintrc";
+
+const compat = new FlatCompat({
+  // import.meta.dirname is available after Node.js v20.11.0
+  baseDirectory: import.meta.dirname,
+});
+
+const eslintConfig = [
+  ...compat.config({
+    extends: [
+      "next",
+      "next/core-web-vitals",
+      "plugin:storybook/recommended",
+      "prettier",
+      "plugin:@next/next/recommended",
+    ],
+    plugins: ["unused-imports"],
+    rules: {
+      "no-console": "warn",
+      "sort-imports": [
+        "error",
+        {
+          ignoreCase: false,
+          ignoreDeclarationSort: true,
+          ignoreMemberSort: false,
+          memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+          allowSeparatedGroups: false,
+        },
+      ],
+      "import/order": [
+        "error",
+        {
+          groups: ["builtin", "external", "internal", ["sibling", "parent"], "index", "object", "type", "unknown"],
+          pathGroups: [
+            {
+              pattern: "react",
+              group: "external",
+              position: "before",
+            },
+          ],
+          "newlines-between": "always",
+          alphabetize: {
+            order: "asc",
+            caseInsensitive: false,
+          },
+          warnOnUnassignedImports: true,
+        },
+      ],
+      "unused-imports/no-unused-imports": "error",
+    },
+  }),
+];
+
+export default eslintConfig;

@@ -36,7 +36,8 @@ const articles: { [id: string]: ProjectArticle } = {
   },
 };
 
-export function generateMetadata({ params }: { params: { id: string } }): Metadata {
+export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const params = await props.params;
   const CareerArticle = articles[params.id];
   if (!CareerArticle) notFound();
   return {
@@ -45,7 +46,8 @@ export function generateMetadata({ params }: { params: { id: string } }): Metada
   };
 }
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+export default async function ProjectPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const CareerArticle = articles[params.id];
   if (!CareerArticle) notFound();
   return <CareerArticle.Component />;
