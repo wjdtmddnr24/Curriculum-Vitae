@@ -86,6 +86,7 @@ export function TechSkills() {
             <Item>JavaScript</Item>
             <Item>TypeScript</Item>
             <Item>C, C++</Item>
+            <Item>C#</Item>
             <Item>Java</Item>
             <Item>Python</Item>
             <Item>Dart</Item>
